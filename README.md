@@ -1,4 +1,4 @@
-# PwdCrypter-Xamarin
+# PwdCrypter (Open Source version)
 PwdCrypter App multiplatform (Xamarin).  
 Tool: VisualStudio 2019.
 

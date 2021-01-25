@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="PwdCrypter.CloudPage"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ext="clr-namespace:PwdCrypter.Extensions.ResxLocalization"
+             xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             xmlns:local="clr-namespace:PwdCrypter"
+             Title="{ext:Translate titleCloud}"
+             BackgroundColor="White"
+             SizeChanged="ContentPage_SizeChanged">
+    <ContentPage.Content>
+        <RelativeLayout>
+            <!--
+                Immagine di sfondo
+                A causa di un bug, è necessario specifiare ReplaceStringMap prima
+                di Source
+            -->
+            <ffimageloadingsvg:SvgCachedImage x:Name="imgBackground"
+                                              RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                                                     Property=Height,
+                                                                                                     Factor=1}"
+                                              RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                                                    Property=Width,
+                                                                                                    Factor=1}"
+                                              RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                                                Property=Width,
+                                                                                                Factor=0.4,
+                                                                                                Constant=0}"
+                                              RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                                                Property=Height,
+                                                                                                Factor=0.2,
+                                                                                                Constant=0}"
+                                              ReplaceStringMap="{x:Static local:CloudPage.BackgroundImageColor}"
+                                              Source="Assets/SVG/cloud_solid.svg"/>
+
+            <StackLayout RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                                Property=Height,
+                                                                                Factor=1}"
+                         RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                               Property=Width,
+                                                                               Factor=1}">
+
+                <Grid Margin="20"
+                      HorizontalOptions="CenterAndExpand"
+                      VerticalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <!--  Titolo  -->
+                    <Label x:Name="lblTitle"
+                           Grid.Row="0"
+                           FontAttributes="Bold"
+                           FontSize="Large"
+                           HorizontalOptions="Center"
+                           HorizontalTextAlignment="Center"
+                           Text="{ext:Translate titleCloud}"
+                           TextColor="Black"
+                           VerticalOptions="Center"/>
+
+                    <!--  Spinner  -->
+                    <ActivityIndicator x:Name="spinnerCloud"
+                                       Grid.Row="1"
+                                       IsEnabled="False"
+                                       IsRunning="False"
+                                       IsVisible="False"
+                                       Color="{x:Static local:AppStyle.IconColor}"/>
+
+                    <!--  Stato della connessione  -->
+                    <StackLayout Grid.Row="2"
+                                 HorizontalOptions="Center"
+                                 Orientation="Vertical">
+
+                        <!--  Stato  -->
+                        <Label x:Name="lblCloudStatus"
+                               FontSize="14"
+                               TextColor="Black"/>
+
+                        <!--  Ricorda i dati di accesso  -->
+                        <StackLayout x:Name="stackRememberMe"
+                                     Orientation="Horizontal">
+                            <Label FontSize="14"
+                                   Text="{ext:Translate txtRememberMe}"
+                                   TextColor="Black"
+                                   VerticalOptions="Center"/>
+                            <Switch x:Name="switchRememberMe"/>
+                        </StackLayout>
+                    </StackLayout>
+
+                    <!--  Pulsanti per la connessione alle varie piattaforme Cloud  -->
+                    <FlexLayout Grid.Row="3"
+                                AlignItems="Center"
+                                Direction="Column"
+                                JustifyContent="SpaceAround"
+                                Wrap="Wrap">
+
+                        <!--  OneDrive  -->
+                        <Frame BackgroundColor="Transparent"
+                               FlexLayout.AlignSelf="Stretch"
+                               VerticalOptions="Start">
+                            <Grid HorizontalOptions="Center">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <ffimageloadingsvg:SvgCachedImage Grid.Column="0"
+                                                                  Aspect="AspectFit"
+                                                                  Source="Assets/SVG/onedrive_logo.svg"
+                                                                  WidthRequest="{x:Static local:CloudPage.LogoCloudWidth}"/>
+                                <Button x:Name="btnOneDrive"
+                                        Grid.Column="1"
+                                        Clicked="BtnOneDrive_OnClicked"
+                                        IsEnabled="True"
+                                        Text="Login"
+                                        VerticalOptions="Center"/>
+                            </Grid>
+                        </Frame>
+
+                        <!--  GoogleDrive  -->
+                        <Frame BackgroundColor="Transparent"
+                               FlexLayout.AlignSelf="Stretch"
+                               VerticalOptions="Start">
+                            <Grid HorizontalOptions="Center">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <ffimageloadingsvg:SvgCachedImage Grid.Column="0"
+                                                                  Aspect="AspectFit"
+                                                                  Source="Assets/SVG/googledrive_logo.svg"
+                                                                  WidthRequest="{x:Static local:CloudPage.LogoCloudWidth}"/>
+                                <Button x:Name="btnGoogleDrive"
+                                        Grid.Column="1"
+                                        Clicked="BtnGoogleDrive_Clicked"
+                                        IsEnabled="True"
+                                        Text="Login"
+                                        VerticalOptions="Center"/>
+                            </Grid>
+                        </Frame>
+
+                    </FlexLayout>
+
+                    <!--
+                        Pulsante per annullare l'operazione in caso di apertura modale
+                        della pagina
+                    -->
+                    <Button x:Name="btnCancel"
+                            Grid.Row="4"
+                            BackgroundColor="{x:Static local:AppStyle.ButtonAlternativeBackgroundColor}"
+                            Clicked="BtnCancel_Clicked"
+                            HorizontalOptions="FillAndExpand"
+                            IsVisible="False"
+                            Text="{ext:Translate btnCancel}"/>
+                </Grid>
+            </StackLayout>
+        </RelativeLayout>
+    </ContentPage.Content>
+</ContentPage>

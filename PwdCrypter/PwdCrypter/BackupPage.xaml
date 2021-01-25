@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="PwdCrypter.BackupPage"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:ext="clr-namespace:PwdCrypter.Extensions.ResxLocalization"
+             xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             xmlns:local="clr-namespace:PwdCrypter"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             Title="{ext:Translate titleBackup}"
+             BackgroundColor="White"
+             SizeChanged="ContentPage_SizeChanged"
+             mc:Ignorable="d">
+    <ContentPage.Content>
+        <RelativeLayout>
+            <!--
+                Immagine di sfondo
+                A causa di un bug, è necessario specifiare ReplaceStringMap prima
+                di Source
+            -->
+            <ffimageloadingsvg:SvgCachedImage x:Name="imgBackground"
+                                              RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                                                     Property=Height,
+                                                                                                     Factor=1}"
+                                              RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                                                    Property=Width,
+                                                                                                    Factor=1}"
+                                              RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                                                Property=Width,
+                                                                                                Factor=0.4,
+                                                                                                Constant=0}"
+                                              RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                                                Property=Height,
+                                                                                                Factor=0.2,
+                                                                                                Constant=0}"
+                                              ReplaceStringMap="{x:Static local:BackupPage.BackgroundImageColor}"
+                                              Source="Assets/SVG/history.svg"/>
+
+            <!--  Titolo  -->
+            <Label x:Name="lblTitle"
+                   FontAttributes="Bold"
+                   FontSize="Large"
+                   HorizontalTextAlignment="Center"
+                   RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                         Property=Width,
+                                                                         Factor=1}"
+                   RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                     Property=Height,
+                                                                     Factor=0,
+                                                                     Constant=20}"
+                   Text="{ext:Translate titleBackup}"
+                   TextColor="Black"
+                   VerticalOptions="Center"/>
+
+            <StackLayout RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                                Property=Height,
+                                                                                Factor=1}"
+                         RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                               Property=Width,
+                                                                               Factor=1}">
+                <Grid x:Name="gridMain"
+                      Margin="20"
+                      HorizontalOptions="CenterAndExpand"
+                      VerticalOptions="CenterAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <!--  Spinner  -->
+                    <ActivityIndicator x:Name="spinnerBackup"
+                                       Grid.Row="0"
+                                       IsEnabled="False"
+                                       IsRunning="False"
+                                       IsVisible="False"
+                                       Color="{x:Static local:AppStyle.IconColor}"/>
+
+                    <Label x:Name="labelLastBackup"
+                           Grid.Row="1"
+                           HorizontalOptions="FillAndExpand"
+                           HorizontalTextAlignment="Center"
+                           IsVisible="False"
+                           Text="{ext:Translate txtLastBackup}"
+                           TextColor="Black"
+                           VerticalOptions="Center"/>
+                    <Label x:Name="labelNextBackup"
+                           Grid.Row="2"
+                           HorizontalOptions="FillAndExpand"
+                           HorizontalTextAlignment="Center"
+                           IsVisible="False"
+                           Text="{ext:Translate txtNextBackup}"
+                           TextColor="Black"
+                           VerticalOptions="Center"/>
+
+                    <Button x:Name="btnBackup"
+                            Grid.Row="3"
+                            Clicked="BtnBackup_Clicked"
+                            HorizontalOptions="FillAndExpand"
+                            Text="{ext:Translate btnBackup}"
+                            VerticalOptions="Center"/>
+                    <Button x:Name="btnRestore"
+                            Grid.Row="4"
+                            BackgroundColor="{x:Static local:AppStyle.ButtonAlternativeBackgroundColor}"
+                            Clicked="BtnRestore_Clicked"
+                            HorizontalOptions="FillAndExpand"
+                            IsVisible="False"
+                            Text="{ext:Translate btnRestore}"
+                            VerticalOptions="Center"/>
+                </Grid>
+            </StackLayout>
+        </RelativeLayout>
+    </ContentPage.Content>
+</ContentPage>

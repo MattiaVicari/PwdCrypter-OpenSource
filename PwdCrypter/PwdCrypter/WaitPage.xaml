@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="PwdCrypter.WaitPage"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:PwdCrypter.Controls"
+             xmlns:ext="clr-namespace:PwdCrypter.Extensions.ResxLocalization"
+             xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             xmlns:local="clr-namespace:PwdCrypter"
+             Title="{ext:Translate titleWait}"
+             BackgroundColor="White">
+    <ContentPage.Content>
+        <RelativeLayout>
+            <!--
+                Immagine di sfondo
+                A causa di un bug, è necessario specifiare ReplaceStringMap prima
+                di Source
+            -->
+            <ffimageloadingsvg:SvgCachedImage x:Name="imgBackground"
+                                              RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                                                     Property=Height,
+                                                                                                     Factor=1}"
+                                              RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                                                    Property=Width,
+                                                                                                    Factor=1}"
+                                              RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                                                Property=Width,
+                                                                                                Factor=0.4,
+                                                                                                Constant=0}"
+                                              RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                                                Property=Height,
+                                                                                                Factor=0.2,
+                                                                                                Constant=0}"
+                                              ReplaceStringMap="{x:Static local:WaitPage.BackgroundImageColor}"
+                                              Source="Assets/SVG/hourglass_regular.svg"/>
+
+            <Frame Padding="5"
+                   BorderColor="LightGray"
+                   CornerRadius="10"
+                   RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                         Property=Width,
+                                                                         Factor=0.7}"
+                   RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                     Property=Width,
+                                                                     Factor=0.15}"
+                   RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                     Property=Height,
+                                                                     Factor=0.5,
+                                                                     Constant=-100}">
+
+                <StackLayout HorizontalOptions="FillAndExpand"
+                             Orientation="Vertical">
+                    <controls:FontAwesomeLabel x:Name="lblHourglass"
+                                               FontSize="60"
+                                               HorizontalOptions="Center"
+                                               Text="{x:Static controls:Icon.FAHourglassEndSolid}"
+                                               TextColor="{x:Static local:AppStyle.IconColor}"
+                                               VerticalTextAlignment="Center">
+                        <controls:FontAwesomeLabel.HeightRequest>
+                            <OnPlatform x:TypeArguments="x:Double">
+                                <OnPlatform.Platforms>
+                                    <On Platform="Android"
+                                        Value="80"/>
+                                    <On Platform="UWP"
+                                        Value="-1"/>
+                                </OnPlatform.Platforms>
+                            </OnPlatform>
+                        </controls:FontAwesomeLabel.HeightRequest>
+                    </controls:FontAwesomeLabel>
+
+                    <Label FontSize="14"
+                           HorizontalOptions="FillAndExpand"
+                           HorizontalTextAlignment="Center"
+                           LineBreakMode="WordWrap"
+                           Text="{Binding Message}"
+                           TextColor="Black"/>
+                </StackLayout>
+            </Frame>
+
+        </RelativeLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PwdCrypter.BreachedAccountDetailsPage"
+			 xmlns:local="clr-namespace:PwdCrypter"
+			 xmlns:ext="clr-namespace:PwdCrypter.Extensions.ResxLocalization"
+			 xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+			 Title="{ext:Translate titleBreachedAccountDetails}"
+			 BackgroundColor="White">
+    <ContentPage.Content>
+		<RelativeLayout>
+			<!-- Immagine di sfondo
+			A causa di un bug, è necessario specifiare ReplaceStringMap prima
+			di Source -->
+			<ffimageloadingsvg:SvgCachedImage
+				x:Name="imgBackground"
+				ReplaceStringMap="{x:Static local:BreachedAccountDetailsPage.BackgroundImageColor}"
+				Source="Assets/SVG/skull_crossbones_solid.svg"
+				RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+				RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}"
+				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.4, Constant=0}"
+				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.2, Constant=0}"/>
+
+			<StackLayout RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+						 RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}">
+
+				<Grid x:Name="gridMain" 
+					  HorizontalOptions="FillAndExpand"
+					  VerticalOptions="FillAndExpand"
+					  Margin="10,0,10,0">
+					<ListView x:Name="listViewDetails"
+							  HasUnevenRows="True"
+							  BackgroundColor="Transparent">
+						<ListView.ItemTemplate>
+							<DataTemplate>
+								<ViewCell>
+									<Grid BackgroundColor="{Binding RowColor}">
+										<Grid.ColumnDefinitions>
+											<ColumnDefinition Width="150"/>
+											<ColumnDefinition Width="Auto"/>
+											<ColumnDefinition Width="*"/>
+										</Grid.ColumnDefinitions>
+										<Grid.RowDefinitions>
+											<RowDefinition Height="Auto"/>
+											<RowDefinition Height="Auto"/>
+											<RowDefinition Height="Auto"/>
+											<RowDefinition Height="Auto"/>
+											<RowDefinition Height="Auto"/>
+											<RowDefinition Height="Auto"/>
+											<RowDefinition Height="Auto"/>
+											<RowDefinition Height="Auto"/>
+											<RowDefinition Height="Auto"/>
+										</Grid.RowDefinitions>
+
+										<!-- Logo -->
+										<Image Grid.Row="0" Grid.RowSpan="3" Grid.Column="0"
+											   Source ="{Binding LogoPath}"
+											   Margin="5"
+											   HorizontalOptions="Center"
+											   VerticalOptions="Center"
+											   Aspect="AspectFit"/>
+
+										<!-- Nome -->
+										<Label Grid.Row="0" Grid.Column="1" 
+											   Text="{ext:Translate txtBreachName}"
+											   TextColor="Black"
+											   FontAttributes="Bold"
+											   LineBreakMode="TailTruncation"
+											   VerticalTextAlignment="Center"
+											   HorizontalTextAlignment="Start"/>
+										<Label Grid.Row="0" Grid.Column="2" 
+											   Text="{Binding Name}"
+											   TextColor="Black"
+											   LineBreakMode="WordWrap"
+											   VerticalTextAlignment="Center"
+											   HorizontalTextAlignment="Start"
+											   Margin="10,0,0,0"/>
+										<!-- Title -->
+										<Label Grid.Row="1" Grid.Column="1" 
+											   Text="{ext:Translate txtBreachTitle}"
+											   TextColor="Black"
+											   FontAttributes="Bold"
+											   LineBreakMode="TailTruncation"
+											   VerticalTextAlignment="Center"
+											   HorizontalTextAlignment="Start"/>
+										<Label Grid.Row="1" Grid.Column="2"  
+											   Text="{Binding Title}"
+											   TextColor="Black"
+											   LineBreakMode="WordWrap"
+											   VerticalTextAlignment="Center"
+											   HorizontalTextAlignment="Start"
+											   Margin="10,0,0,0"/>
+										<!-- Domain -->
+										<Label Grid.Row="2" Grid.Column="1"  
+											   Text="{ext:Translate txtBreachDomain}"
+											   TextColor="Black"
+											   FontAttributes="Bold"
+											   LineBreakMode="TailTruncation"
+											   VerticalTextAlignment="Center"
+											   HorizontalTextAlignment="Start"/>
+										<Label Grid.Row="2" Grid.Column="2"  
+											   Text="{Binding Domain}"
+											   TextColor="Black"
+											   LineBreakMode="WordWrap"
+											   VerticalTextAlignment="Center"
+											   HorizontalTextAlignment="Start"
+											   Margin="10,0,0,0"/>
+										<!-- BreachDate -->
+										<Label Grid.Row="3" Grid.Column="0" 
+											   Text="{ext:Translate txtBreachDate}"
+											   TextColor="Black"
+											   FontAttributes="Bold"
+											   LineBreakMode="TailTruncation"
+											   VerticalTextAlignment="Center"
+											   HorizontalTextAlignment="Start"/>
+										<Label Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" 
+											   Text="{Binding BreachDate}"
+											   TextColor="Black"
+											   LineBreakMode="WordWrap"
+											   VerticalTextAlignment="Center"
+											   HorizontalTextAlignment="Start"
+											   Margin="10,0,0,0"/>
+										<!-- AddedDate -->
+										<Label Grid.Row="4" Grid.Column="0"
+											   Text="{ext:Translate txtBreachAddedDate}"
+											   TextColor="Black"
+											   FontAttributes="Bold"
+											   LineBreakMode="TailTruncation"
+											   VerticalTextAlignment="Center"
+											   HorizontalTextAlignment="Start"/>
+										<Label Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" 
+											   Text="{Binding AddedDate}"
+											   TextColor="Black"
+											   LineBreakMode="WordWrap"
+											   VerticalTextAlignment="Center"
+											   HorizontalTextAlignment="Start"
+											   Margin="10,0,0,0"/>
+										<!-- ModifiedDate -->
+										<Label Grid.Row="5" Grid.Column="0"
+											   Text="{ext:Translate txtBreachModifiedDate}"
+											   TextColor="Black"
+											   FontAttributes="Bold"
+											   LineBreakMode="TailTruncation"
+											   VerticalTextAlignment="Center"
+											   HorizontalTextAlignment="Start"/>
+										<Label Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" 
+											   Text="{Binding ModifiedDate}"
+											   TextColor="Black"
+											   LineBreakMode="WordWrap"
+											   VerticalTextAlignment="Center"
+											   HorizontalTextAlignment="Start"
+											   Margin="10,0,0,0"/>
+										<!-- Description -->
+										<Label Grid.Row="6" Grid.Column="0"
+											   Text="{ext:Translate txtBreachDescription}"
+											   TextColor="Black"
+											   FontAttributes="Bold"
+											   LineBreakMode="TailTruncation"
+											   VerticalTextAlignment="Start"
+											   HorizontalTextAlignment="Start"/>
+										<Button Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2"
+												VerticalOptions="Center" 
+												HorizontalOptions="Center"
+												Text="{ext:Translate txtShowDescription}"
+												CommandParameter="{Binding Description}"
+												Clicked="ShowDescription_Clicked"/>
+										<!-- DataClasses -->
+										<Label Grid.Row="7" Grid.Column="0"
+											   Text="{ext:Translate txtBreachDataClasses}"
+											   TextColor="Black"
+											   FontAttributes="Bold"
+											   LineBreakMode="TailTruncation"
+											   VerticalTextAlignment="Start"
+											   HorizontalTextAlignment="Start"/>
+										<Label Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2" 
+											   Text="{Binding DataClasses}"
+											   TextColor="Black"
+											   LineBreakMode="WordWrap"
+											   VerticalTextAlignment="Center"
+											   HorizontalTextAlignment="Start"
+											   Margin="10,0,0,0"/>
+										<!-- IsSpamList -->
+										<Label Grid.Row="8" Grid.Column="0"
+											   Text="{ext:Translate txtBreachIsSpamList}"
+											   TextColor="Black"
+											   FontAttributes="Bold"
+											   LineBreakMode="TailTruncation"
+											   VerticalTextAlignment="Center"
+											   HorizontalTextAlignment="Start"/>
+										<Label Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="2" 
+										       Text="{Binding IsSpamList}"
+											   TextColor="Black"
+											   LineBreakMode="WordWrap"
+											   VerticalTextAlignment="Center"
+											   HorizontalTextAlignment="Start"
+											   Margin="10,0,0,0"/>
+									</Grid>
+								</ViewCell>
+							</DataTemplate>
+						</ListView.ItemTemplate>
+					</ListView>
+				</Grid>
+			</StackLayout>
+		</RelativeLayout>
+	</ContentPage.Content>
+</ContentPage>

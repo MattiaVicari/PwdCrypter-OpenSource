@@ -1,0 +1,169 @@
+
+  ____          _   _____           _           _____           _                           _      _                              
+ |___ \        | | |  __ \         | |         |  __ \         | |                         | |    (_)                             
+   __) |_ __ __| | | |__) |_ _ _ __| |_ _   _  | |__) |_ _  ___| | ____ _  __ _  ___  ___  | |     _  ___ ___ _ __  ___  ___  ___ 
+  |__ <| '__/ _` | |  ___/ _` | '__| __| | | | |  ___/ _` |/ __| |/ / _` |/ _` |/ _ \/ __| | |    | |/ __/ _ \ '_ \/ __|/ _ \/ __|
+  ___) | | | (_| | | |  | (_| | |  | |_| |_| | | |  | (_| | (__|   < (_| | (_| |  __/\__ \ | |____| | (_|  __/ | | \__ \  __/\__ \
+ |____/|_|  \__,_| |_|   \__,_|_|   \__|\__, | |_|   \__,_|\___|_|\_\__,_|\__, |\___||___/ |______|_|\___\___|_| |_|___/\___||___/
+                                         __/ |                             __/ |                                                  
+                                        |___/                             |___/                                                   
+
+-------------------------------------------------------------------------------------------
+                     _           _     _ 
+     /\             | |         (_)   | |
+    /  \   _ __   __| |_ __ ___  _  __| |
+   / /\ \ | '_ \ / _` | '__/ _ \| |/ _` |
+  / ____ \| | | | (_| | | | (_) | | (_| |
+ /_/    \_\_| |_|\__,_|_|  \___/|_|\__,_|
+                                         
+                                         
+-------------------------------------------------------------------------------------------
+
+Com.OneSignal	
+(C) 2016 OneSignal
+https://github.com/OneSignal/OneSignal-Xamarin-SDK/blob/master/LICENSE
+-------
+Microsoft.Net.Http
+(C) Microsoft
+https://dotnet.microsoft.com/en/dotnet_library_license.htm
+-----------
+Xamarin.Android.Support.Compat
+(C) .NET Foundation Contributors
+https://github.com/xamarin/AndroidSupportComponents/blob/master/LICENSE.md
+-------------
+Xamarin.Android.Support.CustomTabs
+(C) .NET Foundation Contributors
+https://github.com/xamarin/AndroidSupportComponents/blob/master/LICENSE.md
+--------------
+Xamarin.Android.Support.Design
+(C) .NET Foundation Contributors
+https://github.com/xamarin/AndroidSupportComponents/blob/master/LICENSE.md
+--------------
+Xamarin.Android.Support.v4
+(C) .NET Foundation Contributors
+https://github.com/xamarin/AndroidSupportComponents/blob/master/LICENSE.md
+-------------
+Xamarin.Android.Support.v7.AppCompat
+(C) .NET Foundation Contributors
+https://github.com/xamarin/AndroidSupportComponents/blob/master/LICENSE.md
+--------------
+Xamarin.Android.Support.v7.CardView
+(C) .NET Foundation Contributors
+https://github.com/xamarin/AndroidSupportComponents/blob/master/LICENSE.md
+-------------
+Xamarin.Android.Support.v7.MediaRouter
+(C) .NET Foundation Contributors
+https://github.com/xamarin/AndroidSupportComponents/blob/master/LICENSE.md
+-------------
+Xamarin.AndroidX.MediaRouter
+(C) .NET Foundation Contributors
+https://www.nuget.org/packages/Xamarin.AndroidX.MediaRouter/1.1.0/license
+-------------
+Xamarin.GooglePlayServices.Location
+(C) .NET Foundation Contributors
+https://github.com/xamarin/GooglePlayServicesComponents/blob/master/LICENSE.md
+-------------------
+Xamarin.Android.Arch.Work.Runtime
+(C) .NET Foundation Contributors
+https://github.com/xamarin/AndroidSupportComponents/blob/master/LICENSE.md
+-------------------
+Xamarin.AndroidX.Work.Runtime
+(C) .NET Foundation Contributors
+https://www.nuget.org/packages/Xamarin.AndroidX.Work.Runtime/2.3.4.1/license
+-------------------
+Xamarin.AndroidX.AppCompat.Resources
+(C) .NET Foundation Contributors
+https://www.nuget.org/packages/Xamarin.AndroidX.AppCompat.Resources/1.1.0.1/license
+
+-------------------------------------------------------------------------------------------
+
+ __          ___           _                   
+ \ \        / (_)         | |                  
+  \ \  /\  / / _ _ __   __| | _____      _____ 
+   \ \/  \/ / | | '_ \ / _` |/ _ \ \ /\ / / __|
+    \  /\  /  | | | | | (_| | (_) \ V  V /\__ \
+     \/  \/   |_|_| |_|\__,_|\___/ \_/\_/ |___/
+                                               
+                                               
+
+-------------------------------------------------------------------------------------------
+
+Microsoft.NETCore.UniversalWindowsPlatform
+(C) Microsoft
+https://github.com/Microsoft/dotnet/blob/master/releases/UWP/LICENSE.TXT
+--------------
+Otp.NET
+(C) 2017 Kyle Spearrin
+https://raw.githubusercontent.com/kspearrin/Otp.NET/master/LICENSE.txt
+--------------
+Wiry.Base32
+(C) Dmitry Razumikhin
+https://opensource.org/licenses/MIT
+---------------
+
+
+-------------------------------------------------------------------------------------------
+
+  ____        _   _     
+ |  _ \      | | | |    
+ | |_) | ___ | |_| |__  
+ |  _ < / _ \| __| '_ \ 
+ | |_) | (_) | |_| | | |
+ |____/ \___/ \__|_| |_|
+                        
+                        
+
+-------------------------------------------------------------------------------------------
+
+NETStandard.Library
+(C) .NET Foundation and Contributors
+https://github.com/dotnet/standard/blob/master/LICENSE.TXT
+---------------------
+Newtonsoft.Json
+(C) James Newton-King
+https://licenses.nuget.org/MIT
+---------------------
+Plugin.InAppBilling
+(C) 2017 James Montemagno / Refractored LLC
+https://github.com/jamesmontemagno/InAppBillingPlugin/blob/master/LICENSE
+---------------------
+SkiaSharp.Views.Forms
+(C) 2015-2016 Xamarin, Inc.
+(C) 2017-2018 Microsoft Corporation.
+https://github.com/mono/SkiaSharp/blob/master/LICENSE.md
+--------------------
+System.IO.Compression.ZipFile
+(C) Microsoft
+https://dotnet.microsoft.com/en/dotnet_library_license.htm
+---------------------
+Xam.Forms.QRCode
+(C) 2018 Aloïs Deniel
+https://github.com/dotnet-ad/Xam.Forms.QRCode/blob/master/LICENSE
+---------------------
+Xamarin.Auth
+(C) Microsoft
+https://github.com/xamarin/Xamarin.Auth/blob/master/License.md
+-------------------
+Xamarin.Essentials
+(C) Microsoft
+https://www.nuget.org/packages/Xamarin.Essentials/1.5.2/license
+------------------
+Xamarin.FFImageLoading.Svg.Forms
+(C) 2015 Daniel Luberda & Fabien Molinet
+https://raw.githubusercontent.com/luberda-molinet/FFImageLoading/master/LICENSE.md
+------------------
+Xamarin.Forms
+(C) Microsoft
+https://licenses.nuget.org/MIT
+------------------
+Xamarin.Plugin.FilePicker
+(C) 2018 jfversluis - Xamarin & .NET
+https://github.com/jfversluis/FilePicker-Plugin-for-Xamarin-and-Windows/blob/master/LICENSE
+------------------
+Xamarin.Plugins.Clipboard
+(C) 2017 AkiraGTX
+https://github.com/stavroskasidis/XamarinClipboardPlugin/blob/master/LICENSE
+-----------------
+zxcvbn-core
+(C) 2012 Dropbox, Inc.
+https://github.com/trichards57/zxcvbn-cs/blob/master/LICENSE

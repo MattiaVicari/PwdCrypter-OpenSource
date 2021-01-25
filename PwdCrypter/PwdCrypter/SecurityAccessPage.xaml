@@ -1,0 +1,451 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="PwdCrypter.SecurityAccessPage"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:PwdCrypter.Controls"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:ext="clr-namespace:PwdCrypter.Extensions.ResxLocalization"
+             xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             xmlns:local="clr-namespace:PwdCrypter"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             Title="{ext:Translate titleSecurityAccess}"
+             BackgroundColor="White"
+             SizeChanged="ContentPage_SizeChanged"
+             mc:Ignorable="d">
+    <ContentPage.Content>
+        <RelativeLayout>
+            <!--
+                Immagine di sfondo
+                A causa di un bug, è necessario specifiare ReplaceStringMap prima
+                di Source
+            -->
+            <ffimageloadingsvg:SvgCachedImage x:Name="imgBackground"
+                                              RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                                                     Property=Height,
+                                                                                                     Factor=1}"
+                                              RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                                                    Property=Width,
+                                                                                                    Factor=1}"
+                                              RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                                                Property=Width,
+                                                                                                Factor=0.4,
+                                                                                                Constant=0}"
+                                              RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                                                Property=Height,
+                                                                                                Factor=0.2,
+                                                                                                Constant=0}"
+                                              ReplaceStringMap="{x:Static local:SecurityAccessPage.BackgroundImageColor}"
+                                              Source="Assets/SVG/unlock_alt.svg"/>
+            <StackLayout RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                                Property=Height,
+                                                                                Factor=1}"
+                         RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                               Property=Width,
+                                                                               Factor=1}">
+                <!--  Titolo  -->
+                <Label x:Name="lblTitle"
+                       FontAttributes="Bold"
+                       FontSize="Large"
+                       HorizontalOptions="Center"
+                       HorizontalTextAlignment="Center"
+                       Text="{ext:Translate titleSecurityAccess}"
+                       TextColor="Black"
+                       VerticalOptions="Center"/>
+
+                <ScrollView x:Name="scrollMain"
+                            HorizontalScrollBarVisibility="Never"
+                            VerticalScrollBarVisibility="Default">
+                    <Grid Margin="20"
+                          HorizontalOptions="CenterAndExpand"
+                          VerticalOptions="FillAndExpand">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="{x:Static local:SecurityAccessPage.BackupHistoryRowHeight}"/>
+                            <RowDefinition Height="{x:Static local:SecurityAccessPage.BackupHistoryRowHeight}"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="30*"/>
+                            <ColumnDefinition Width="70*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <!--  Verifica periodica della password  -->
+                        <Label Grid.Row="0"
+                               Grid.Column="0"
+                               FontSize="14"
+                               HorizontalOptions="End"
+                               HorizontalTextAlignment="End"
+                               Text="{ext:Translate txtPeriodicallyCheckPassword}"
+                               TextColor="Black"
+                               VerticalOptions="Start"
+                               VerticalTextAlignment="Center">
+                            <Label.Margin>
+                                <OnPlatform x:TypeArguments="Thickness">
+                                    <OnPlatform.Platforms>
+                                        <On Platform="Android"
+                                            Value="0"/>
+                                        <On Platform="UWP"
+                                            Value="0,0,0,8"/>
+                                    </OnPlatform.Platforms>
+                                </OnPlatform>
+                            </Label.Margin>
+                        </Label>
+                        <StackLayout Grid.Row="0"
+                                     Grid.Column="1"
+                                     Orientation="Vertical">
+                            <Picker x:Name="pickerPeriodicallyCheckPwd"
+                                    SelectedIndexChanged="PickerPeriodicallyCheckPwd_SelectedIndexChanged"
+                                    VerticalOptions="Center">
+                                <Picker.WidthRequest>
+                                    <OnPlatform x:TypeArguments="x:Double">
+                                        <OnPlatform.Platforms>
+                                            <On Platform="Android"
+                                                Value="100"/>
+                                            <On Platform="UWP"
+                                                Value="-1"/>
+                                        </OnPlatform.Platforms>
+                                    </OnPlatform>
+                                </Picker.WidthRequest>
+                            </Picker>
+                            <StackLayout x:Name="stackDateTimePeriodicallyCheckPwd"
+                                         IsVisible="False"
+                                         Orientation="Vertical">
+                                <DatePicker x:Name="datePickerPeriodicallyCheckPwd"
+                                            DateSelected="DatePickerPeriodicallyCheckPwd_DateSelected"/>
+                                <controls:CustomTimePicker x:Name="timePickerPeriodicallyCheckPwd"
+                                                           PropertyChanged="TimePickerPeriodicallyCheckPwd_PropertyChanged">
+                                    <controls:CustomTimePicker.MinutesInterval>
+                                        <OnPlatform x:TypeArguments="x:Int32">
+                                            <OnPlatform.Platforms>
+                                                <On Platform="Android"
+                                                    Value="1"/>
+                                                <On Platform="UWP"
+                                                    Value="15"/>
+                                            </OnPlatform.Platforms>
+                                        </OnPlatform>
+                                    </controls:CustomTimePicker.MinutesInterval>
+                                </controls:CustomTimePicker>
+                                <Label Margin="0,0,0,10"
+                                       HorizontalOptions="Center"
+                                       HorizontalTextAlignment="Center"
+                                       Text="{ext:Translate txtApproximateDateTime}">
+                                    <Label.IsVisible>
+                                        <OnPlatform x:TypeArguments="x:Boolean">
+                                            <On Platform="Android"
+                                                Value="False"/>
+                                            <On Platform="UWP"
+                                                Value="True"/>
+                                        </OnPlatform>
+                                    </Label.IsVisible>
+                                </Label>
+                                <Label Margin="0,0,0,10"
+                                       HorizontalOptions="Center"
+                                       HorizontalTextAlignment="Center"
+                                       Text="{ext:Translate txtMonthYearExplanation}">
+                                    <Label.IsVisible>
+                                        <OnPlatform x:TypeArguments="x:Boolean">
+                                            <On Platform="Android"
+                                                Value="True"/>
+                                            <On Platform="UWP"
+                                                Value="False"/>
+                                        </OnPlatform>
+                                    </Label.IsVisible>
+                                </Label>
+                            </StackLayout>
+                        </StackLayout>
+
+                        <!--  Modalità di accesso  -->
+                        <Label Grid.Row="1"
+                               Grid.Column="0"
+                               FontSize="14"
+                               HorizontalOptions="End"
+                               HorizontalTextAlignment="End"
+                               Text="{ext:Translate txtSecurityAccess}"
+                               TextColor="Black">
+                            <Label.VerticalOptions>
+                                <OnPlatform x:TypeArguments="LayoutOptions">
+                                    <OnPlatform.Platforms>
+                                        <On Platform="Android"
+                                            Value="Center"/>
+                                        <On Platform="UWP"
+                                            Value="End"/>
+                                    </OnPlatform.Platforms>
+                                </OnPlatform>
+                            </Label.VerticalOptions>
+                            <Label.Margin>
+                                <OnPlatform x:TypeArguments="Thickness">
+                                    <OnPlatform.Platforms>
+                                        <On Platform="Android"
+                                            Value="0"/>
+                                        <On Platform="UWP"
+                                            Value="0,0,0,8"/>
+                                    </OnPlatform.Platforms>
+                                </OnPlatform>
+                            </Label.Margin>
+                        </Label>
+                        <Picker x:Name="pickerSecurityAccess"
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                SelectedIndexChanged="PickerSecurityAccess_SelectedIndexChanged"
+                                VerticalOptions="Center">
+                            <Picker.WidthRequest>
+                                <OnPlatform x:TypeArguments="x:Double">
+                                    <OnPlatform.Platforms>
+                                        <On Platform="Android"
+                                            Value="100"/>
+                                        <On Platform="UWP"
+                                            Value="-1"/>
+                                    </OnPlatform.Platforms>
+                                </OnPlatform>
+                            </Picker.WidthRequest>
+                        </Picker>
+
+                        <!--  Avviso di configurazione effettuata per l'impronta digitale  -->
+                        <StackLayout x:Name="stackFingerprintConfigured"
+                                     Grid.Row="2"
+                                     Grid.Column="0"
+                                     Grid.ColumnSpan="2"
+                                     HorizontalOptions="Center"
+                                     IsVisible="False"
+                                     Orientation="Horizontal"
+                                     VerticalOptions="Start">
+                            <controls:FontAwesomeLabel Text="{x:Static controls:Icon.FAFingerprintSolid}"
+                                                       TextColor="Green">
+                                <controls:FontAwesomeLabel.FontSize>
+                                    <OnPlatform x:TypeArguments="x:Double">
+                                        <OnPlatform.Platforms>
+                                            <On Platform="Android"
+                                                Value="50"/>
+                                            <On Platform="UWP"
+                                                Value="60"/>
+                                        </OnPlatform.Platforms>
+                                    </OnPlatform>
+                                </controls:FontAwesomeLabel.FontSize>
+                                <controls:FontAwesomeLabel.WidthRequest>
+                                    <OnPlatform x:TypeArguments="x:Double">
+                                        <OnPlatform.Platforms>
+                                            <On Platform="Android"
+                                                Value="70"/>
+                                            <On Platform="UWP"
+                                                Value="80"/>
+                                        </OnPlatform.Platforms>
+                                    </OnPlatform>
+                                </controls:FontAwesomeLabel.WidthRequest>
+                            </controls:FontAwesomeLabel>
+                            <Label FontSize="Small"
+                                   HorizontalOptions="Start"
+                                   Text="{ext:Translate txtFingerprintConfigured}"
+                                   TextColor="Green"
+                                   VerticalOptions="Center"/>
+                        </StackLayout>
+
+                        <!--  Avviso di configurazione effettuata per 2FA  -->
+                        <StackLayout x:Name="stack2FAConfigured"
+                                     Grid.Row="2"
+                                     Grid.Column="0"
+                                     Grid.ColumnSpan="2"
+                                     HorizontalOptions="Center"
+                                     IsVisible="False"
+                                     Orientation="Horizontal"
+                                     VerticalOptions="Start">
+                            <controls:FontAwesomeLabel Text="{x:Static controls:Icon.FAShieldAltSolid}"
+                                                       TextColor="Green">
+                                <controls:FontAwesomeLabel.FontSize>
+                                    <OnPlatform x:TypeArguments="x:Double">
+                                        <OnPlatform.Platforms>
+                                            <On Platform="Android"
+                                                Value="50"/>
+                                            <On Platform="UWP"
+                                                Value="60"/>
+                                        </OnPlatform.Platforms>
+                                    </OnPlatform>
+                                </controls:FontAwesomeLabel.FontSize>
+                                <controls:FontAwesomeLabel.WidthRequest>
+                                    <OnPlatform x:TypeArguments="x:Double">
+                                        <OnPlatform.Platforms>
+                                            <On Platform="Android"
+                                                Value="70"/>
+                                            <On Platform="UWP"
+                                                Value="80"/>
+                                        </OnPlatform.Platforms>
+                                    </OnPlatform>
+                                </controls:FontAwesomeLabel.WidthRequest>
+                            </controls:FontAwesomeLabel>
+                            <Label FontSize="Small"
+                                   HorizontalOptions="Start"
+                                   Text="{ext:Translate txt2FAConfigured}"
+                                   TextColor="Green"
+                                   VerticalOptions="Center"/>
+                        </StackLayout>
+
+                        <!--  Bottone per la configurazione dell'accesso con impronta digitale  -->
+                        <controls:ImageTextButton x:Name="btnConfigureFingerprint"
+                                                  Grid.Row="3"
+                                                  Grid.Column="0"
+                                                  Grid.ColumnSpan="2"
+                                                  Margin="5"
+                                                  HorizontalOptions="FillAndExpand"
+                                                  Icon="{x:Static controls:Icon.FAFingerprintSolid}"
+                                                  IsVisible="False"
+                                                  OnClicked="ConfigureFingerprint_OnClicked"
+                                                  Text="{ext:Translate btnConfigure}"
+                                                  VerticalOptions="Center"/>
+                        <!--  Bottone per la configurazione dell'accesso con autenticazione a due fattori  -->
+                        <controls:ImageTextButton x:Name="btnConfigureTwoFactor"
+                                                  Grid.Row="3"
+                                                  Grid.Column="0"
+                                                  Grid.ColumnSpan="2"
+                                                  Margin="5"
+                                                  HorizontalOptions="FillAndExpand"
+                                                  Icon="{x:Static controls:Icon.FAMobileAltSolid}"
+                                                  IsVisible="False"
+                                                  OnClicked="ConfigureTwoFactor_OnClicked"
+                                                  Text="{ext:Translate btnConfigure}"
+                                                  VerticalOptions="Center"/>
+
+                        <!--  Pianificazione backup  -->
+                        <Label Grid.Row="4"
+                               Grid.Column="0"
+                               FontSize="14"
+                               HorizontalOptions="End"
+                               HorizontalTextAlignment="End"
+                               Text="{ext:Translate txtBackupFrequency}"
+                               TextColor="Black"
+                               VerticalOptions="Start"
+                               VerticalTextAlignment="Center">
+                            <Label.Margin>
+                                <OnPlatform x:TypeArguments="Thickness">
+                                    <OnPlatform.Platforms>
+                                        <On Platform="Android"
+                                            Value="0"/>
+                                        <On Platform="UWP"
+                                            Value="0,0,0,8"/>
+                                    </OnPlatform.Platforms>
+                                </OnPlatform>
+                            </Label.Margin>
+                        </Label>
+                        <StackLayout Grid.Row="4"
+                                     Grid.Column="1"
+                                     Orientation="Vertical">
+                            <Picker x:Name="pickerBackupFrequency"
+                                    SelectedIndexChanged="PickerBackupFrequency_SelectedIndexChanged"
+                                    VerticalOptions="Center">
+                                <Picker.WidthRequest>
+                                    <OnPlatform x:TypeArguments="x:Double">
+                                        <OnPlatform.Platforms>
+                                            <On Platform="Android"
+                                                Value="100"/>
+                                            <On Platform="UWP"
+                                                Value="-1"/>
+                                        </OnPlatform.Platforms>
+                                    </OnPlatform>
+                                </Picker.WidthRequest>
+                            </Picker>
+                            <StackLayout x:Name="stackDateTimeBackupFrequency"
+                                         IsVisible="False"
+                                         Orientation="Vertical">
+                                <DatePicker x:Name="datePickerBackupFrequency"
+                                            DateSelected="DatePickerBackupFrequency_DateSelected"/>
+                                <controls:CustomTimePicker x:Name="timePickerBackupFrequency"
+                                                           PropertyChanged="TimePickerBackupFrequency_PropertyChanged">
+                                    <controls:CustomTimePicker.MinutesInterval>
+                                        <OnPlatform x:TypeArguments="x:Int32">
+                                            <OnPlatform.Platforms>
+                                                <On Platform="Android"
+                                                    Value="1"/>
+                                                <On Platform="UWP"
+                                                    Value="15"/>
+                                            </OnPlatform.Platforms>
+                                        </OnPlatform>
+                                    </controls:CustomTimePicker.MinutesInterval>
+                                </controls:CustomTimePicker>
+                                <Label Margin="0,0,0,10"
+                                       HorizontalOptions="Center"
+                                       HorizontalTextAlignment="Center"
+                                       Text="{ext:Translate txtApproximateDateTime}">
+                                    <Label.IsVisible>
+                                        <OnPlatform x:TypeArguments="x:Boolean">
+                                            <On Platform="Android"
+                                                Value="False"/>
+                                            <On Platform="UWP"
+                                                Value="True"/>
+                                        </OnPlatform>
+                                    </Label.IsVisible>
+                                </Label>
+                                <Label Margin="0,0,0,10"
+                                       HorizontalOptions="Center"
+                                       HorizontalTextAlignment="Center"
+                                       Text="{ext:Translate txtMonthYearExplanation}">
+                                    <Label.IsVisible>
+                                        <OnPlatform x:TypeArguments="x:Boolean">
+                                            <On Platform="Android"
+                                                Value="True"/>
+                                            <On Platform="UWP"
+                                                Value="False"/>
+                                        </OnPlatform>
+                                    </Label.IsVisible>
+                                </Label>
+                            </StackLayout>
+                        </StackLayout>
+
+                        <!--  Durata dei backup (valido per il Cloud)  -->
+                        <Label Grid.Row="5"
+                               Grid.Column="0"
+                               FontSize="14"
+                               HorizontalOptions="End"
+                               HorizontalTextAlignment="End"
+                               Text="{ext:Translate txtBackupHistory}"
+                               TextColor="Black">
+                            <Label.VerticalOptions>
+                                <OnPlatform x:TypeArguments="LayoutOptions">
+                                    <OnPlatform.Platforms>
+                                        <On Platform="Android"
+                                            Value="Center"/>
+                                        <On Platform="UWP"
+                                            Value="End"/>
+                                    </OnPlatform.Platforms>
+                                </OnPlatform>
+                            </Label.VerticalOptions>
+                            <Label.Margin>
+                                <OnPlatform x:TypeArguments="Thickness">
+                                    <OnPlatform.Platforms>
+                                        <On Platform="Android"
+                                            Value="0"/>
+                                        <On Platform="UWP"
+                                            Value="0,0,0,8"/>
+                                    </OnPlatform.Platforms>
+                                </OnPlatform>
+                            </Label.Margin>
+                        </Label>
+                        <Picker x:Name="pickerBackupHistory"
+                                Grid.Row="5"
+                                Grid.Column="1"
+                                SelectedIndexChanged="PickerBackupHistory_SelectedIndexChanged"
+                                VerticalOptions="Center">
+                            <Picker.WidthRequest>
+                                <OnPlatform x:TypeArguments="x:Double">
+                                    <OnPlatform.Platforms>
+                                        <On Platform="Android"
+                                            Value="100"/>
+                                        <On Platform="UWP"
+                                            Value="-1"/>
+                                    </OnPlatform.Platforms>
+                                </OnPlatform>
+                            </Picker.WidthRequest>
+                        </Picker>
+                        <Label Grid.Row="6"
+                               Grid.Column="0"
+                               Grid.ColumnSpan="2"
+                               Margin="0,0,0,10"
+                               HorizontalOptions="Center"
+                               HorizontalTextAlignment="Center"
+                               Text="{ext:Translate txtBackupInCloud}"/>
+                    </Grid>
+                </ScrollView>
+            </StackLayout>
+        </RelativeLayout>
+    </ContentPage.Content>
+</ContentPage>

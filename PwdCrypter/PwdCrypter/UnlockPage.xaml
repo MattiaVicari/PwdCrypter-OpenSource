@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="PwdCrypter.UnlockPage"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:PwdCrypter.Controls"
+             xmlns:ext="clr-namespace:PwdCrypter.Extensions.ResxLocalization"
+             xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             xmlns:local="clr-namespace:PwdCrypter"
+             Title="{ext:Translate titleUnlock}"
+             BackgroundColor="White"
+             SizeChanged="ContentPage_SizeChanged">
+    <RelativeLayout>
+        <!--
+            Immagine di sfondo
+            A causa di un bug, è necessario specifiare ReplaceStringMap prima
+            di Source
+        -->
+        <ffimageloadingsvg:SvgCachedImage x:Name="imgBackground"
+                                          RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                                                 Property=Height,
+                                                                                                 Factor=1}"
+                                          RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                                                Property=Width,
+                                                                                                Factor=1}"
+                                          RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                                            Property=Width,
+                                                                                            Factor=0.4,
+                                                                                            Constant=0}"
+                                          RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                                            Property=Height,
+                                                                                            Factor=0.2,
+                                                                                            Constant=0}"
+                                          ReplaceStringMap="{x:Static local:UnlockPage.BackgroundImageColor}"
+                                          Source="Assets/SVG/lock.svg"/>
+
+        <StackLayout RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                            Property=Height,
+                                                                            Factor=1}"
+                     RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                           Property=Width,
+                                                                           Factor=1}">
+            <Grid x:Name="gridMain"
+                  Margin="20"
+                  VerticalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <!--  Titolo  -->
+                <Label x:Name="lblTitle"
+                       Grid.Row="0"
+                       FontAttributes="Bold"
+                       FontSize="Large"
+                       HorizontalOptions="Center"
+                       HorizontalTextAlignment="Center"
+                       Text="{ext:Translate titleUnlock}"
+                       TextColor="Black"
+                       VerticalOptions="Center"/>
+
+                <StackLayout x:Name="stackEntry"
+                             Grid.Row="1"
+                             Orientation="Vertical"
+                             VerticalOptions="Center">
+                    <!--  Password  -->
+                    <controls:FormEntry x:Name="entryPassword"
+                                        Title="{ext:Translate txtLoginPassword}"
+                                        IsPassword="True"
+                                        Placeholder="Password"/>
+                    <!--  Codice di sblocco  -->
+                    <controls:FormEntry x:Name="entryUnlockCode"
+                                        Title="{ext:Translate txtUnlockCode2}"
+                                        IsPassword="False"
+                                        MaxTextLength="35"
+                                        OnSetText="EntryUnlockCode_OnSetText"
+                                        Placeholder="XXXXXXXX-XXXXXXXX-XXXXXXXX-XXXXXXXX"/>
+                </StackLayout>
+
+                <!--  Pulsanti per lo sblocco  -->
+                <StackLayout x:Name="stackButtons"
+                             Grid.Row="2"
+                             HorizontalOptions="FillAndExpand"
+                             Orientation="Horizontal"
+                             VerticalOptions="CenterAndExpand">
+                    <Button x:Name="btnCancel"
+                            BackgroundColor="{x:Static local:AppStyle.ButtonAlternativeBackgroundColor}"
+                            Clicked="BtnCancel_Clicked"
+                            HorizontalOptions="FillAndExpand"
+                            Text="{ext:Translate btnNoThanks}"/>
+                    <Button x:Name="btnUnlock"
+                            Clicked="BtnUnlock_Clicked"
+                            HorizontalOptions="FillAndExpand"
+                            Text="{ext:Translate btnUnlock}"/>
+                </StackLayout>
+            </Grid>
+        </StackLayout>
+    </RelativeLayout>
+</ContentPage>

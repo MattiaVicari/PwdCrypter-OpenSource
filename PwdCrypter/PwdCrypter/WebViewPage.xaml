@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="PwdCrypter.WebViewPage"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:PwdCrypter.Controls"
+             xmlns:ext="clr-namespace:PwdCrypter.Extensions.ResxLocalization"
+             BackgroundColor="White">
+    <ContentPage.Content>
+        <StackLayout x:Name="stackMain"
+                     HorizontalOptions="FillAndExpand"
+                     Orientation="Vertical"
+                     VerticalOptions="FillAndExpand">
+            <controls:CustomWebView x:Name="webViewContent"
+                                    BackgroundColor="Transparent"
+                                    HorizontalOptions="FillAndExpand"
+                                    Navigating="WebViewContent_Navigating"
+                                    VerticalOptions="FillAndExpand"/>
+            <Button x:Name="btnClose"
+                    Clicked="Close_Clicked"
+                    IsVisible="False"
+                    Text="{ext:Translate btnClose}"
+                    WidthRequest="150"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,77 @@
+<html>
+    <head>
+        <style>
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+            div {
+                display: block;
+                width: 100%;
+                margin-top: 5px;
+            }
+            input {
+                width: 100%;
+            }
+            span {
+                font-size: 18;
+            }
+            button {
+                width: 100%;
+                height: 35px;
+                color: white;
+                background-color: black;
+            }
+            .iconKey {
+                height: 15px;
+                margin-right: 10px;
+            }
+            .btnCaption {
+                font-size: 14;
+            }
+            #app-version {
+                font-size: 10px;
+            }
+        </style>
+    </head>
+    <body style="width: 280px;">
+        <div style="text-align: center">
+            <h2 id="popupTitle">__MSG_popupTitle__</h2>
+            <div>
+                <span id="app-version"></span>
+            </div>
+            <div>
+                <div>
+                    <div style="display: inline-flex; flex-direction: row; height: 30px;">
+                        <input id="markField" type="checkbox" class="big-checkbox" style="width: 20px; height: 20px;"><span id="mark-field-caption">__MSG_markFieldCaption__</span>
+                    </div>
+                </div>
+                <div>
+                    <button id="pasteFormData">
+                        <img class="iconKey" src="images/file-import.png"/>
+                        <span id="paste-form-data-caption" class="btnCaption">__MSG_pasteFormDataCaption__</span>
+                    </button>
+                </div>
+                <div id="fillUsername" style="display: none">
+                    <button id="btnFillUsername">
+                        <img class="iconKey" src="images/user.png"/>
+                        <span id="fill-username-caption" class="btnCaption">__MSG_fillUsernameCaption_</span>
+                    </button>
+                </div>
+                <div id="fillEmail" style="display: none">
+                    <button id="btnFillEmail">
+                        <img class="iconKey" src="images/envelope.png"/>
+                        <span id="fill-email-caption" class="btnCaption">__MSG_fillEmailCaption_</span>
+                    </button>
+                </div>
+                <div id="fillPassword" style="display: none">
+                    <button id="btnFillPassword">
+                        <img class="iconKey" src="images/lock.png"/>
+                        <span id="fill-password-caption" class="btnCaption">__MSG_fillPasswordCaption_</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <script src="popup.js"></script>
+    </body>
+</html>

@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="PwdCrypter.ExportFilterPage"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ext="clr-namespace:PwdCrypter.Extensions.ResxLocalization"
+             xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             xmlns:local="clr-namespace:PwdCrypter"
+             Title="{ext:Translate titleExportFilter}"
+             BackgroundColor="White"
+             SizeChanged="ContentPage_SizeChanged">
+    <RelativeLayout>
+        <!--
+            Immagine di sfondo
+            A causa di un bug, è necessario specifiare ReplaceStringMap prima
+            di Source
+        -->
+        <ffimageloadingsvg:SvgCachedImage x:Name="imgBackground"
+                                          RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                                                 Property=Height,
+                                                                                                 Factor=1}"
+                                          RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                                                Property=Width,
+                                                                                                Factor=1}"
+                                          RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                                            Property=Width,
+                                                                                            Factor=0.4,
+                                                                                            Constant=0}"
+                                          RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                                            Property=Height,
+                                                                                            Factor=0.2,
+                                                                                            Constant=0}"
+                                          ReplaceStringMap="{x:Static local:ExportFilterPage.BackgroundImageColor}"
+                                          Source="Assets/SVG/exchange_alt_solid.svg"/>
+
+        <StackLayout RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                            Property=Height,
+                                                                            Factor=1}"
+                     RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                           Property=Width,
+                                                                           Factor=1}">
+            <Grid x:Name="gridMain"
+                  Margin="20"
+                  VerticalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <!--  Titolo  -->
+                <Label x:Name="lblTitle"
+                       Grid.Row="0"
+                       FontAttributes="Bold"
+                       FontSize="Large"
+                       HorizontalOptions="Center"
+                       HorizontalTextAlignment="Center"
+                       Text="{ext:Translate titleExportFilter}"
+                       TextColor="Black"
+                       VerticalOptions="Center"/>
+
+                <!--  Lista delle password su Cloud o in locale  -->
+                <Grid x:Name="grdCloud"
+                      Grid.Row="1"
+                      Margin="0,40,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Row="0"
+                           Grid.Column="0"
+                           FontSize="14"
+                           HorizontalOptions="End"
+                           Text="{ext:Translate txtExportCloud}"
+                           TextColor="Black"
+                           VerticalOptions="Center"/>
+                    <Switch x:Name="switchCloud"
+                            Grid.Row="0"
+                            Grid.Column="1"/>
+                    <Label x:Name="labelCloudRequirement"
+                           Grid.Row="1"
+                           Grid.Column="0"
+                           Grid.ColumnSpan="2"
+                           Text="{ext:Translate txtCloudRequirement}"/>
+                </Grid>
+
+                <StackLayout Grid.Row="2"
+                             Padding="0,20,0,0"
+                             Orientation="Horizontal"
+                             VerticalOptions="Center">
+                    <Button BackgroundColor="{x:Static local:AppStyle.ButtonAlternativeBackgroundColor}"
+                            Clicked="ButtonCancel_Clicked"
+                            HorizontalOptions="FillAndExpand"
+                            Text="{ext:Translate btnCancel}"/>
+
+                    <Button Clicked="ButtonConfirm_Clicked"
+                            HorizontalOptions="FillAndExpand"
+                            Text="{ext:Translate btnConfirm}"/>
+                </StackLayout>
+            </Grid>
+        </StackLayout>
+    </RelativeLayout>
+</ContentPage>

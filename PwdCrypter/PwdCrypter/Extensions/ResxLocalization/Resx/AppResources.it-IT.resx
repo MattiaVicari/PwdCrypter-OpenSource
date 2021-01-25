@@ -1,0 +1,1581 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="btnAgree" xml:space="preserve">
+    <value>Accetto</value>
+  </data>
+  <data name="btnCancel" xml:space="preserve">
+    <value>Annulla</value>
+  </data>
+  <data name="btnClose" xml:space="preserve">
+    <value>Chiudi</value>
+  </data>
+  <data name="btnConfirm" xml:space="preserve">
+    <value>Conferma</value>
+  </data>
+  <data name="btnDeny" xml:space="preserve">
+    <value>Rifiuto</value>
+  </data>
+  <data name="btnDetail" xml:space="preserve">
+    <value>Visualizza i dettagli</value>
+    <comment>Password</comment>
+  </data>
+  <data name="btnGo" xml:space="preserve">
+    <value>Vai</value>
+  </data>
+  <data name="btnLogin" xml:space="preserve">
+    <value>Login</value>
+    <comment>Login</comment>
+  </data>
+  <data name="btnNo" xml:space="preserve">
+    <value>No</value>
+    <comment>Privacy</comment>
+  </data>
+  <data name="btnReadPrivacyPolicy" xml:space="preserve">
+    <value>Leggi l'informativa sulla privacy</value>
+    <comment>Privacy</comment>
+  </data>
+  <data name="btnYes" xml:space="preserve">
+    <value>Sì</value>
+    <comment>Privacy</comment>
+  </data>
+  <data name="errCloudAccess" xml:space="preserve">
+    <value>Impossibile accedere al Cloud.
+Errore:</value>
+    <comment>Cloud</comment>
+  </data>
+  <data name="errCloudAuth" xml:space="preserve">
+    <value>Impossibile completare l'operazione di login su Cloud.
+Errore:</value>
+    <comment>Cloud</comment>
+  </data>
+  <data name="errCloudDownload" xml:space="preserve">
+    <value>Errore durante il download del file da Cloud.
+Errore:</value>
+    <comment>Cloud</comment>
+  </data>
+  <data name="errCloudLogout" xml:space="preserve">
+    <value>Impossibile completare l'operazione di logout.
+Errore:</value>
+    <comment>Error</comment>
+  </data>
+  <data name="errCloudMalformedResponse" xml:space="preserve">
+    <value>Impossibile completare l'operazione di login su Cloud.
+Errore: risposta non valida</value>
+    <comment>Cloud</comment>
+  </data>
+  <data name="errCloudRedeemTokenCode" xml:space="preserve">
+    <value>Impossibile completare l'operazione di login su Cloud.
+Errore: impossibile ottenere il codice per l'access token</value>
+    <comment>Cloud</comment>
+  </data>
+  <data name="errCloudRefreshToken" xml:space="preserve">
+    <value>Impossibile completare l'operazione di login su Cloud.
+Errore: impossibile aggiornare il token di accesso</value>
+    <comment>Cloud</comment>
+  </data>
+  <data name="errCloudRefreshToken2" xml:space="preserve">
+    <value>Impossibile effettuare l'aggiornamento delle informazioni di sessione.
+Errore:</value>
+    <comment>Error</comment>
+  </data>
+  <data name="errCloudUpload" xml:space="preserve">
+    <value>Errore durante l'upload del file.
+Errore:</value>
+    <comment>Cloud</comment>
+  </data>
+  <data name="errCloudUserNotLoggedIn" xml:space="preserve">
+    <value>Utente non loggato o sessione scaduta.
+Rieffettuare l'accesso su Cloud.</value>
+    <comment>Cloud</comment>
+  </data>
+  <data name="errInvalidFile" xml:space="preserve">
+    <value>Il file delle password non è valido o è corrotto</value>
+    <comment>Error</comment>
+  </data>
+  <data name="errInvalidFileFormat" xml:space="preserve">
+    <value>Impossibile aprire il file della lista delle password.
+Formato file non valido.</value>
+    <comment>Error</comment>
+  </data>
+  <data name="errInvalidPassword" xml:space="preserve">
+    <value>La password inserita non è valida</value>
+    <comment>Error</comment>
+  </data>
+  <data name="errPasswordConfirm" xml:space="preserve">
+    <value>Le due password non corrispondono</value>
+    <comment>Error</comment>
+  </data>
+  <data name="errPasswordConfirmMissing" xml:space="preserve">
+    <value>La password di conferma non è valida</value>
+    <comment>Error</comment>
+  </data>
+  <data name="errPasswordFileCreation" xml:space="preserve">
+    <value>E' avvenuto un errore durante l'inizializzazione della lista delle password.
+Errore:</value>
+    <comment>Error</comment>
+  </data>
+  <data name="errPasswordToLong" xml:space="preserve">
+    <value>Password troppo lunga.
+Per favore, digita una password con lunghezza inferiore o uguale a {0} caratteri</value>
+    <comment>Password</comment>
+  </data>
+  <data name="errPrivacyPolicy" xml:space="preserve">
+    <value>Errore durante il caricamento del testo dell'informativa sulla privacy.
+Errore:</value>
+    <comment>Error</comment>
+  </data>
+  <data name="errPrivacyPolicyAgree" xml:space="preserve">
+    <value>Devi leggere e accettare l'informativa sulla privacy per continuare</value>
+    <comment>Error</comment>
+  </data>
+  <data name="errReadPassword" xml:space="preserve">
+    <value>Impossibile aprire il file della lista delle password.
+Errore:</value>
+    <comment>Error</comment>
+  </data>
+  <data name="errReadSettings" xml:space="preserve">
+    <value>Impossibile ottenere le impostazioni dell'applicazioni.</value>
+    <comment>Error</comment>
+  </data>
+  <data name="errReadSettings2" xml:space="preserve">
+    <value>Errore durante la lettura delle impostazioni dell'applicazione.
+Errore:</value>
+    <comment>Error</comment>
+  </data>
+  <data name="errSettingsUpdate" xml:space="preserve">
+    <value>Errore durante l'aggiornamento delle impostazioni dell'App.
+Errore:</value>
+    <comment>Error</comment>
+  </data>
+  <data name="errWrongPassword" xml:space="preserve">
+    <value>La password di accesso sembra errata. Si prega di verificare la password e riprovare</value>
+    <comment>Error</comment>
+  </data>
+  <data name="langID" xml:space="preserve">
+    <value>it_it</value>
+    <comment>Language ID for resources</comment>
+  </data>
+  <data name="msgChangeSaved" xml:space="preserve">
+    <value>Le modifiche sono state salvate</value>
+  </data>
+  <data name="msgDataCopyToClipboard" xml:space="preserve">
+    <value>L'informazione selezionata è stata copiata negli appunti.</value>
+    <comment>Copy clipboard</comment>
+  </data>
+  <data name="msgPrivacyPolicyDeny" xml:space="preserve">
+    <value>L'applicazione verrà chiusa.
+Dovrai disinstallare questa App dal tuo dispositivo se non accetti l'informativa sulla privacy.
+Sei sicuro della tua scelta?</value>
+    <comment>Privacy</comment>
+  </data>
+  <data name="msgUploadToCloud" xml:space="preserve">
+    <value>Desideri importare su Cloud la lista corrente delle password salvate nell'applicazione?</value>
+    <comment>Cloud</comment>
+  </data>
+  <data name="titleAbout" xml:space="preserve">
+    <value>Informazioni</value>
+  </data>
+  <data name="titleChangeLoginPwd" xml:space="preserve">
+    <value>Cambia la password di accesso</value>
+  </data>
+  <data name="titleCloud" xml:space="preserve">
+    <value>Cloud</value>
+  </data>
+  <data name="titleFilter" xml:space="preserve">
+    <value>Filtro</value>
+    <comment>Filter</comment>
+  </data>
+  <data name="titlePassword" xml:space="preserve">
+    <value>Password</value>
+    <comment>Password</comment>
+  </data>
+  <data name="titlePasswordDetail" xml:space="preserve">
+    <value>Dettagli della password</value>
+  </data>
+  <data name="titlePasswordList" xml:space="preserve">
+    <value>Lista delle password</value>
+  </data>
+  <data name="titlePrivacyPolicy" xml:space="preserve">
+    <value>Informativa sulla privacy</value>
+    <comment>Page title</comment>
+  </data>
+  <data name="titleSettings" xml:space="preserve">
+    <value>Impostazioni</value>
+  </data>
+  <data name="titleSummary" xml:space="preserve">
+    <value>Riepilogo</value>
+  </data>
+  <data name="titleTransferPwd" xml:space="preserve">
+    <value>Trasferisci le password</value>
+  </data>
+  <data name="txPassword" xml:space="preserve">
+    <value>Password</value>
+    <comment>Password</comment>
+  </data>
+  <data name="txtAccountType" xml:space="preserve">
+    <value>Tipo di account</value>
+    <comment>Filter</comment>
+  </data>
+  <data name="txtAccountTypeApp" xml:space="preserve">
+    <value>Login di App</value>
+    <comment>Account Type</comment>
+  </data>
+  <data name="txtAccountTypeBank" xml:space="preserve">
+    <value>Banca</value>
+    <comment>Account Type</comment>
+  </data>
+  <data name="txtAccountTypeCreditDebitCard" xml:space="preserve">
+    <value>Carta di credito/debito</value>
+    <comment>Account Type</comment>
+  </data>
+  <data name="txtAccountTypeDevice" xml:space="preserve">
+    <value>Dispositivo</value>
+    <comment>Account Type</comment>
+  </data>
+  <data name="txtAccountTypeDeviceHome" xml:space="preserve">
+    <value>Dispositivo di casa</value>
+    <comment>Account Type</comment>
+  </data>
+  <data name="txtAccountTypeDeviceWork" xml:space="preserve">
+    <value>Dispositivo di lavoro</value>
+    <comment>Account Type</comment>
+  </data>
+  <data name="txtAccountTypeECommerce" xml:space="preserve">
+    <value>e-commerce</value>
+    <comment>Account Type</comment>
+  </data>
+  <data name="txtAccountTypeEmail" xml:space="preserve">
+    <value>Email</value>
+    <comment>Account Type</comment>
+  </data>
+  <data name="txtAccountTypeInstitutional" xml:space="preserve">
+    <value>Account di ente o istituto</value>
+    <comment>Account Type</comment>
+  </data>
+  <data name="txtAccountTypeOther" xml:space="preserve">
+    <value>Generico</value>
+    <comment>Account Type</comment>
+  </data>
+  <data name="txtAccountTypeSocialNetwork" xml:space="preserve">
+    <value>Social network</value>
+    <comment>Account Type</comment>
+  </data>
+  <data name="txtAccountTypeSoftware" xml:space="preserve">
+    <value>Login di software</value>
+    <comment>Account Type</comment>
+  </data>
+  <data name="txtAddPassword" xml:space="preserve">
+    <value>Nuova password</value>
+  </data>
+  <data name="txtAny" xml:space="preserve">
+    <value>Qualsiasi</value>
+  </data>
+  <data name="txtBrowserExtHelp" xml:space="preserve">
+    <value>Mostra le istruzioni quando si utilizza l'estesione per il browser di PwdCrypter</value>
+    <comment>Settings</comment>
+  </data>
+  <data name="txtCloudRequirement" xml:space="preserve">
+    <value>Questa opzione è abilitata quando si è effettuato l'accesso alla piattaforma Cloud</value>
+    <comment>Filter</comment>
+  </data>
+  <data name="txtCloudYouAreConnected" xml:space="preserve">
+    <value>Sei attualmente connesso con {0}</value>
+    <comment>Cloud</comment>
+  </data>
+  <data name="txtCloudYouAreDisconnected" xml:space="preserve">
+    <value>Sei attualmente disconnesso</value>
+    <comment>Cloud</comment>
+  </data>
+  <data name="txtCopyright" xml:space="preserve">
+    <value>YOUR_NAME</value>
+  </data>
+  <data name="txtDescription" xml:space="preserve">
+    <value>Descrizione</value>
+    <comment>Password</comment>
+  </data>
+  <data name="txtEdit" xml:space="preserve">
+    <value>Modifica</value>
+  </data>
+  <data name="txtEmail" xml:space="preserve">
+    <value>Email</value>
+    <comment>Password</comment>
+  </data>
+  <data name="txtFilterAllFields" xml:space="preserve">
+    <value>Cerca in tutti i campi</value>
+    <comment>Filter</comment>
+  </data>
+  <data name="txtFilterCloud" xml:space="preserve">
+    <value>Cerca nel Cloud</value>
+    <comment>Filter</comment>
+  </data>
+  <data name="txtFilterCriteria" xml:space="preserve">
+    <value>Criterio di ricerca</value>
+    <comment>Filter</comment>
+  </data>
+  <data name="txtFirstAccess" xml:space="preserve">
+    <value>Questo è il tuo primo avvio. Crea la password di accesso all'applicazione.
+Dovrai ricordarti questa password per accedere in seguito.</value>
+  </data>
+  <data name="txtFirstAccessTitle" xml:space="preserve">
+    <value>Crea la password di accesso</value>
+  </data>
+  <data name="txtIMAPServer" xml:space="preserve">
+    <value>Server IMAP</value>
+  </data>
+  <data name="txtIMAPServerPort" xml:space="preserve">
+    <value>Porta del server IMAP</value>
+  </data>
+  <data name="txtInsertPassword" xml:space="preserve">
+    <value>Inserire la password</value>
+  </data>
+  <data name="txtLastLogin" xml:space="preserve">
+    <value>Ultimo accesso:</value>
+  </data>
+  <data name="txtLastPassword" xml:space="preserve">
+    <value>Ultima password inserita:</value>
+  </data>
+  <data name="txtLocalNotification" xml:space="preserve">
+    <value>Abilita le notifiche locali sul tuo dispositivo</value>
+    <comment>Settings</comment>
+  </data>
+  <data name="txtLoginPassword" xml:space="preserve">
+    <value>Password di accesso</value>
+    <comment>Login</comment>
+  </data>
+  <data name="txtLoginTitle" xml:space="preserve">
+    <value>Accedi alle tue password</value>
+    <comment>Login</comment>
+  </data>
+  <data name="txtManualAndSupport" xml:space="preserve">
+    <value>Manuale e supporto online</value>
+  </data>
+  <data name="txtMinute" xml:space="preserve">
+    <value>minuto</value>
+  </data>
+  <data name="txtMinutes" xml:space="preserve">
+    <value>minuti</value>
+  </data>
+  <data name="txtNever" xml:space="preserve">
+    <value>Mai</value>
+  </data>
+  <data name="txtNote" xml:space="preserve">
+    <value>Note aggiuntive</value>
+  </data>
+  <data name="txtNothing" xml:space="preserve">
+    <value>Nessuna</value>
+  </data>
+  <data name="txtPOPServer" xml:space="preserve">
+    <value>Server POP</value>
+  </data>
+  <data name="txtPOPServerPort" xml:space="preserve">
+    <value>Porta del server POP</value>
+  </data>
+  <data name="txtPrivacyAgreement" xml:space="preserve">
+    <value>Sono d'accordo con l'informativa sulla privacy di PwdCrypter</value>
+    <comment>Privacy</comment>
+  </data>
+  <data name="txtPrivacyPolicy" xml:space="preserve">
+    <value>Informativa sulla privacy</value>
+    <comment>Privacy</comment>
+  </data>
+  <data name="txtPwdNoDetails" xml:space="preserve">
+    <value>Nessun dettaglio da mostrare per la password</value>
+    <comment>Details</comment>
+  </data>
+  <data name="txtRememberMe" xml:space="preserve">
+    <value>Ricordati i miei dati di accesso</value>
+    <comment>Cloud</comment>
+  </data>
+  <data name="txtRepeatPassword" xml:space="preserve">
+    <value>Ripetere la password</value>
+  </data>
+  <data name="txtSave" xml:space="preserve">
+    <value>Salva</value>
+  </data>
+  <data name="txtSearch" xml:space="preserve">
+    <value>Ricerca</value>
+  </data>
+  <data name="txtSeconds" xml:space="preserve">
+    <value>secondi</value>
+  </data>
+  <data name="txtSecurityAnswer" xml:space="preserve">
+    <value>Risposta alla domanda di sicurezza</value>
+  </data>
+  <data name="txtSecurityQuestion" xml:space="preserve">
+    <value>Domanda di sicurezza</value>
+  </data>
+  <data name="txtSessionTimeout" xml:space="preserve">
+    <value>Timeout della sessione</value>
+    <comment>Settings</comment>
+  </data>
+  <data name="txtSMTPServer" xml:space="preserve">
+    <value>Server SMTP</value>
+  </data>
+  <data name="txtSMTPServerPort" xml:space="preserve">
+    <value>Porta del server SMTP</value>
+  </data>
+  <data name="txtStatistics" xml:space="preserve">
+    <value>Statistiche:</value>
+  </data>
+  <data name="txtStatisticsAccType" xml:space="preserve">
+    <value>in {0} categorie</value>
+    <comment>Categories statistics</comment>
+  </data>
+  <data name="txtStatisticsAccTypeSingle" xml:space="preserve">
+    <value>in 1 categoria</value>
+    <comment>Categories statistics</comment>
+  </data>
+  <data name="txtSummary" xml:space="preserve">
+    <value>Riepilogo attività</value>
+  </data>
+  <data name="txtTimeInSeconds" xml:space="preserve">
+    <value>Tempo espresso in secondi</value>
+    <comment>Settings</comment>
+  </data>
+  <data name="txtUsername" xml:space="preserve">
+    <value>Username</value>
+    <comment>Password</comment>
+  </data>
+  <data name="txtVersion" xml:space="preserve">
+    <value>Versione: {0}</value>
+  </data>
+  <data name="txtWebSite" xml:space="preserve">
+    <value>Sito web di YOUR_NAME</value>
+  </data>
+  <data name="txtWhen" xml:space="preserve">
+    <value>alle {0}</value>
+  </data>
+  <data name="urlMyWebSite" xml:space="preserve">
+    <value>YOUR_WEBSITE</value>
+  </data>
+  <data name="urlMyWebSiteLang" xml:space="preserve">
+    <value>YOUR_WEBSITE_IT</value>
+  </data>
+  <data name="urlManualAndSupport" xml:space="preserve">
+    <value>YOUR_MANUAL_URL_IT</value>
+  </data>
+  <data name="errWritePassword" xml:space="preserve">
+    <value>Impossibile salvare la lista delle password.
+Errore:</value>
+    <comment>Error</comment>
+  </data>
+  <data name="txtNickname" xml:space="preserve">
+    <value>Nickname</value>
+  </data>
+  <data name="txtUrlProfile" xml:space="preserve">
+    <value>URL del profilo pubblico</value>
+  </data>
+  <data name="txtBICSWIFT" xml:space="preserve">
+    <value>BIC/SWIFT</value>
+  </data>
+  <data name="txtBranch" xml:space="preserve">
+    <value>Filiale</value>
+  </data>
+  <data name="txtContractNr" xml:space="preserve">
+    <value>Nr. contratto</value>
+  </data>
+  <data name="txtFirstSecurityCode" xml:space="preserve">
+    <value>Primo codice di sicurezza</value>
+  </data>
+  <data name="txtIBAN" xml:space="preserve">
+    <value>IBAN</value>
+  </data>
+  <data name="txtSecondSecurityCode" xml:space="preserve">
+    <value>Secondo codice di sicurezza</value>
+  </data>
+  <data name="txtTelSupport" xml:space="preserve">
+    <value>Tel. assistenza</value>
+  </data>
+  <data name="txtUserID" xml:space="preserve">
+    <value>Codice utente</value>
+  </data>
+  <data name="txtCreditCardNumber" xml:space="preserve">
+    <value>Numero carta di credito</value>
+  </data>
+  <data name="txtPIN" xml:space="preserve">
+    <value>PIN</value>
+  </data>
+  <data name="txtProvider" xml:space="preserve">
+    <value>Fornitore</value>
+  </data>
+  <data name="txtOS" xml:space="preserve">
+    <value>Sistema Operativo</value>
+  </data>
+  <data name="txtVersionDesc" xml:space="preserve">
+    <value>Versione</value>
+  </data>
+  <data name="txtManual" xml:space="preserve">
+    <value>Manuale utente</value>
+  </data>
+  <data name="txtSupport" xml:space="preserve">
+    <value>Assistenza e supporto</value>
+  </data>
+  <data name="txtWebsiteDesc" xml:space="preserve">
+    <value>Sito web</value>
+  </data>
+  <data name="txtName" xml:space="preserve">
+    <value>Nome</value>
+  </data>
+  <data name="txtSecurityCode" xml:space="preserve">
+    <value>Codice di sicurezza</value>
+  </data>
+  <data name="txtOther" xml:space="preserve">
+    <value>Altro</value>
+  </data>
+  <data name="txtAttachment" xml:space="preserve">
+    <value>Allegato</value>
+  </data>
+  <data name="txtAddAttachment" xml:space="preserve">
+    <value>Aggiungi allegato...</value>
+  </data>
+  <data name="titleAttachment" xml:space="preserve">
+    <value>Allegato</value>
+  </data>
+  <data name="txtDelete" xml:space="preserve">
+    <value>Cancella</value>
+  </data>
+  <data name="btnContinueChange" xml:space="preserve">
+    <value>Continua con le modifiche</value>
+  </data>
+  <data name="btnIgnore" xml:space="preserve">
+    <value>Ignora</value>
+  </data>
+  <data name="msgQuestionAbandon" xml:space="preserve">
+    <value>Ci sono delle modifiche da confermare.
+Vuoi abbandonare le modifche?</value>
+    <comment>Question</comment>
+  </data>
+  <data name="btnIgnoreChange" xml:space="preserve">
+    <value>Ignora le modifiche</value>
+  </data>
+  <data name="txtCancel" xml:space="preserve">
+    <value>Annulla le modifiche</value>
+  </data>
+  <data name="msgQuestionPwdUndo" xml:space="preserve">
+    <value>Sei sicuro di voler abbandonare tutte le modifiche apportate alla password (non solo quelle sulle informazioni di dettaglio)?</value>
+  </data>
+  <data name="msgQuestionUndo" xml:space="preserve">
+    <value>Sei davvero sicuro di voler abbandonare tutte le modifiche?</value>
+  </data>
+  <data name="msgQuestionAttachmentUndo" xml:space="preserve">
+    <value>Sei sicuro di voler abbandoare le modifiche apportate all'allegato?</value>
+  </data>
+  <data name="errSaveAttachment" xml:space="preserve">
+    <value>Impossibile salvare l'allegato.
+Errore:</value>
+    <comment>Error</comment>
+  </data>
+  <data name="errDeleteAttachment" xml:space="preserve">
+    <value>Impossibile completare l'eliminazione del file allegato.
+Errore:</value>
+  </data>
+  <data name="errAttachmentFile" xml:space="preserve">
+    <value>Selezionare il file che vuoi allegare alla password</value>
+  </data>
+  <data name="errAttachmentName" xml:space="preserve">
+    <value>Inserire la descrizione dell'allegato</value>
+  </data>
+  <data name="msgQuestionAttachmentDelete" xml:space="preserve">
+    <value>Vuoi davvero rimuovere l'allegato?</value>
+  </data>
+  <data name="errCorruptedFile" xml:space="preserve">
+    <value>Oh no :(  Il file sembra essere corrotto!</value>
+  </data>
+  <data name="errGetAttachmentFile" xml:space="preserve">
+    <value>Impossibile recuperare il file dell'allegato.
+Errore:</value>
+  </data>
+  <data name="errFileNotFound" xml:space="preserve">
+    <value>File non trovato</value>
+  </data>
+  <data name="titleAttachments" xml:space="preserve">
+    <value>Allegati</value>
+  </data>
+  <data name="errCloudAttachmentsUpload" xml:space="preserve">
+    <value>Errore durante il caricamento degli allegati sul Cloud.
+Errore:</value>
+  </data>
+  <data name="errCloudCreateFolder" xml:space="preserve">
+    <value>Impossibile creare la cartella su Cloud.
+Errore:</value>
+  </data>
+  <data name="txtAttachmentPlaceholder" xml:space="preserve">
+    <value>Fai click qui per selezionare il file allegato...</value>
+  </data>
+  <data name="msgPwdInserted" xml:space="preserve">
+    <value>La password è stata aggiunta alla lista</value>
+  </data>
+  <data name="msgQuestionPasswordDelete" xml:space="preserve">
+    <value>Vuoi davvero eliminare la password e tutti i suoi dettagli, allegati compresi?</value>
+  </data>
+  <data name="errPasswordDelete" xml:space="preserve">
+    <value>E' avvenuto un errore durante l'eliminazione della password.
+Errore:</value>
+  </data>
+  <data name="txtPwdListEmpty" xml:space="preserve">
+    <value>La tua lista delle password è vuota :(</value>
+  </data>
+  <data name="btnEditDetail" xml:space="preserve">
+    <value>Modifica i dettagli</value>
+  </data>
+  <data name="btnInsertDetail" xml:space="preserve">
+    <value>Inserisci i dettagli</value>
+  </data>
+  <data name="txtPwdListNoResult" xml:space="preserve">
+    <value>La tua ricerca non ha prodotto alcun risultato</value>
+  </data>
+  <data name="titleWait" xml:space="preserve">
+    <value>Attendere...</value>
+  </data>
+  <data name="txtPleaseWait" xml:space="preserve">
+    <value>Attendere la fine dell'operazione...</value>
+  </data>
+  <data name="btnContinue" xml:space="preserve">
+    <value>Continua</value>
+  </data>
+  <data name="txtClearFilter" xml:space="preserve">
+    <value>Rimuovi filtro</value>
+  </data>
+  <data name="txtLoginOption" xml:space="preserve">
+    <value>Nome utente per il login</value>
+  </data>
+  <data name="txtUsernameLoginOptionEmail" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="txtUsernameLoginOptionUsername" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="msgPwdSent" xml:space="preserve">
+    <value>Dati pronti per essere spediti all'estensione del browser</value>
+  </data>
+  <data name="msgPwdExtensionHelp" xml:space="preserve">
+    <value>Dati pronti per essere spediti.
+Posizionati sul primo campo del form di login e clicca sull'icona dell'estensione sul tuo browser.</value>
+    <comment>Extension instruction</comment>
+  </data>
+  <data name="txtNewPassword" xml:space="preserve">
+    <value>Nuova password</value>
+  </data>
+  <data name="txtOldPassword" xml:space="preserve">
+    <value>Vecchia password</value>
+  </data>
+  <data name="errCheckPassword" xml:space="preserve">
+    <value>La nuova password non corrisponde a quella inserita nel campo di verifica. Ricontrollare la password inserita e riprovare.</value>
+  </data>
+  <data name="errNewPassword" xml:space="preserve">
+    <value>Digitare la nuova password</value>
+  </data>
+  <data name="errOldPassword" xml:space="preserve">
+    <value>Digitare la vecchia password</value>
+  </data>
+  <data name="errRepeatPassword" xml:space="preserve">
+    <value>Ripetere la nuova password</value>
+  </data>
+  <data name="errSamePassword" xml:space="preserve">
+    <value>La nuova password non deve corrispondere a quella vecchia</value>
+  </data>
+  <data name="msgQuestionCloudChangeLogin" xml:space="preserve">
+    <value>Vuoi aggiornare la password di accesso anche per il Cloud?
+Tieni presente che, se non lo farai, non sarai più in grado di accedere al file su Cloud.</value>
+  </data>
+  <data name="msgQuestionCloudConn" xml:space="preserve">
+    <value>Non sei connesso al Cloud.
+Per poter continuare con l'aggiornamento, dovresti prima accedere al Cloud. Vuoi connetterti al Cloud ora?</value>
+  </data>
+  <data name="msgChangeLoginDone" xml:space="preserve">
+    <value>Password di accesso aggiornata!</value>
+  </data>
+  <data name="errChangePassword" xml:space="preserve">
+    <value>Impossibile completare il cambio della password di accesso.
+Errore:</value>
+    <comment>Error</comment>
+  </data>
+  <data name="msgSessionTimeout" xml:space="preserve">
+    <value>La tua sessione è scaduta per le impostazioni di timeout della sessione</value>
+  </data>
+  <data name="txtCardHolder" xml:space="preserve">
+    <value>Nome del titolare</value>
+  </data>
+  <data name="txtExpirationDate" xml:space="preserve">
+    <value>Data di scadenza</value>
+  </data>
+  <data name="txtVerificationNumber" xml:space="preserve">
+    <value>Codice di sicurezza (CVV)</value>
+  </data>
+  <data name="titleTransfer" xml:space="preserve">
+    <value>Trasferisci le tue password</value>
+  </data>
+  <data name="txtDownload" xml:space="preserve">
+    <value>Download</value>
+  </data>
+  <data name="txtExport" xml:space="preserve">
+    <value>Esporta</value>
+  </data>
+  <data name="txtImport" xml:space="preserve">
+    <value>Importa</value>
+  </data>
+  <data name="txtUpload" xml:space="preserve">
+    <value>Upload</value>
+  </data>
+  <data name="titleExport" xml:space="preserve">
+    <value>Esportazione</value>
+  </data>
+  <data name="txtExportFormat" xml:space="preserve">
+    <value>Formato di esportazione</value>
+  </data>
+  <data name="errExportPwdList" xml:space="preserve">
+    <value>E' avvenuto un errore durante l'esportazione della lista delle password.
+Errore:</value>
+    <comment>Error</comment>
+  </data>
+  <data name="txtFormatDescJSON" xml:space="preserve">
+    <value>La lista delle password viene esportata in un file in chiaro (non criptato) in formato JSON. Nessun allegato è incluso in questo formato.</value>
+    <comment>Export</comment>
+  </data>
+  <data name="txtFormatDescLIST" xml:space="preserve">
+    <value>La lista delle password viene esportata in un file criptato con estensione .list. Questo è il formato proprietario di PwdCrypter. Tutti gli allegati sono inclusi.</value>
+    <comment>Export</comment>
+  </data>
+  <data name="txtFormatDescZIP" xml:space="preserve">
+    <value>La lista delle password viene esportata in un file in chiaro (non criptato) in formato JSON. L'archivio ZIP contiene tutti gli allegati che hai associato alle password.</value>
+    <comment>Export</comment>
+  </data>
+  <data name="txtFormatNameJSON" xml:space="preserve">
+    <value>Formato JSON (in chiaro)</value>
+    <comment>Export</comment>
+  </data>
+  <data name="txtFormatNameLIST" xml:space="preserve">
+    <value>Formato LIST (criptato)</value>
+    <comment>Export</comment>
+  </data>
+  <data name="txtFormatNameZIP" xml:space="preserve">
+    <value>Formato ZIP (in chiaro)</value>
+    <comment>Export</comment>
+  </data>
+  <data name="txtImportExportFileFormatJSON" xml:space="preserve">
+    <value>Formato JSON</value>
+  </data>
+  <data name="txtImportExportFileFormatLIST" xml:space="preserve">
+    <value>File di lista di PwdCrypter</value>
+  </data>
+  <data name="txtImportExportFileFormatZIP" xml:space="preserve">
+    <value>File compresso ZIP</value>
+  </data>
+  <data name="errImportPwdList" xml:space="preserve">
+    <value>Errore durante il processo di importazione della lista delle password.
+Errore:</value>
+    <comment>Error</comment>
+  </data>
+  <data name="msgPwdImportCancelled" xml:space="preserve">
+    <value>Importazione annullata</value>
+  </data>
+  <data name="msgQuestionPwdImport" xml:space="preserve">
+    <value>Sei sicuro di voler importare la lista delle password da un file esterno?
+Tieni in mente che la lista corrente verrà sovrascritta.</value>
+  </data>
+  <data name="errImportWrongPassword" xml:space="preserve">
+    <value>Impossibile accedere alla lista delle password. Probabilmente la password di accesso al file sorgente non corrisponde a quella corrente.</value>
+    <comment>Error</comment>
+  </data>
+  <data name="errUnknownFormat" xml:space="preserve">
+    <value>Formato sconosciuto!</value>
+    <comment>Error</comment>
+  </data>
+  <data name="errImportPassword" xml:space="preserve">
+    <value>Errore durante il processo di importazione.
+Impossibile completare l'operazione.</value>
+    <comment>Error</comment>
+  </data>
+  <data name="txtExportCloud" xml:space="preserve">
+    <value>Esporta le password salvate su Cloud</value>
+  </data>
+  <data name="msgPwdImportDone" xml:space="preserve">
+    <value>Importazione completata con successo!</value>
+  </data>
+  <data name="msgQuestionCloudNoConn" xml:space="preserve">
+    <value>Attualmente non sei collegato al Cloud.
+Vuoi effettuare il login ora?</value>
+  </data>
+  <data name="errCloudFileNotFound" xml:space="preserve">
+    <value>Nessun dato disponibile sul Cloud.</value>
+  </data>
+  <data name="msgQuestionPwdDonwload" xml:space="preserve">
+    <value>Sei davvero sicuro di voler scaricare dal Cloud la lista delle password (e i suoi allegati)?
+Tieni presente che la lista corrente e gli allegati verranno sovrascritti.</value>
+  </data>
+  <data name="msgQuestionPwdUpload" xml:space="preserve">
+    <value>Sei davvero sicuro di voler caricare su Cloud la lista corrente delle password (compresi gli allegati)?
+Tieni presente che le password e gli allegati attualmente su Cloud verranno sovrascritti.</value>
+  </data>
+  <data name="msgPwdDownloadDone" xml:space="preserve">
+    <value>Allegati e lista delle password scaricati con successo dal Cloud!</value>
+  </data>
+  <data name="msgPwdUploadDone" xml:space="preserve">
+    <value>Allegati e lista delle password caricati con successo sul Cloud!</value>
+  </data>
+  <data name="titleExportFilter" xml:space="preserve">
+    <value>Filtro di esportazione</value>
+  </data>
+  <data name="msgPwdExportDone" xml:space="preserve">
+    <value>Esportazione completata con successo!</value>
+  </data>
+  <data name="msgPwdExportTo" xml:space="preserve">
+    <value>Lista delle password esportate con successo in {0}</value>
+    <comment>Export</comment>
+  </data>
+  <data name="txtSafelyUnguessable" xml:space="preserve">
+    <value>Difficilmente indovinabile</value>
+  </data>
+  <data name="txtSomewhatGuessable" xml:space="preserve">
+    <value>Un po' insicura</value>
+  </data>
+  <data name="txtVeryGuessable" xml:space="preserve">
+    <value>Facilmente indovinabile</value>
+  </data>
+  <data name="txtVeryUnguessable" xml:space="preserve">
+    <value>Molto sicura</value>
+  </data>
+  <data name="txtWeak" xml:space="preserve">
+    <value>Debole</value>
+  </data>
+  <data name="warnWeakPassword" xml:space="preserve">
+    <value>La password è troppo debole.
+Vuoi continuare nonostante ciò?</value>
+  </data>
+  <data name="txtPwdOrderAccountType" xml:space="preserve">
+    <value>Categoria</value>
+  </data>
+  <data name="txtPwdOrderName" xml:space="preserve">
+    <value>Nome</value>
+  </data>
+  <data name="txtPwdOrder" xml:space="preserve">
+    <value>Ordina per</value>
+  </data>
+  <data name="txtPwdOrderRegistration" xml:space="preserve">
+    <value>Data di registrazione</value>
+  </data>
+  <data name="titleCheckPassword" xml:space="preserve">
+    <value>Verifica le tue password</value>
+  </data>
+  <data name="btnCheckPassword" xml:space="preserve">
+    <value>Inizia a verificare le tue password</value>
+  </data>
+  <data name="txtPoweredByHaveIBeenPwned" xml:space="preserve">
+    <value>Have I Been Pwned è la sorgente dei dati</value>
+  </data>
+  <data name="errCheckingPassword" xml:space="preserve">
+    <value>E' avvenuto un errore durante la verifica delle password.
+Errore:</value>
+    <comment>Error</comment>
+  </data>
+  <data name="txtCC4License" xml:space="preserve">
+    <value>Creative Commons Attribution 4.0 International License</value>
+  </data>
+  <data name="txtBreachedAccount" xml:space="preserve">
+    <value>Oh no!
+Sono stati trovati {0} account che sono stati violati!</value>
+  </data>
+  <data name="txtNoBreachedAccount" xml:space="preserve">
+    <value>Buone notizie!
+Nessun account è stato violato!</value>
+  </data>
+  <data name="errAccountsBreachedFailed" xml:space="preserve">
+    <value>Impossibile trovare le informazioni sulla violazione di alcuni account.</value>
+    <comment>Error</comment>
+  </data>
+  <data name="txtOneBreachedAccount" xml:space="preserve">
+    <value>Oh no!
+E' stato trovato 1 account che è stato violato!</value>
+  </data>
+  <data name="btnShowBreachedAccounts" xml:space="preserve">
+    <value>Vedi i dettagli degli account violati</value>
+  </data>
+  <data name="titleBreachedAccount" xml:space="preserve">
+    <value>Account violati</value>
+  </data>
+  <data name="txtAccount" xml:space="preserve">
+    <value>Account:</value>
+  </data>
+  <data name="txtBreachesCount" xml:space="preserve">
+    <value>Numero di violazioni:</value>
+  </data>
+  <data name="titleBreachedAccountDetails" xml:space="preserve">
+    <value>Dettagli sulle violazioni</value>
+  </data>
+  <data name="txtBreachAddedDate" xml:space="preserve">
+    <value>Aggiunto il:</value>
+  </data>
+  <data name="txtBreachDataClasses" xml:space="preserve">
+    <value>Classi dei dati:</value>
+  </data>
+  <data name="txtBreachDate" xml:space="preserve">
+    <value>Data della violazione:</value>
+  </data>
+  <data name="txtBreachDescription" xml:space="preserve">
+    <value>Descrizione:</value>
+  </data>
+  <data name="txtBreachDomain" xml:space="preserve">
+    <value>Dominio:</value>
+  </data>
+  <data name="txtBreachIsSpamList" xml:space="preserve">
+    <value>Lista delle spam:</value>
+  </data>
+  <data name="txtBreachModifiedDate" xml:space="preserve">
+    <value>Modificato il:</value>
+  </data>
+  <data name="txtBreachName" xml:space="preserve">
+    <value>Nome:</value>
+  </data>
+  <data name="txtBreachTitle" xml:space="preserve">
+    <value>Titolo:</value>
+  </data>
+  <data name="txtNo" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="txtYes" xml:space="preserve">
+    <value>Sì</value>
+  </data>
+  <data name="txtShowDescription" xml:space="preserve">
+    <value>Mostra la descrizione...</value>
+  </data>
+  <data name="errInAppBillingNotConnected" xml:space="preserve">
+    <value>Impossibile connettersi con il servizio di acquisti In-App</value>
+  </data>
+  <data name="errInAppBillingNotSupported" xml:space="preserve">
+    <value>Gli acquisti In-App non sono supportati sul tuo dispositivo</value>
+  </data>
+  <data name="errAlreadyOwned" xml:space="preserve">
+    <value>Possiedi già il prodotto</value>
+  </data>
+  <data name="errAppStoreUnavailable" xml:space="preserve">
+    <value>L'App store non è disponibile sul tuo dispositivo</value>
+  </data>
+  <data name="errBillingUnavailable" xml:space="preserve">
+    <value>Il sistema di acquisti non è disponibile</value>
+  </data>
+  <data name="errDeveloperError" xml:space="preserve">
+    <value>C'è un problema tecnico. Per piacere, contattare il supporto tecnico</value>
+  </data>
+  <data name="errGeneralError" xml:space="preserve">
+    <value>Errore sconosciuto. Per piacere, contattare il supporto tecnico</value>
+  </data>
+  <data name="errInvalidProduct" xml:space="preserve">
+    <value>Il prodotto richiesto non è disponibile. Per piacere, contattare il supporto tecnico</value>
+  </data>
+  <data name="errItemUnavailable" xml:space="preserve">
+    <value>Il prodotto non è disponibile. Per piacere, contattare il supporto tecnico</value>
+  </data>
+  <data name="errNotOwned" xml:space="preserve">
+    <value>Non possiedi il prodtto e non è possibile utilizzarlo</value>
+  </data>
+  <data name="errPaymentInvalid" xml:space="preserve">
+    <value>Alcuni dei parametri di acquisto non sono stati riconosciuti dall'App store</value>
+  </data>
+  <data name="errPaymentNotAllowed" xml:space="preserve">
+    <value>L'utente non ha i permessi per autorizzare l'acquisto</value>
+  </data>
+  <data name="errProductRequestFailed" xml:space="preserve">
+    <value>La richiesta per il prodotto è fallita. Per piacere, contattare il supporto tecnico</value>
+  </data>
+  <data name="errRestoreFailed" xml:space="preserve">
+    <value>Il ripristino della transazione è fallita. Per piacere, contattare il supporto tecnico</value>
+  </data>
+  <data name="errServiceUnavailable" xml:space="preserve">
+    <value>La connessione di rete verso il servizio sembra inattiva</value>
+  </data>
+  <data name="errUserCancelled" xml:space="preserve">
+    <value>L'utente ha cancellato l'acquisto</value>
+  </data>
+  <data name="errUnableToPurchase" xml:space="preserve">
+    <value>Impossibile acquistare il prodotto</value>
+  </data>
+  <data name="errUnableToFindProducts" xml:space="preserve">
+    <value>Impossibile trovare le informazioni sui prodotti. Per piacere, contattare il supporto tecnico</value>
+  </data>
+  <data name="errConsumeProduct" xml:space="preserve">
+    <value>Si è verificato un errore durante il consumo del prodotto</value>
+  </data>
+  <data name="btnNoThanks" xml:space="preserve">
+    <value>No, grazie</value>
+  </data>
+  <data name="btnYesUpgradePRO" xml:space="preserve">
+    <value>Passa a PRO (€ 5,00)</value>
+  </data>
+  <data name="titleUpgradeToPLUS" xml:space="preserve">
+    <value>Passa alla versione PLUS</value>
+  </data>
+  <data name="txtPLUSAttachmentFeature" xml:space="preserve">
+    <value>Allegati nei dettagli delle password</value>
+  </data>
+  <data name="txtPLUSCloudFeature" xml:space="preserve">
+    <value>Cloud (OneDrive e GoogleDrive)</value>
+  </data>
+  <data name="txtUpgradeToPLUS" xml:space="preserve">
+    <value>Passando alla versione PLUS avrai</value>
+  </data>
+  <data name="btnAttachmentFeature" xml:space="preserve">
+    <value>Ottieni la funzionalità degli allegati</value>
+  </data>
+  <data name="txtPurchase" xml:space="preserve">
+    <value>Acquista</value>
+  </data>
+  <data name="msgQuestionGenPassword" xml:space="preserve">
+    <value>Vuoi generare una password casuale?
+Il contenuto corrente verrà sostituito con una password di 12 caratteri.</value>
+  </data>
+  <data name="msgLogoutCloudPlatform" xml:space="preserve">
+    <value>Sei attualmente connesso a un'altra piattaforma Cloud.
+Effettua prima il logout dalla piattaforma corrente.</value>
+  </data>
+  <data name="errBreachedLoadFileFailed" xml:space="preserve">
+    <value>Impossibile leggere i dati dalla cache.
+Errore:</value>
+    <comment>Error</comment>
+  </data>
+  <data name="errBreachedSaveFileFailed" xml:space="preserve">
+    <value>Impossibile salvare i dati in cache.
+Errore:</value>
+    <comment>Error</comment>
+  </data>
+  <data name="txtLastCheck" xml:space="preserve">
+    <value>Ultimo controllo il</value>
+  </data>
+  <data name="txtNextCheck" xml:space="preserve">
+    <value>Prossimo controllo permesso dal</value>
+  </data>
+  <data name="txtSend" xml:space="preserve">
+    <value>Invia al browser</value>
+  </data>
+  <data name="errGenericError" xml:space="preserve">
+    <value>E' avvenuto un errore!</value>
+    <comment>Error</comment>
+  </data>
+  <data name="txtCloudSource" xml:space="preserve">
+    <value>Cloud</value>
+  </data>
+  <data name="txtDataSource" xml:space="preserve">
+    <value>Sorgente dati: {0}</value>
+  </data>
+  <data name="txtLocalSource" xml:space="preserve">
+    <value>locale</value>
+  </data>
+  <data name="warnFileCorruptedButRecover" xml:space="preserve">
+    <value>Attenzione: i dati sembrano essere corrotti. L'App ha provato a recuperare i dati.
+Si prega di verificare le ultime modifiche.</value>
+    <comment>warning corrupted data</comment>
+  </data>
+  <data name="txtUnlockCode" xml:space="preserve">
+    <value>Codice di sblocco per le altre piattaforme</value>
+  </data>
+  <data name="btnIHaveUnlockCode" xml:space="preserve">
+    <value>Ho un codice di sblocco</value>
+  </data>
+  <data name="btnUnlock" xml:space="preserve">
+    <value>Sblocca</value>
+  </data>
+  <data name="titleUnlock" xml:space="preserve">
+    <value>Sblocca funzionalità</value>
+  </data>
+  <data name="txtUnlockCode2" xml:space="preserve">
+    <value>Codice di sblocco</value>
+  </data>
+  <data name="errInvalidUnlockCode" xml:space="preserve">
+    <value>Inserire un codice di sblocco valido</value>
+  </data>
+  <data name="errUnlock" xml:space="preserve">
+    <value>Errore durante la procedura di sblocco.
+Errore: </value>
+    <comment>Error</comment>
+  </data>
+  <data name="errUnlockCodeNoMatch" xml:space="preserve">
+    <value>Il codice di sblocco non corrisponde</value>
+    <comment>Error</comment>
+  </data>
+  <data name="msgFeatureUnlocked" xml:space="preserve">
+    <value>Funzionalità sbloccata con successo!</value>
+  </data>
+  <data name="txtUsedUnlockCode" xml:space="preserve">
+    <value>Stai utilizzando il seguente codice di sblocco:</value>
+  </data>
+  <data name="warnExpireUnlockCode" xml:space="preserve">
+    <value>Stai utilizzando un codice di sblocco. Per motivi di sicurezza, se si cambia la master password, dovrai inserire il nuovo codice di sblocco proveniente dall'altra App.
+Ricorda che dovrai utilizzare la stessa master password anche sull'altra App. Vuoi proseguire?</value>
+    <comment>Warning on unlock code</comment>
+  </data>
+  <data name="warnPersistentUnlockCode" xml:space="preserve">
+    <value>Stai utilizzando un codice di sblocco persistente.
+In seguito all'aggiornamento della master password, questo codice di sblocco è stato rinnovato.
+Nella pagina delle informazioni puoi sempre vedere il codice di sblocco che stai utilizzando. Si prega di prendere nota del nuovo codice.</value>
+    <comment>Warning on unlock code</comment>
+  </data>
+  <data name="txtFastSearch" xml:space="preserve">
+    <value>Ricerca veloce...</value>
+  </data>
+  <data name="errUnableToReadNTFSet" xml:space="preserve">
+    <value>Impossibile leggere le impostazioni per le notifiche push.
+Errore:</value>
+    <comment>Error</comment>
+  </data>
+  <data name="txtPushNotification" xml:space="preserve">
+    <value>Abilita le notifiche push sul tuo dispositivo</value>
+  </data>
+  <data name="btnOpenNFSettings" xml:space="preserve">
+    <value>Apri</value>
+  </data>
+  <data name="txtOpenPushNFSettings" xml:space="preserve">
+    <value>Usa il pannello delle "Notifiche e azioni" di Windows 10.</value>
+  </data>
+  <data name="titleNews" xml:space="preserve">
+    <value>News</value>
+  </data>
+  <data name="titleNewsList" xml:space="preserve">
+    <value>Lista delle news</value>
+  </data>
+  <data name="txtNewsListEmpty" xml:space="preserve">
+    <value>Nessuna news per te!</value>
+  </data>
+  <data name="langIDSuper" xml:space="preserve">
+    <value>it</value>
+  </data>
+  <data name="txtNewsOf" xml:space="preserve">
+    <value>Notizia del {0}</value>
+  </data>
+  <data name="btnSecurityAccess" xml:space="preserve">
+    <value>Accesso e sicurezza</value>
+  </data>
+  <data name="btnConfigure" xml:space="preserve">
+    <value>Configura</value>
+  </data>
+  <data name="titleSecurityAccess" xml:space="preserve">
+    <value>Accesso e sicurezza</value>
+  </data>
+  <data name="txtSecurityAccess" xml:space="preserve">
+    <value>Accedi con</value>
+  </data>
+  <data name="txtFingerprint" xml:space="preserve">
+    <value>Impronta</value>
+  </data>
+  <data name="txtMasterPassword" xml:space="preserve">
+    <value>Master password</value>
+  </data>
+  <data name="txtTwoFactor" xml:space="preserve">
+    <value>Autenticazione a due fattori (2FA)</value>
+  </data>
+  <data name="errConfigFingerprint" xml:space="preserve">
+    <value>Errore durante la configurazione di accesso tramite impronta digitale.
+Errore: {0}</value>
+    <comment>Fingerprint</comment>
+  </data>
+  <data name="titleFingerprint" xml:space="preserve">
+    <value>Impronta</value>
+  </data>
+  <data name="txtFingerprintCanceled" xml:space="preserve">
+    <value>Operazione cancellata dall'utente</value>
+  </data>
+  <data name="txtFingerprintError" xml:space="preserve">
+    <value>Si è verificato un errore: {0}</value>
+  </data>
+  <data name="txtFingerprintFailed" xml:space="preserve">
+    <value>Autenticazione fallita! L'impronta non corrisponde</value>
+  </data>
+  <data name="txtFingerprintHelp" xml:space="preserve">
+    <value>Richiesta di aiuto: {0}</value>
+  </data>
+  <data name="txtFingerprintReady" xml:space="preserve">
+    <value>Appoggiare il dito sul sensore...</value>
+  </data>
+  <data name="txtFingerprintSucceeded" xml:space="preserve">
+    <value>Autenticazione completata con successo!</value>
+  </data>
+  <data name="txtFingerprintConfigured" xml:space="preserve">
+    <value>Disponibile l'accesso tramite impronta digitale</value>
+  </data>
+  <data name="btnReconfigure" xml:space="preserve">
+    <value>Riconfigura</value>
+  </data>
+  <data name="msgFingerprintReconfigure" xml:space="preserve">
+    <value>Hai abilitato l'accesso tramite impronta digitale. È necessario riconfigurare questa impostazione dopo aver modificato la password principale.
+Vai alla pagina di Accesso e sicurezza e registra la tua impronta digitale.</value>
+  </data>
+  <data name="title2FASetting" xml:space="preserve">
+    <value>Impostazione per 2-FA</value>
+  </data>
+  <data name="txtTwoFactorAuth" xml:space="preserve">
+    <value>Scansiona il codice QR o utilizza il codice visualizzato.</value>
+  </data>
+  <data name="errTwoFactorConfig" xml:space="preserve">
+    <value>Si è verificato un errore durante la configurazione dell'autenticazione a due fattori.
+Errore: {0}</value>
+    <comment>Error</comment>
+  </data>
+  <data name="txtBackupCode" xml:space="preserve">
+    <value>Codice di ripristino:</value>
+  </data>
+  <data name="txt2FAConfigured" xml:space="preserve">
+    <value>Accesso configurato con 2-FA</value>
+  </data>
+  <data name="txtCode" xml:space="preserve">
+    <value>Codice</value>
+  </data>
+  <data name="titleTOTP" xml:space="preserve">
+    <value>Codice OTP</value>
+  </data>
+  <data name="msgTOTPCancelled" xml:space="preserve">
+    <value>Operazione cancellata dall'utente</value>
+  </data>
+  <data name="errTOTPWrongCode" xml:space="preserve">
+    <value>Il codice non corrisponde! Verifica l'App di autenticazione e riprova.</value>
+  </data>
+  <data name="errTwoFactorConfig2" xml:space="preserve">
+    <value>L'autenticazione a due fattori non è configurata. Vai alla pagina Accesso e sicurezza e registra la tua configurazione.</value>
+    <comment>Error</comment>
+  </data>
+  <data name="errTwoFactorNotAvailable" xml:space="preserve">
+    <value>L'autenticazione a due fattori non è disponibile.</value>
+    <comment>Error</comment>
+  </data>
+  <data name="txtRecovyCodeAlert" xml:space="preserve">
+    <value>Salva il codice di ripristino in un luogo sicuro. Se perdi lo smartphone o le impostazioni dell'App di autenticazione, verrai bloccato fuori.</value>
+  </data>
+  <data name="btnVerify" xml:space="preserve">
+    <value>Verifica</value>
+  </data>
+  <data name="txtTOTP" xml:space="preserve">
+    <value>Inserisci il codice OTP visualizzato nella tua App di autenticazione.</value>
+  </data>
+  <data name="txtUseRecoveryCode" xml:space="preserve">
+    <value>Non riesci a ottenere il token? Fai click qui e utilizza il codice di ripristino.</value>
+  </data>
+  <data name="txtTOTPRecoveryCode" xml:space="preserve">
+    <value>Inserisci il codice di ripristino. Per motivi di sicurezza, un nuovo codice di ripristino verrà generato dopo il suo utilizzo.</value>
+  </data>
+  <data name="titleRecoveryCode" xml:space="preserve">
+    <value>Codice di ripristino per 2FA</value>
+  </data>
+  <data name="txtRecoveryCode" xml:space="preserve">
+    <value>Questo è il tuo nuovo codice di ripristino. Salvalo in un posto sicuro. Se perdi lo smartphone o le impostazioni dell'App di autenticazione, verrai bloccato fuori.</value>
+  </data>
+  <data name="errWrongRecoveryCode" xml:space="preserve">
+    <value>Il codice di ripristino non è valido!</value>
+  </data>
+  <data name="btnShowPasswordCheckResult" xml:space="preserve">
+    <value>Alcune password richiedono attenzione</value>
+  </data>
+  <data name="txtNoPasswordAttention" xml:space="preserve">
+    <value>Buone notizie!
+Tutto sembra essere a posto!</value>
+  </data>
+  <data name="txtOnePasswordAttention" xml:space="preserve">
+    <value>Oh no!
+C'è una password che richiede attenzione!</value>
+  </data>
+  <data name="txtPasswordsAttention" xml:space="preserve">
+    <value>Oh no!
+Ci sono {0} password che richiedono attenzione!</value>
+  </data>
+  <data name="errPwdCheckerLoadFileFailed" xml:space="preserve">
+    <value>Impossibile caricare i dati della verifica delle password dalla cache.
+Errore: {0}</value>
+  </data>
+  <data name="errPwdCheckerSaveFileFailed" xml:space="preserve">
+    <value>Impossibile salvare i dati della verifica delle password in cache.
+Errore: {0}</value>
+  </data>
+  <data name="txtPwdIssues" xml:space="preserve">
+    <value>Problemi:</value>
+  </data>
+  <data name="txtPwdIssueTooOld" xml:space="preserve">
+    <value>La password è troppo vecchia. L'ultima modifica risale a più di {0} giorni fa.</value>
+  </data>
+  <data name="txtPwdIssueTooWeak" xml:space="preserve">
+    <value>La password è troppo debole.</value>
+  </data>
+  <data name="txtPwdIssueTooOld2" xml:space="preserve">
+    <value>Password troppo vecchia</value>
+  </data>
+  <data name="txtPwdIssueTooWeak2" xml:space="preserve">
+    <value>Password troppo debole</value>
+  </data>
+  <data name="txtCalcTime" xml:space="preserve">
+    <value>Tempo di calcolo [ms]:</value>
+  </data>
+  <data name="txtCrackTime" xml:space="preserve">
+    <value>Tempo per il crack:</value>
+  </data>
+  <data name="txtEntropy" xml:space="preserve">
+    <value>Entropia [bit]:</value>
+  </data>
+  <data name="txtHacking" xml:space="preserve">
+    <value>Hacking</value>
+  </data>
+  <data name="txtLastChange" xml:space="preserve">
+    <value>Ultima modifica:</value>
+  </data>
+  <data name="txtScore" xml:space="preserve">
+    <value>Punteggio [0 - 4]:</value>
+  </data>
+  <data name="txtCenturies" xml:space="preserve">
+    <value>secoli</value>
+  </data>
+  <data name="txtDays" xml:space="preserve">
+    <value>giorni</value>
+  </data>
+  <data name="txtHours" xml:space="preserve">
+    <value>ore</value>
+  </data>
+  <data name="txtInstant" xml:space="preserve">
+    <value>istantaneo</value>
+  </data>
+  <data name="txtMonths" xml:space="preserve">
+    <value>mesi</value>
+  </data>
+  <data name="txtYears" xml:space="preserve">
+    <value>anni</value>
+  </data>
+  <data name="txtDescription2" xml:space="preserve">
+    <value>Descrizione:</value>
+  </data>
+  <data name="errPasswordNoyFound" xml:space="preserve">
+    <value>Password non trovata!</value>
+  </data>
+  <data name="btnShowPassword" xml:space="preserve">
+    <value>Mostra la password</value>
+  </data>
+  <data name="title3rdPartyLicenses" xml:space="preserve">
+    <value>Licenze terze parti</value>
+  </data>
+  <data name="msgCheckPassword" xml:space="preserve">
+    <value>È ora di controllare le tue password!
+Fai click sulla notifica e avvia l'analisi.</value>
+  </data>
+  <data name="txtPeriodicallyCheckPassword" xml:space="preserve">
+    <value>Controllo periodico delle password</value>
+  </data>
+  <data name="txtWeek" xml:space="preserve">
+    <value>settimana</value>
+  </data>
+  <data name="txtYear" xml:space="preserve">
+    <value>anno</value>
+  </data>
+  <data name="txtSkipPasswordCheck" xml:space="preserve">
+    <value>Salta il controllo della password</value>
+  </data>
+  <data name="txtPasswordSkipped" xml:space="preserve">
+    <value>Numero di password ignorate: {0}</value>
+  </data>
+  <data name="txtBackupFrequency" xml:space="preserve">
+    <value>Frequenza di backup</value>
+    <comment>Backup</comment>
+  </data>
+  <data name="txtBackupHistory" xml:space="preserve">
+    <value>Storico dei backup</value>
+    <comment>Backup</comment>
+  </data>
+  <data name="txtBackupInCloud" xml:space="preserve">
+    <value>Questa funzione è disponibile per il backup su Cloud</value>
+    <comment>Backup</comment>
+  </data>
+  <data name="titleBackup" xml:space="preserve">
+    <value>Backup</value>
+  </data>
+  <data name="btnBackup" xml:space="preserve">
+    <value>Esegui il backup</value>
+  </data>
+  <data name="btnRestore" xml:space="preserve">
+    <value>Ripristina</value>
+  </data>
+  <data name="txtLastBackup" xml:space="preserve">
+    <value>Ultimo backup creato il {0}</value>
+  </data>
+  <data name="txtNextBackup" xml:space="preserve">
+    <value>Prossimo backup programmato per il {0}</value>
+  </data>
+  <data name="errBackupLoadCacheFailed" xml:space="preserve">
+    <value>Impossibile caricare le informazioni aggiuntive riguardo all'ultimo backup.
+Errore: {0}</value>
+  </data>
+  <data name="errBackupSaveCacheFailed" xml:space="preserve">
+    <value>Impossibile salvare le informazioni aggiuntive riguardo all'ultimo backup.
+Errore: {0}</value>
+  </data>
+  <data name="errBackup" xml:space="preserve">
+    <value>Si è verificato un errore durante l'operazione di backup.
+Errore: {0}</value>
+    <comment>Error</comment>
+  </data>
+  <data name="titleBackupLocation" xml:space="preserve">
+    <value>Locazione del backup</value>
+  </data>
+  <data name="txtCloud" xml:space="preserve">
+    <value>Cloud</value>
+  </data>
+  <data name="txtLocal" xml:space="preserve">
+    <value>Locale</value>
+  </data>
+  <data name="msgBackupSaved" xml:space="preserve">
+    <value>Backup creato con successo!</value>
+  </data>
+  <data name="errBackupHistory" xml:space="preserve">
+    <value>Controllo dello storico dei backup fallito!
+Errore: {0}</value>
+    <comment>Error</comment>
+  </data>
+  <data name="errBackupRestore" xml:space="preserve">
+    <value>Errore durante l'operazione di ripristino.
+Errore: {0}</value>
+    <comment>Error</comment>
+  </data>
+  <data name="msgRestoreDone" xml:space="preserve">
+    <value>Ripristino completato!</value>
+  </data>
+  <data name="msgNoBackup" xml:space="preserve">
+    <value>Nessun backup disponibile</value>
+  </data>
+  <data name="txtBackupSelection" xml:space="preserve">
+    <value>Seleziona il file di backup da ripristinare</value>
+  </data>
+  <data name="errDatePriorToday" xml:space="preserve">
+    <value>Selezionare una data da oggi in poi.</value>
+  </data>
+  <data name="errTimePriorNow" xml:space="preserve">
+    <value>Non è consentito selezionare un'orario nel passato.</value>
+  </data>
+  <data name="txtEveryMonth" xml:space="preserve">
+    <value>Ogni mese</value>
+  </data>
+  <data name="errTimePrior15MinuteFromNow" xml:space="preserve">
+    <value>L'orario di partenza deve essere successivo di almeno 15 minuti da ora.</value>
+  </data>
+  <data name="txtNextCheckScheduled" xml:space="preserve">
+    <value>Prossimo controllo programmato per il {0}</value>
+  </data>
+  <data name="txtHour" xml:space="preserve">
+    <value>ora</value>
+  </data>
+  <data name="txtMonth" xml:space="preserve">
+    <value>mese</value>
+  </data>
+  <data name="txtApproximateDateTime" xml:space="preserve">
+    <value>Questa è l'ora approssimativa di pianificazione.</value>
+  </data>
+  <data name="txtMonthYearExplanation" xml:space="preserve">
+    <value>Per "Mese" si intende 30 giorni; per "Anno" si intende 365 giorni.</value>
+  </data>
+</root>

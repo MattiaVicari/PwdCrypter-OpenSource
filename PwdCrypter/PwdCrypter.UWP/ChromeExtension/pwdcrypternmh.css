@@ -1,0 +1,11 @@
+/**
+ * Author: 3DCrypter
+ * Date: 14-07-2019
+*/
+
+input.pwdcrypterField {
+    background-image: url("chrome-extension://__MSG_@@extension_id__/images/key_solid.svg")!important;
+    background-repeat: no-repeat!important;
+    background-position: right top!important;
+    background-size: auto 50%!important;
+}

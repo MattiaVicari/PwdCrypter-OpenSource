@@ -1,0 +1,9 @@
+{
+    "name": "<YOUR_PACKAGE_NAME>",
+    "description": "PwdCrypter",
+    "path": "PwdCrypterNativeMessagingHost.exe",
+    "type": "stdio",
+    "allowed_origins": [
+       "<YOUR_EXTENSION>"
+    ]
+}

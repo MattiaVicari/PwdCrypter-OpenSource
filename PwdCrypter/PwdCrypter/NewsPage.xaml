@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:ext="clr-namespace:PwdCrypter.Extensions.ResxLocalization"
+             xmlns:controls="clr-namespace:PwdCrypter.Controls"
+             xmlns:local="clr-namespace:PwdCrypter"
+             mc:Ignorable="d"
+             x:Class="PwdCrypter.NewsPage"
+             Title="{ext:Translate titleNews}"
+			 BackgroundColor="White"
+			 SizeChanged="ContentPage_SizeChanged">
+    <ContentPage.Content>
+        <Grid Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <!-- Titolo -->
+            <Label 
+				x:Name="lblTitle"
+				Grid.Row="0"
+				Text="{Binding Title}"
+				HorizontalOptions="Center"
+				VerticalOptions="Center"
+				FontSize="Large"
+				FontAttributes="Bold"
+				TextColor="Black"
+				HorizontalTextAlignment="Center"/>
+
+            <!-- Testo della news -->
+            <controls:NestedScrollView Grid.Row="1"
+                                       VerticalScrollBarVisibility="Default"
+                                       HorizontalScrollBarVisibility="Never"
+						               VerticalOptions="FillAndExpand">
+                <!-- Contenuto della news -->
+                <controls:CustomWebView 
+                    VerticalOptions="FillAndExpand" 
+                    HorizontalOptions="FillAndExpand"
+                    HtmlToLoad="{Binding Content}"
+                    Navigating="CustomWebView_Navigating"/>
+            </controls:NestedScrollView>
+            
+            <!-- Bottone per chiudere la pagina -->
+            <Button x:Name="btnClose"
+                    Grid.Row="2" 
+                    Margin="0,5,0,5"
+                    Text="{ext:Translate btnClose}"
+                    HorizontalOptions="Center"
+                    Clicked="Close_Clicked"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

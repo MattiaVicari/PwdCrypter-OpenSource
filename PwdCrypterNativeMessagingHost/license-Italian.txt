@@ -1,0 +1,60 @@
+﻿=========================================
+Contratto di licenza ("Contratto")
+=========================================
+Ultimo aggiornamento: <LAST_UPDATE_DATE>
+
+Leggere attentamente questo Accordo di licenza ("Accordo") prima di fare clic sul pulsante "Accetto", scaricare o utilizzare PwdCrypter Native Messaging Host ("Applicazione").
+Facendo clic sul pulsante "Accetto", scaricando o utilizzando l'applicazione, accetti di essere vincolato dai termini e dalle condizioni del presente Accordo.
+Se non si accettano i termini del presente Accordo, non fare clic sul pulsante "Accetto" e non scaricare o utilizzare l'applicazione.
+
+
+*****************************************
+** Licenza
+*****************************************
+<YOUR_NAME> ti garantisce una licenza revocabile, non esclusiva, non trasferibile, limitata per scaricare, installare e utilizzare l'Applicazione esclusivamente per scopi personali e non commerciali, rigorosamente in conformità con i termini del presente Accordo.
+
+
+*****************************************
+** Restrizioni
+*****************************************
+Accetti di non fare e non permettere ad altri di:
+a) licenziare, vendere, affittare, noleggiare, assegnare, distribuire, trasmettere, ospitare, esportare, divulgare o altrimenti sfruttare commercialmente l'Applicazione o rendere l'Applicazione disponibile a terzi;
+b) copiare o utilizzare la mia applicazione per scopi diversi da quelli personali e non commerciali;
+c) modificare, decodificare, decompilare o decodificare la mia applicazione.
+
+
+*****************************************
+** Modifiche all'applicazione
+*****************************************
+<YOUR_NAME> si riserva il diritto di modificare, sospendere o interrompere, temporaneamente o in modo permanente, l'Applicazione o qualsiasi servizio a cui si connette, con o senza preavviso e senza responsabilità verso di voi.
+
+
+*****************************************
+** Termine e risoluzione
+*****************************************
+Il presente Contratto rimarrà in vigore fino alla risoluzione da parte dell'utente o di <YOUR_NAME>.
+<YOUR_NAME> può, a sua esclusiva discrezione, in qualsiasi momento e per qualsiasi o nessuna ragione, sospendere o risolvere il presente Accordo con o senza preavviso.
+Il presente Accordo si risolverà immediatamente, senza preavviso da parte di <YOUR_NAME>, nel caso in cui non vengano rispettate le disposizioni del presente Accordo. Si può risolvere questo
+Accordo anche eliminando l'Applicazione e tutte le copie dai tuoi dispositivi.
+In caso di risoluzione del presente Contratto, l'utente dovrà interrompere l'uso dell'applicazione e cancellare tutte le copie dell'applicazione dai dispositivi.
+
+
+*****************************************
+** Invalidità
+*****************************************
+Se una qualsiasi disposizione del presente Accordo &egrave; ritenuta inapplicabile o non valida, tale disposizione sarà cambiata e interpretata per raggiungere gli obiettivi di tale disposizione, nella massima misura possibile, ai sensi delle leggi applicabili, e le restanti disposizioni continueranno ad avere pieno vigore ed efficacia.
+
+
+*****************************************
+** Modifiche al presente accordo
+*****************************************
+<YOUR_NAME> si riserva il diritto, a sua sola discrezione, di modificare o sostituire l'Accordo in qualsiasi momento. 
+Se una revisione &egrave; rilevante, forniremo un preavviso di almeno 30 giorni prima che tutti i nuovi termini entrino in vigore. Ciò che costituisce un cambiamento rilevante sarà determinato a nostra unica discrezione.
+
+
+*****************************************
+** Informazioni sui contatti
+*****************************************
+Se avete domande su questo accordo, vi preghiamo di contattarci
+a) per e-mail <YOUR_EMAIL>;
+b) tramite il modulo di supporto su <YOUR_WEBSITE>

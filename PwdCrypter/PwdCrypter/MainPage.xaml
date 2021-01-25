@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="PwdCrypter.MainPage"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:PwdCrypter.Controls"
+             xmlns:ext="clr-namespace:PwdCrypter.Extensions.ResxLocalization"
+             xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             xmlns:local="clr-namespace:PwdCrypter"
+             Title="PwdCrypter"
+             BackgroundColor="White"
+             SizeChanged="ContentPage_SizeChanged">
+
+    <RelativeLayout>
+
+        <!--
+            Immagine di sfondo
+            A causa di un bug, è necessario specifiare ReplaceStringMap prima
+            di Source
+        -->
+        <ffimageloadingsvg:SvgCachedImage x:Name="imgBackground"
+                                          RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                                                 Property=Height,
+                                                                                                 Factor=1}"
+                                          RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                                                Property=Width,
+                                                                                                Factor=1}"
+                                          RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                                            Property=Width,
+                                                                                            Factor=0.4,
+                                                                                            Constant=0}"
+                                          RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                                            Property=Height,
+                                                                                            Factor=0.2,
+                                                                                            Constant=0}"
+                                          ReplaceStringMap="{x:Static local:MainPage.BackgroundImageColor}"
+                                          Source="Assets/SVG/lock.svg"/>
+
+        <ScrollView HorizontalScrollBarVisibility="Never"
+                    RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                           Property=Height,
+                                                                           Factor=1}"
+                    RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                          Property=Width,
+                                                                          Factor=1}"
+                    VerticalScrollBarVisibility="Default">
+            <Grid x:Name="gridMain"
+                  Margin="20"
+                  VerticalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <!--  Spinner  -->
+                <ActivityIndicator x:Name="spinnerLoading"
+                                   IsEnabled="False"
+                                   IsRunning="False"
+                                   IsVisible="False"
+                                   Color="{x:Static local:AppStyle.IconColor}"/>
+
+                <!--  Titolo  -->
+                <Label x:Name="lblTitle"
+                       Grid.Row="0"
+                       FontAttributes="Bold"
+                       FontSize="Large"
+                       HorizontalOptions="Center"
+                       HorizontalTextAlignment="Center"
+                       Text="{ext:Translate txtFirstAccessTitle}"
+                       TextColor="Black"
+                       VerticalOptions="Center"/>
+
+                <!--  Caselle per l'inserimento della password  -->
+                <Grid x:Name="gridPassword"
+                      Grid.Row="1"
+                      VerticalOptions="Center">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <!--  Password  -->
+                    <controls:FormEntry x:Name="entryPassword"
+                                        Title="{ext:Translate txtInsertPassword}"
+                                        Grid.Row="0"
+                                        IsPassword="True"
+                                        Placeholder="Password"
+                                        ShowPasswordStrength="True"/>
+
+                    <!--  Casella per confermare la password  -->
+                    <controls:FormEntry x:Name="entryPasswordConfirm"
+                                        Title="{ext:Translate txtRepeatPassword}"
+                                        Grid.Row="1"
+                                        IsPassword="True"
+                                        Placeholder="Password"/>
+                </Grid>
+
+                <!--  Accettazione dell'informativa sulla privacy  -->
+                <Grid x:Name="gridPrivacy"
+                      Grid.Row="2"
+                      HorizontalOptions="FillAndExpand">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="70*"/>
+                        <ColumnDefinition Width="30*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0"
+                           FontSize="14"
+                           HorizontalOptions="End"
+                           Text="{ext:Translate txtPrivacyAgreement}"
+                           TextColor="Black"
+                           VerticalOptions="Center"/>
+                    <Switch x:Name="switchPrivacy"
+                            Grid.Column="1"
+                            HorizontalOptions="Start"
+                            IsToggled="False"
+                            VerticalOptions="Center"/>
+                </Grid>
+
+                <!--  Bottoni della pagina  -->
+                <StackLayout x:Name="stackButtons"
+                             Grid.Row="3"
+                             Orientation="Vertical"
+                             VerticalOptions="Center">
+
+                    <!--  Visualizza l'informativa sulla privacy  -->
+                    <Button x:Name="btnPrivacyPolicy"
+                            BackgroundColor="{x:Static local:AppStyle.ButtonAlternativeBackgroundColor}"
+                            Clicked="BtnPrivacyPolicy_Clicked"
+                            HorizontalOptions="FillAndExpand"
+                            Text="{ext:Translate btnReadPrivacyPolicy}"/>
+
+                    <!--  Conferma  -->
+                    <Button x:Name="btnConfirm"
+                            Clicked="BtnConfirm_Clicked"
+                            HorizontalOptions="FillAndExpand"
+                            Text="{ext:Translate btnConfirm}"/>
+                </StackLayout>
+            </Grid>
+        </ScrollView>
+    </RelativeLayout>
+</ContentPage>

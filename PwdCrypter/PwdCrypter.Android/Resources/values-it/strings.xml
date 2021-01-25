@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="txtFirstAccessTitle">Crea la tua password di accesso</string>
+  <string name="msgPwdExportTo">Lista delle password esportata con successo in {0}</string>
+  <string name="langID">it</string>
+  <string name="errFpHWNotDetected">Scanner dell\'impronta digitale non disponibile. Hardware non individuato.</string>
+  <string name="errFpLockScreen">Il blocca schermo non è configurato. Si prega di configurare il blocca schermo e registrare l\'impronta.</string>
+  <string name="errFpNotFound">Nessuna impronta digitale registrata. Registrare almeno una impronta.</string>
+  <string name="errFpPermissionDenied">Accesso negato per l\'utilizzo dello scanner dell\'impronta digitale.</string>
+  <string name="errFpNotRead">Lo scanner dell\'impronta digitale non è pronto all\'uso.</string>
+  <string name="msgCheckPassword">È ora di controllare le tue password!\nFai click sulla notifica e avvia l\'analisi.</string>
+  <string name="msgBackup">È ora di fare il backup delle tue password!\nFai click sulla notifica ed esegui il backup.</string>
+</resources>

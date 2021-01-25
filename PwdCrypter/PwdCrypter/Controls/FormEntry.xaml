@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<StackLayout
+	x:Name="mainStackLayout"
+	xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="PwdCrypter.Controls.FormEntry"
+	xmlns:views="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+	HorizontalOptions="FillAndExpand"
+	VerticalOptions="Center"
+	Orientation="Vertical">
+
+	<Label
+		x:Name="labelTitle"
+		HorizontalTextAlignment="Start"
+		VerticalTextAlignment="Center"
+		FontSize="14"
+		TextColor="Gray"
+		WidthRequest="200"
+		HorizontalOptions="Start"/>
+
+	<Grid x:Name="gridEntry"
+		  HorizontalOptions="FillAndExpand">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="Auto"/>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*"/>
+		</Grid.ColumnDefinitions>
+		
+		<Entry x:Name="entryValue"
+			   Grid.Row="0"
+			   Grid.Column="0"
+			   TextColor="Black"
+			   HorizontalOptions="FillAndExpand"
+			   VerticalOptions="Center"
+               TextChanged="EntryValue_TextChanged"/>
+		<Editor x:Name="editorValue"
+				Grid.Row="0"
+				Grid.Column="0"
+				TextColor="Black"
+				HorizontalOptions="FillAndExpand"
+				VerticalOptions="Center"
+				HeightRequest="100"
+                TextChanged="EditorValue_TextChanged"
+				IsVisible="False"/>
+		<Label x:Name="labelDisabledValue"
+			   Grid.Row="0"
+			   Grid.Column="0"
+			   TextColor="Black"
+			   HorizontalOptions="FillAndExpand"
+			   VerticalOptions="Center"
+			   IsVisible="False"/>
+
+		<StackLayout x:Name="stackPwdStrength"
+					 Grid.Row="1" Grid.Column="0"
+					 Orientation="Vertical"
+					 IsVisible="False">
+			<Label x:Name="labelPwdStrength"
+				   HorizontalOptions="FillAndExpand"
+				   VerticalOptions="Center"/>
+			
+			<!-- Simula una progress bar a 5 tacche -->
+			<Grid HorizontalOptions="FillAndExpand"
+				  VerticalOptions="Center">
+				<views:SKCanvasView x:Name="viewPwdStrengthBar" PaintSurface="SKCanvasView_PaintSurface"/>
+			</Grid>
+		</StackLayout>
+	</Grid>
+</StackLayout>

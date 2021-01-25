@@ -1,0 +1,52 @@
+{
+    "name": "PwdCrypter",
+    "version": "YOUR_VERSION",
+    "description": "__MSG_extDescription__",
+    "manifest_version": 2,
+    "browser_action": {
+        "default_icon": {
+            "20": "logo_20.png",
+            "40": "logo_40.png"
+        },
+        "default_title": "PwdCrypter",
+		"default_popup": "popup.html"
+    },
+    "default_locale": "en",
+    "content_scripts": [
+        {
+            "matches": [
+                "http://*/*",
+                "https://*/*"
+            ],
+            "js": [
+                "utility.js",
+                "action.js",
+                "typewriteTimer.js",
+                "content.js"
+            ],
+            "css": [
+                "pwdcrypternmh.css"
+            ],
+            "run_at": "document_end"
+        }
+    ],
+    "web_accessible_resources": [
+		"images/key_solid.svg"		
+    ],
+    "permissions": [
+        "tabs",
+        "nativeMessaging",
+        "<all_urls>"
+    ],
+    "applications": {
+        "gecko": {
+            "id": "<YOUR_EXTENSION>",
+            "strict_min_version": "50.0"
+        }
+    },
+    "icons": {
+        "16": "logo_16.png",
+        "48": "logo_48.png",
+        "128": "logo_128.png"
+    }
+}

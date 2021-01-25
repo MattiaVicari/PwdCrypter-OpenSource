@@ -1,0 +1,30 @@
+{
+    "extDescription": {
+        "message": "Estensione di PwdCrypter per la funzione speciale di copia e incolla",
+        "description": "Descrizione dell'estensione"
+    },
+    "popupTitle": {
+        "message": "Estensione di PwdCrypter",
+        "description": "Titolo del popup"
+    },
+    "markFieldCaption": {
+        "message": "Evidenzia le caselle di input",
+        "description": "Etichetta dell'opzione per evidenziare i campi dei form"
+    },
+    "pasteFormDataCaption": {
+        "message": "Compila la form",
+        "description": "Etichetta del comando per compilare la form"
+    },
+    "fillUsernameCaption": {
+        "message": "Inserisci lo username",
+        "description": "Etichetta del comando inserire lo username"
+    },
+    "fillEmailCaption": {
+        "message": "Inserisci l'e-mail",
+        "description": "Etichetta del comando inserire l'email"
+    },
+    "fillPasswordCaption": {
+        "message": "Inserisci la password",
+        "description": "Etichetta del comando inserire la password"
+    }
+}

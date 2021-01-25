@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 xmlns:ext="clr-namespace:PwdCrypter.Extensions.ResxLocalization"
+			 xmlns:local="clr-namespace:PwdCrypter"
+			 xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+			 xmlns:controls="clr-namespace:PwdCrypter.Controls"
+			 x:Class="PwdCrypter.AttachmentPage"
+			 Title="{ext:Translate titleAttachment}"
+			 BackgroundColor="White"
+			 SizeChanged="ContentPage_SizeChanged">
+    <ContentPage.Content>
+		<RelativeLayout>
+			<!-- Immagine di sfondo
+			A causa di un bug, è necessario specifiare ReplaceStringMap prima
+			di Source -->
+			<ffimageloadingsvg:SvgCachedImage
+				x:Name="imgBackground"
+				ReplaceStringMap="{x:Static local:AttachmentPage.BackgroundImageColor}"
+				Source="Assets/SVG/key_solid.svg"
+				RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+				RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}"
+				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.4, Constant=0}"
+				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.2, Constant=0}"/>
+
+			<StackLayout Orientation="Vertical"
+						 RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+						 RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}">
+
+				<!-- Titolo -->
+				<Label x:Name="lblTitle"
+					   Text="{ext:Translate titleAttachment}"
+					   HorizontalOptions="Center"
+					   VerticalOptions="Center"
+					   FontSize="Large"
+					   FontAttributes="Bold"
+					   TextColor="Black"
+					   HorizontalTextAlignment="Center"/>
+
+				<Grid x:Name="gridMain"
+						  HorizontalOptions="FillAndExpand"
+						  Margin="40,0,40,0">
+					<Grid.RowDefinitions>
+						<RowDefinition Height="Auto"/>
+						<RowDefinition Height="Auto"/>
+						<RowDefinition Height="Auto"/>
+					</Grid.RowDefinitions>
+
+					<controls:FormEntry x:Name="entryAttachmentName"
+										Grid.Row="0"
+										Title="{ext:Translate txtDescription}"
+										Placeholder="{ext:Translate txtDescription}"/>
+					<controls:FormEntry x:Name="entryAttachmentFile"
+										Grid.Row="1"
+										Title="{ext:Translate txtAttachment}"
+										IsEntryEnabled="False"
+										Text="{ext:Translate txtAttachmentPlaceholder}"
+										OnClick="AttachmentFile_OnClick"/>
+
+					<!-- Progress bar -->
+					<ProgressBar x:Name="progressbar"
+								 Grid.Row="2"
+								 Progress="0"
+								 ProgressColor="{x:Static local:AppStyle.ButtonBackgroundColor}"
+								 IsVisible="False"/>
+				</Grid>
+			</StackLayout>
+
+			<!-- Notifica fade in/out -->
+			<Frame x:Name="frameNotification"
+				   CornerRadius="10"
+				   Padding="5"
+				   BackgroundColor="Black"
+				   Opacity="0"
+           IsVisible="False"
+				   RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.7}"
+				   RelativeLayout.HeightConstraint="{ConstraintExpression Type=Constant, Constant=60}"
+				   RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.15}"
+				   RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1, Constant=-150}">
+                <StackLayout HorizontalOptions="CenterAndExpand"
+							 VerticalOptions="FillAndExpand">
+                    <Label x:Name="lblNotification" FontSize="14" TextColor="White"
+                           VerticalOptions="CenterAndExpand"
+						   VerticalTextAlignment="Center"/>
+                </StackLayout>
+            </Frame>
+		</RelativeLayout>
+    </ContentPage.Content>
+</ContentPage>

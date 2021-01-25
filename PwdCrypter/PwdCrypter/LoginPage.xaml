@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="PwdCrypter.LoginPage"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:PwdCrypter.Controls"
+             xmlns:ext="clr-namespace:PwdCrypter.Extensions.ResxLocalization"
+             xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             xmlns:local="clr-namespace:PwdCrypter"
+             Title="Login"
+             BackgroundColor="White"
+             SizeChanged="ContentPage_SizeChanged">
+
+    <RelativeLayout>
+        <!--
+            Immagine di sfondo
+            A causa di un bug, è necessario specifiare ReplaceStringMap prima
+            di Source
+        -->
+        <ffimageloadingsvg:SvgCachedImage x:Name="imgBackground"
+                                          RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                                                 Property=Height,
+                                                                                                 Factor=1}"
+                                          RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                                                Property=Width,
+                                                                                                Factor=1}"
+                                          RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                                            Property=Width,
+                                                                                            Factor=0.4,
+                                                                                            Constant=0}"
+                                          RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                                            Property=Height,
+                                                                                            Factor=0.2,
+                                                                                            Constant=0}"
+                                          ReplaceStringMap="{x:Static local:MainPage.BackgroundImageColor}"
+                                          Source="Assets/SVG/lock.svg"/>
+
+        <StackLayout RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                            Property=Height,
+                                                                            Factor=1}"
+                     RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                           Property=Width,
+                                                                           Factor=1}">
+            <Grid x:Name="gridMain"
+                  Margin="20"
+                  VerticalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <!--  Titolo  -->
+                <Label x:Name="lblTitle"
+                       Grid.Row="0"
+                       FontAttributes="Bold"
+                       FontSize="Large"
+                       HorizontalOptions="Center"
+                       HorizontalTextAlignment="Center"
+                       Text="{ext:Translate txtLoginTitle}"
+                       TextColor="Black"
+                       VerticalOptions="Center"/>
+
+                <!--  Messaggio  -->
+                <Label x:Name="lblMessage"
+                       Grid.Row="1"
+                       HorizontalOptions="Center"
+                       HorizontalTextAlignment="Center"
+                       IsVisible="False"
+                       Text="Message"
+                       VerticalOptions="Center"/>
+
+                <!--  Spinner  -->
+                <ActivityIndicator x:Name="spinnerLogin"
+                                   Grid.Row="2"
+                                   IsEnabled="False"
+                                   IsRunning="False"
+                                   IsVisible="False"
+                                   Color="{x:Static local:AppStyle.IconColor}"/>
+
+                <!--  Password  -->
+                <controls:FormEntry x:Name="entryPassword"
+                                    Title="{ext:Translate txtLoginPassword}"
+                                    Grid.Row="3"
+                                    IsPassword="True"
+                                    Placeholder="Password"/>
+
+                <!--  Oppure accesso con impronta digitale  -->
+                <StackLayout x:Name="stackFingerprint"
+                             Grid.Row="4"
+                             Margin="0,0,0,10"
+                             HorizontalOptions="Center"
+                             IsVisible="False"
+                             Orientation="Vertical"
+                             VerticalOptions="Start">
+                    <!--  Immagine dell'impronta  -->
+                    <controls:FontAwesomeLabel FontSize="60"
+                                               HorizontalOptions="CenterAndExpand"
+                                               Text="{x:Static controls:Icon.FAFingerprintSolid}"
+                                               TextColor="Black"
+                                               WidthRequest="80"/>
+                    <!--  Messaggio  -->
+                    <Label x:Name="lblFingerprintMsg"
+                           FontSize="Small"
+                           HorizontalOptions="CenterAndExpand"
+                           Text="{ext:Translate txtFingerprintReady}"
+                           VerticalOptions="Center"/>
+                </StackLayout>
+
+                <!--  Login  -->
+                <Button x:Name="btnLogin"
+                        Grid.Row="5"
+                        Clicked="BtnLogin_Clicked"
+                        HorizontalOptions="FillAndExpand"
+                        Text="{ext:Translate btnLogin}"/>
+            </Grid>
+        </StackLayout>
+
+    </RelativeLayout>
+
+</ContentPage>

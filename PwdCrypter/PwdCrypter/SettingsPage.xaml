@@ -1,0 +1,245 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="PwdCrypter.SettingsPage"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:PwdCrypter.Controls"
+             xmlns:ext="clr-namespace:PwdCrypter.Extensions.ResxLocalization"
+             xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             xmlns:local="clr-namespace:PwdCrypter"
+             Title="{ext:Translate titleSettings}"
+             BackgroundColor="White"
+             SizeChanged="ContentPage_SizeChanged">
+    <ContentPage.Content>
+        <RelativeLayout>
+            <!--
+                Immagine di sfondo
+                A causa di un bug, è necessario specifiare ReplaceStringMap prima
+                di Source
+            -->
+            <ffimageloadingsvg:SvgCachedImage x:Name="imgBackground"
+                                              RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                                                     Property=Height,
+                                                                                                     Factor=1}"
+                                              RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                                                    Property=Width,
+                                                                                                    Factor=1}"
+                                              RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                                                Property=Width,
+                                                                                                Factor=0.4,
+                                                                                                Constant=0}"
+                                              RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                                                Property=Height,
+                                                                                                Factor=0.2,
+                                                                                                Constant=0}"
+                                              ReplaceStringMap="{x:Static local:SettingsPage.BackgroundImageColor}"
+                                              Source="Assets/SVG/cog_solid.svg"/>
+
+            <!--  Titolo  -->
+            <Label x:Name="lblTitle"
+                   FontAttributes="Bold"
+                   FontSize="Large"
+                   HorizontalTextAlignment="Center"
+                   RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                         Property=Width,
+                                                                         Factor=1}"
+                   RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                     Property=Height,
+                                                                     Factor=0,
+                                                                     Constant=20}"
+                   Text="{ext:Translate titleSettings}"
+                   TextColor="Black"/>
+
+            <Grid x:Name="gridMain"
+                  Padding="40,0,40,0"
+                  RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                         Property=Height,
+                                                                         Factor=1}"
+                  RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                        Property=Width,
+                                                                        Factor=1}"
+                  VerticalOptions="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition>
+                        <RowDefinition.Height>
+                            <OnPlatform x:TypeArguments="GridLength">
+                                <OnPlatform.Platforms>
+                                    <On Platform="Android"
+                                        Value="0"/>
+                                    <On Platform="UWP"
+                                        Value="Auto"/>
+                                </OnPlatform.Platforms>
+                            </OnPlatform>
+                        </RowDefinition.Height>
+                    </RowDefinition>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition>
+                        <RowDefinition.Height>
+                            <OnPlatform x:TypeArguments="GridLength">
+                                <OnPlatform.Platforms>
+                                    <On Platform="Android"
+                                        Value="0"/>
+                                    <On Platform="UWP"
+                                        Value="Auto"/>
+                                </OnPlatform.Platforms>
+                            </OnPlatform>
+                        </RowDefinition.Height>
+                    </RowDefinition>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="70*"/>
+                    <ColumnDefinition Width="30*"/>
+                </Grid.ColumnDefinitions>
+
+                <!--  Timeout della sessione  -->
+                <Label Grid.Row="0"
+                       Grid.Column="0"
+                       FontSize="14"
+                       HorizontalOptions="End"
+                       HorizontalTextAlignment="End"
+                       Text="{ext:Translate txtSessionTimeout}"
+                       TextColor="Black">
+                    <Label.VerticalOptions>
+                        <OnPlatform x:TypeArguments="LayoutOptions">
+                            <OnPlatform.Platforms>
+                                <On Platform="Android"
+                                    Value="Center"/>
+                                <On Platform="UWP"
+                                    Value="End"/>
+                            </OnPlatform.Platforms>
+                        </OnPlatform>
+                    </Label.VerticalOptions>
+                    <Label.Margin>
+                        <OnPlatform x:TypeArguments="Thickness">
+                            <OnPlatform.Platforms>
+                                <On Platform="Android"
+                                    Value="0"/>
+                                <On Platform="UWP"
+                                    Value="0,0,0,8"/>
+                            </OnPlatform.Platforms>
+                        </OnPlatform>
+                    </Label.Margin>
+                </Label>
+                <Picker x:Name="pickerSessionTimeout"
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        SelectedIndexChanged="PickerSessionTimeout_SelectedIndexChanged">
+                    <Picker.WidthRequest>
+                        <OnPlatform x:TypeArguments="x:Double">
+                            <OnPlatform.Platforms>
+                                <On Platform="Android"
+                                    Value="100"/>
+                                <On Platform="UWP"
+                                    Value="-1"/>
+                            </OnPlatform.Platforms>
+                        </OnPlatform>
+                    </Picker.WidthRequest>
+                </Picker>
+
+                <!--  Mostra le istruzioni dopo la copia (estensione del browser)  -->
+                <Label Grid.Row="1"
+                       Grid.Column="0"
+                       FontSize="14"
+                       HorizontalOptions="End"
+                       HorizontalTextAlignment="End"
+                       Text="{ext:Translate txtBrowserExtHelp}"
+                       TextColor="Black"
+                       VerticalOptions="Center"/>
+                <Switch x:Name="switchBrowserExtHelp"
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        HorizontalOptions="Start"
+                        IsToggled="False"
+                        Toggled="SwitchToggleChanged_Toggled"
+                        VerticalOptions="Center"/>
+
+                <!--  Notifiche locali  -->
+                <Label Grid.Row="2"
+                       Grid.Column="0"
+                       FontSize="14"
+                       HorizontalOptions="End"
+                       HorizontalTextAlignment="End"
+                       Text="{ext:Translate txtLocalNotification}"
+                       TextColor="Black"
+                       VerticalOptions="Center"/>
+                <Switch x:Name="switchLocalNotification"
+                        Grid.Row="2"
+                        Grid.Column="1"
+                        HorizontalOptions="Start"
+                        IsEnabled="{x:Static local:SettingsPage.CanReceiveNotification}"
+                        IsToggled="False"
+                        Toggled="SwitchToggleChanged_Toggled"
+                        VerticalOptions="Center"/>
+
+                <!--  Notifiche push  -->
+                <Label Grid.Row="3"
+                       Grid.Column="0"
+                       FontSize="14"
+                       HorizontalOptions="End"
+                       HorizontalTextAlignment="End"
+                       Text="{ext:Translate txtPushNotification}"
+                       TextColor="Black"
+                       VerticalOptions="Center"/>
+                <Switch x:Name="switchPushNotification"
+                        Grid.Row="3"
+                        Grid.Column="1"
+                        HorizontalOptions="Start"
+                        IsToggled="False"
+                        Toggled="SwitchToggleChanged_Toggled"
+                        VerticalOptions="Center">
+                    <Switch.IsEnabled>
+                        <OnPlatform x:TypeArguments="x:Boolean">
+                            <OnPlatform.Platforms>
+                                <On Platform="Android"
+                                    Value="True"/>
+                                <On Platform="UWP"
+                                    Value="False"/>
+                            </OnPlatform.Platforms>
+                        </OnPlatform>
+                    </Switch.IsEnabled>
+                </Switch>
+                <!--
+                    Per Windows 10, la cancellazione della sottoscrizione si effettua dal pannello
+                    delle impostazioni delle notifiche delle App
+                -->
+                <StackLayout Grid.Row="4"
+                             Grid.Column="0"
+                             Grid.ColumnSpan="2"
+                             HorizontalOptions="Center"
+                             Orientation="Horizontal"
+                             VerticalOptions="Center">
+                    <StackLayout.IsVisible>
+                        <OnPlatform x:TypeArguments="x:Boolean">
+                            <OnPlatform.Platforms>
+                                <On Platform="Android"
+                                    Value="False"/>
+                                <On Platform="UWP"
+                                    Value="True"/>
+                            </OnPlatform.Platforms>
+                        </OnPlatform>
+                    </StackLayout.IsVisible>
+                    <Label FontSize="14"
+                           HorizontalOptions="Start"
+                           Text="{ext:Translate txtOpenPushNFSettings}"
+                           VerticalOptions="Center"/>
+                    <Button Margin="5,0,0,0"
+                            Clicked="OpenPushNotificationSettings_Clicked"
+                            Text="{ext:Translate btnOpenNFSettings}"/>
+                </StackLayout>
+                <!--  Apre la pagina di configurazione delle opzioni di accesso aggiuntive  -->
+                <controls:ImageTextButton Grid.Row="6"
+                                          Grid.Column="0"
+                                          Grid.ColumnSpan="2"
+                                          Margin="5"
+                                          HorizontalOptions="FillAndExpand"
+                                          Icon="{x:Static controls:Icon.FAUnlockAltSolid}"
+                                          OnClicked="SecurityAccess_OnClicked"
+                                          Text="{ext:Translate btnSecurityAccess}"
+                                          VerticalOptions="Center"/>
+            </Grid>
+        </RelativeLayout>
+    </ContentPage.Content>
+</ContentPage>

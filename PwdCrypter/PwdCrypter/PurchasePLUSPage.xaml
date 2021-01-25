@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="PwdCrypter.PurchasePLUSPage"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ext="clr-namespace:PwdCrypter.Extensions.ResxLocalization"
+             xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             xmlns:local="clr-namespace:PwdCrypter"
+             Title="{ext:Translate titleUpgradeToPLUS}"
+             BackgroundColor="White"
+             SizeChanged="ContentPage_SizeChanged">
+    <ContentPage.Content>
+        <RelativeLayout>
+            <!--
+                Immagine di sfondo
+                A causa di un bug, è necessario specifiare ReplaceStringMap prima
+                di Source
+            -->
+            <ffimageloadingsvg:SvgCachedImage x:Name="imgBackground"
+                                              RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                                                     Property=Height,
+                                                                                                     Factor=1}"
+                                              RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                                                    Property=Width,
+                                                                                                    Factor=1}"
+                                              RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                                                Property=Width,
+                                                                                                Factor=0.4,
+                                                                                                Constant=0}"
+                                              RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                                                Property=Height,
+                                                                                                Factor=0.2,
+                                                                                                Constant=0}"
+                                              ReplaceStringMap="{x:Static local:PurchasePLUSPage.BackgroundImageColor}"
+                                              Source="Assets/SVG/shopping_cart_solid.svg"/>
+
+            <StackLayout RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                                Property=Height,
+                                                                                Factor=1}"
+                         RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                               Property=Width,
+                                                                               Factor=1}">
+
+                <Grid x:Name="gridMain"
+                      Margin="20"
+                      HorizontalOptions="CenterAndExpand"
+                      VerticalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <!--  Titolo  -->
+                    <Label x:Name="lblTitle"
+                           Grid.Row="0"
+                           FontAttributes="Bold"
+                           FontSize="Large"
+                           HorizontalOptions="Center"
+                           HorizontalTextAlignment="Center"
+                           Text="{ext:Translate titleUpgradeToPLUS}"
+                           TextColor="Black"
+                           VerticalOptions="Center"/>
+
+                    <!--  Spiegazione delle funzioni  -->
+                    <ScrollView Grid.Row="1"
+                                Margin="0,30,0,0"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="FillAndExpand">
+                        <Grid HorizontalOptions="CenterAndExpand"
+                              VerticalOptions="FillAndExpand">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Label Grid.Row="0"
+                                   Grid.Column="0"
+                                   Grid.ColumnSpan="2"
+                                   Margin="0,0,0,20"
+                                   FontSize="Medium"
+                                   HorizontalOptions="CenterAndExpand"
+                                   HorizontalTextAlignment="Center"
+                                   Text="{ext:Translate txtUpgradeToPLUS}"
+                                   TextColor="Black"
+                                   VerticalOptions="Start"/>
+
+                            <ffimageloadingsvg:SvgCachedImage Grid.Row="1"
+                                                              Grid.Column="0"
+                                                              ReplaceStringMap="{x:Static local:PurchasePLUSPage.FeatureImageColor}"
+                                                              Source="Assets/SVG/cloud_solid.svg"
+                                                              WidthRequest="50"/>
+                            <Label Grid.Row="1"
+                                   Grid.Column="1"
+                                   FontSize="Medium"
+                                   HorizontalOptions="Start"
+                                   HorizontalTextAlignment="Center"
+                                   Text="{ext:Translate txtPLUSCloudFeature}"
+                                   TextColor="Black"
+                                   VerticalOptions="Center"/>
+
+                            <ffimageloadingsvg:SvgCachedImage Grid.Row="2"
+                                                              Grid.Column="0"
+                                                              ReplaceStringMap="{x:Static local:PurchasePLUSPage.FeatureImageColor}"
+                                                              Source="Assets/SVG/paperclip_solid.svg"
+                                                              WidthRequest="50"/>
+                            <Label Grid.Row="2"
+                                   Grid.Column="1"
+                                   FontSize="Medium"
+                                   HorizontalOptions="Start"
+                                   HorizontalTextAlignment="Center"
+                                   Text="{ext:Translate txtPLUSAttachmentFeature}"
+                                   TextColor="Black"
+                                   VerticalOptions="Center"/>
+                        </Grid>
+                    </ScrollView>
+
+                    <!--  Pulsanti per l'acquisto  -->
+                    <StackLayout x:Name="stackButtons"
+                                 Grid.Row="2"
+                                 HorizontalOptions="FillAndExpand"
+                                 Orientation="Horizontal"
+                                 VerticalOptions="CenterAndExpand">
+                        <Button x:Name="btnCancel"
+                                BackgroundColor="{x:Static local:AppStyle.ButtonAlternativeBackgroundColor}"
+                                Clicked="BtnCancel_Clicked"
+                                HorizontalOptions="FillAndExpand"
+                                Text="{ext:Translate btnNoThanks}"/>
+                        <Button x:Name="btnPurchase"
+                                Clicked="BtnPurchase_Clicked"
+                                HorizontalOptions="FillAndExpand"
+                                Text="{ext:Translate txtPurchase}"/>
+                    </StackLayout>
+
+                    <!--  Pulsante per sbloccare la funzione  -->
+                    <Button x:Name="btnUnlock"
+                            Grid.Row="3"
+                            BackgroundColor="{x:Static local:AppStyle.ButtonAlternativeBackgroundColor}"
+                            Clicked="BtnUnlock_Clicked"
+                            HorizontalOptions="FillAndExpand"
+                            IsVisible="{x:Static local:PurchasePLUSPage.ShowUnlockCode}"
+                            Text="{ext:Translate btnIHaveUnlockCode}"
+                            VerticalOptions="CenterAndExpand"/>
+
+                </Grid>
+            </StackLayout>
+        </RelativeLayout>
+    </ContentPage.Content>
+</ContentPage>

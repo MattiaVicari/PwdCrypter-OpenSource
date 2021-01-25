@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="PwdCrypter.LicensesPage"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:ext="clr-namespace:PwdCrypter.Extensions.ResxLocalization"
+             xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             xmlns:local="clr-namespace:PwdCrypter"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             Title="{ext:Translate title3rdPartyLicenses}"
+             BackgroundColor="White"
+             mc:Ignorable="d">
+    <ContentPage.Content>
+        <RelativeLayout>
+            <!--
+                Immagine di sfondo
+                A causa di un bug, è necessario specifiare ReplaceStringMap prima
+                di Source
+            -->
+            <ffimageloadingsvg:SvgCachedImage x:Name="imgBackground"
+                                              RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                                                     Property=Height,
+                                                                                                     Factor=1}"
+                                              RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                                                    Property=Width,
+                                                                                                    Factor=1}"
+                                              RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                                                Property=Width,
+                                                                                                Factor=0.4,
+                                                                                                Constant=0}"
+                                              RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                                                Property=Height,
+                                                                                                Factor=0.2,
+                                                                                                Constant=0}"
+                                              ReplaceStringMap="{x:Static local:LicensesPage.BackgroundImageColor}"
+                                              Source="Assets/SVG/info_circle_solid.svg"/>
+
+            <StackLayout RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                                Property=Height,
+                                                                                Factor=1}"
+                         RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                               Property=Width,
+                                                                               Factor=1}">
+
+                <StackLayout Margin="40,0,40,0"
+                             HorizontalOptions="Center"
+                             Orientation="Vertical">
+                    <!--  Titolo  -->
+                    <Label x:Name="lblTitle"
+                           FontAttributes="Bold"
+                           FontSize="Large"
+                           HorizontalOptions="Center"
+                           HorizontalTextAlignment="Center"
+                           Text="{ext:Translate title3rdPartyLicenses}"
+                           TextColor="Black"
+                           VerticalOptions="Center"/>
+
+                    <ListView x:Name="listViewLicenses"
+                              HorizontalScrollBarVisibility="Never"
+                              ItemSelected="ListViewLicenses_ItemSelected"
+                              VerticalScrollBarVisibility="Never">
+                        <ListView.RowHeight>
+                            <OnPlatform x:TypeArguments="x:Int32">
+                                <On Platform="Android"
+                                    Value="80"/>
+                                <On Platform="UWP"
+                                    Value="-1"/>
+                            </OnPlatform>
+                        </ListView.RowHeight>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid Margin="0,10,0,10">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Grid.Row="0"
+                                               Grid.Column="0"
+                                               LineBreakMode="WordWrap"
+                                               Text="{Binding ThirdPartyName}"
+                                               TextColor="Black"
+                                               VerticalTextAlignment="Center"/>
+                                        <Label Grid.Row="1"
+                                               Grid.Column="0"
+                                               LineBreakMode="WordWrap"
+                                               Text="{Binding LicenseCopyright}"
+                                               TextColor="Black"
+                                               VerticalTextAlignment="Center"/>
+
+                                        <ffimageloadingsvg:SvgCachedImage Grid.Row="0"
+                                                                          Grid.RowSpan="2"
+                                                                          Grid.Column="1"
+                                                                          HeightRequest="25"
+                                                                          ReplaceStringMap="{x:Static local:LicensesPage.LicenseIconColor}"
+                                                                          Source="Assets/SVG/angle_right_solid.svg"
+                                                                          VerticalOptions="Center"/>
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </StackLayout>
+        </RelativeLayout>
+    </ContentPage.Content>
+</ContentPage>

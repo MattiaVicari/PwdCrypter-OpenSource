@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="txtFirstAccessTitle">Create your login password</string>
+  <string name="msgPwdExportTo">Password list successfully exported to {0}</string>
+  <string name="langID">en</string>
+  <string name="errFpHWNotDetected">Fingerprint reader not available. Hardware is not detected</string>
+  <string name="errFpLockScreen">The lock screen is not configured. Please, configure the lock screen and register your fingerprint.</string>
+  <string name="errFpNotFound">No fingerprints has enrolled. Please, register at least one fingerprint</string>
+  <string name="errFpPermissionDenied">Permission denied for the fingerprint scanner</string>
+  <string name="errFpNotRead">Fingerprint scanner is not ready</string>
+  <string name="msgCheckPassword">It\'s time to check your passwords!\nClick on this notification and start the analysis.</string>
+  <string name="msgBackup">It\'s time to make a backup of your passwords!\nClick on this notification and create the backup.</string>
+</resources>

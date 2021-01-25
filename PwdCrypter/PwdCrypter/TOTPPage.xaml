@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="PwdCrypter.TOTPPage"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:PwdCrypter.Controls"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:ext="clr-namespace:PwdCrypter.Extensions.ResxLocalization"
+             xmlns:local="clr-namespace:PwdCrypter"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             Title="{ext:Translate titleTOTP}"
+             BackgroundColor="White"
+             SizeChanged="ContentPage_SizeChanged"
+             mc:Ignorable="d">
+    <ContentPage.Content>
+        <Grid Padding="40,20,40,0"
+              HorizontalOptions="FillAndExpand"
+              VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!--  Titolo  -->
+            <Label x:Name="lblTitle"
+                   Grid.Row="0"
+                   FontAttributes="Bold"
+                   FontSize="Large"
+                   HorizontalTextAlignment="Center"
+                   Text="{ext:Translate titleTOTP}"
+                   TextColor="Black"
+                   VerticalTextAlignment="Start"/>
+
+            <Grid x:Name="gridMain"
+                  Grid.Row="1"
+                  HorizontalOptions="FillAndExpand"
+                  VerticalOptions="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!--  Messaggio e codice  -->
+                <Label x:Name="lblMessage"
+                       Grid.Row="0"
+                       Grid.ColumnSpan="2"
+                       HorizontalOptions="Center"
+                       HorizontalTextAlignment="Center"
+                       Text="{ext:Translate txtTOTP}"
+                       TextColor="Black"
+                       VerticalOptions="Center"/>
+                <controls:FormEntry x:Name="entryTOTP"
+                                    Title=""
+                                    Grid.Row="1"
+                                    Grid.ColumnSpan="2"
+                                    Margin="0,20,0,20"
+                                    HorizontalTextAlignment="Center"
+                                    IsPassword="True"/>
+
+                <!--  Bottoni per confermare o annullare l'operazione  -->
+                <controls:ImageTextButton x:Name="btnConfirm"
+                                          Grid.Row="2"
+                                          Grid.Column="0"
+                                          Margin="0,0,0,40"
+                                          HorizontalOptions="End"
+                                          Icon="{x:Static controls:Icon.FACheckSquareSolid}"
+                                          OnClicked="BtnConfirm_OnClicked"
+                                          Text="{ext:Translate btnVerify}"
+                                          VerticalOptions="End"/>
+                <controls:ImageTextButton x:Name="btnCancel"
+                                          Grid.Row="2"
+                                          Grid.Column="1"
+                                          Margin="0,0,0,40"
+                                          BackgroundColor="{x:Static local:AppStyle.ButtonAlternativeBackgroundColor}"
+                                          HorizontalOptions="Start"
+                                          Icon="{x:Static controls:Icon.FAWindowCloseSolid}"
+                                          OnClicked="BtnCancel_OnClicked"
+                                          Text="{ext:Translate btnCancel}"
+                                          VerticalOptions="End"/>
+
+                <!--  Codice di ripristico  -->
+                <controls:HyperLinkLabel x:Name="linkRecoveryCode"
+                                         Grid.Row="3"
+                                         Grid.ColumnSpan="2"
+                                         HorizontalOptions="Center"
+                                         HorizontalTextAlignment="Center"
+                                         IsVisible="True"
+                                         OnClicked="RecoveryCode_OnClicked"
+                                         Text="{ext:Translate txtUseRecoveryCode}"/>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

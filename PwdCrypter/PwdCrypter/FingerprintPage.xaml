@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:ext="clr-namespace:PwdCrypter.Extensions.ResxLocalization"
+             xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             xmlns:controls="clr-namespace:PwdCrypter.Controls"
+             xmlns:local="clr-namespace:PwdCrypter"
+             mc:Ignorable="d"
+             x:Class="PwdCrypter.FingerprintPage"
+             Title="{ext:Translate titleFingerprint}"
+			 BackgroundColor="White">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical"
+                     Padding="40,0,40,0">
+            <!-- Titolo -->
+            <Label x:Name="lblTitle"
+				   Text="{ext:Translate titleFingerprint}"
+				   FontSize="Large"
+				   FontAttributes="Bold"
+				   TextColor="Black"
+				   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Start"
+                   Margin="0,20,0,0"/>
+            <!-- Immagine dell'impronta -->
+            <ffimageloadingsvg:SvgCachedImage
+                ReplaceStringMap="{x:Static local:FingerprintPage.ImageColor}"
+				Source="Assets/SVG/fingerprint.svg"
+				HorizontalOptions="FillAndExpand"
+                VerticalOptions="Center" Margin="0,20,0,0"/>
+            <!-- Messaggio -->
+            <Label x:Name="lblMessage"
+                   Text="..."
+				   HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="EndAndExpand"
+				   FontSize="Medium"
+				   TextColor="Black"
+				   HorizontalTextAlignment="Center"/>
+            <!-- Bottone per annullare la lettura dell'impronta -->
+            <controls:ImageTextButton 
+                x:Name="btnCancel"
+                Text="{ext:Translate btnCancel}"
+                Icon="{x:Static controls:Icon.FAWindowCloseSolid}"
+                VerticalOptions="EndAndExpand"
+                HorizontalOptions="CenterAndExpand"
+                OnClicked="BtnCancel_OnClicked" 
+                Margin="0,0,0,40"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

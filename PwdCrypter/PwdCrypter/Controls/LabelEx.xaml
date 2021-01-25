@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<StackLayout xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:controls="clr-namespace:PwdCrypter.Controls"
+             mc:Ignorable="d"
+             x:Class="PwdCrypter.Controls.LabelEx"
+             x:Name="stackLabelEx"
+             Orientation="Horizontal">
+    <controls:FontAwesomeLabel    
+        BindingContext="{x:Reference stackLabelEx}"
+        Text="{Binding LabelIcon}"
+		TextColor="{Binding TextColor}"                    
+        VerticalOptions="Center"
+		FontSize="{Binding FontSize}"/>
+    <Label
+        BindingContext="{x:Reference stackLabelEx}"
+        Text="{Binding Text}"        
+        VerticalTextAlignment="Start"
+        HorizontalTextAlignment="Start"
+        Margin="10,0,0,0"/>
+</StackLayout>

@@ -1,0 +1,40 @@
+===================================================================================
+ENGLISH
+
+Last change: 4th September 2018
+
+The extension tracks nothing. During normal browsing with this extension installed, no data is sent anywhere.
+When you use this extension, no data is stored or sent anywhere. The scope of PwdCrypter Extension is build a communication bridge between the PwdCrypter App and the login form to be filled.
+When you use the extension, the login information collected in the PwdCrypter App is sent to the extension by the PwdCrypter Native Messaging Host application (you have to manually instal that in order to use the extension). 
+For more details how to find and install the PwdCrypter Native Messaging Host, see the web site 3dcrypter.it (https://3dcrypter.it/PwdCrypter/?lingua=1).
+How the extension works: 
+1. click the button "Paste in the form" in the PwdCrypter App. This action prepare the data to be sent;
+2. click on the extension icon on your browser. The extension open a connection to the PwdCrypter Native Messaging Host (NMH) application for request the data.  This last one ask the data to the PwdCrypter App. When the NMH application has received the data, the information is sent to the extension.
+3. when the extension receives the data from the NMH application, it is able to fill the form.
+The communication described, is made locally in your machine. No data is sent outside to anyone.
+
+Statistics:
+The information received by the extension is exclusively used for filling the form.
+Mozilla collects basic statistics when any addon hosted on addons.mozilla.org (AMO), such as PwdCrypter Extension, for updates, such as but not limited to the versions of the addon, application, and operating system.
+Please, refer to Mozilla's privacy policy for additional information.
+
+
+===================================================================================
+ITALIANO
+
+Ultima modifica: 4 settembre 2018
+
+L'estensione non traccia nulla. Durante la normale navigazione con installata questa estensione, nessun dato viene inviato all'esterno.
+Quando si utilizza questa estensione, nessun dato viene memorizzato o inviato all'esterno. Lo scopo di PwdCrypter Extension è di creare un ponte di comunicazione tra l'App PwdCrypter e il modulo di accesso (form di login) da compilare.
+Quando si utilizza l'estensione, le informazioni di accesso raccolte nell'App PwdCrypter vengono inviate all'estensione tramite applicazione PwdCrypter Native Messaging Host (è necessario installarla manualmente per poter utilizzare l'estensione).
+Per informazioni su come trovare e installare PwdCrypter Native Messaging Host, consultare il sito web 3dcrypter.it (https://3dcrypter.it/PwdCrypter/?lingua=1).
+Come funziona l'estensione:
+1. fare clic sul pulsante "Copia nel modulo" nell'App PwdCrypter. Questa azione prepara i dati da inviare;
+2. fare clic sull'icona dell'estensione sul browser. L'estensione aprirà una connessione con applicazione PwdCrypter Native Messaging Host (NMH) per richiedere i dati. Quest'ultima chiede i dati all'App PwdCrypter. Quando l'applicazione NMH avrà ricevuto i dati richiesti, tali informazioni verranno inviate all'estensione.
+3. quando l'estensione riceverà i dati dall'applicazione NMH, essa sarà in grado di compilare il modulo.
+La comunicazione descritta sopra è realizzata localmente sulla tua macchina. Nessun dato viene inviato all'esterno, a nessuno.
+
+Statistiche:
+Le informazioni ricevute dall'estensione sono utilizzate esclusivamente per compilare il modulo.
+Mozilla raccoglie statistiche di base quando qualsiasi addon ospitato su addons.mozilla.org (AMO), come PwdCypter Extension, effettua aggiornamenti. Ad esempio, e non solo, raccoglie informazioni sulle versioni degli addon, sulle applicazioni e sul sistema operativo.
+Si prega di fare riferimento alla politica sulla privacy di Mozilla per ulteriori informazioni.

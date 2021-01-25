@@ -1,0 +1,30 @@
+{
+    "extDescription": {
+        "message": "PwdCrypter extension for special copy and paste feature",
+        "description": "Extension description"
+    },
+    "popupTitle": {
+        "message": "PwdCrypter extension",
+        "description": "Popup title"
+    },
+    "markFieldCaption": {
+        "message": "Mark the input fields",
+        "description": "Label of the option for mark the form fields"
+    },
+    "pasteFormDataCaption": {
+        "message": "Fill the form",
+        "description": "Label for the command that fill the form"
+    },
+    "fillUsernameCaption": {
+        "message": "Get and insert the username",
+        "description": "Label for the command that get and insert the username"
+    },
+    "fillEmailCaption": {
+        "message": "Get and insert the e-mail",
+        "description": "Label for the command that get and insert the e-mail"
+    },
+    "fillPasswordCaption": {
+        "message": "Get and insert the password",
+        "description": "Label for the command that get and insert the password"
+    }
+}

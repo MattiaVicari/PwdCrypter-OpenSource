@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Frame x:Class="PwdCrypter.Controls.ImageTextButton"
+       xmlns="http://xamarin.com/schemas/2014/forms"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:controls="clr-namespace:PwdCrypter.Controls"
+       xmlns:local="clr-namespace:PwdCrypter"
+       Padding="5,10"
+       BackgroundColor="{x:Static local:AppStyle.ButtonBackgroundColor}"
+       CornerRadius="10"
+       VerticalOptions="Center">
+
+    <Grid HorizontalOptions="CenterAndExpand">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <controls:FontAwesomeLabel x:Name="faLabelIcon"
+                                   Grid.Column="0"
+                                   TextColor="White"
+                                   VerticalTextAlignment="Center"/>
+        <Label x:Name="labelButtonText"
+               Grid.Column="1"
+               FontAttributes="Bold"
+               HorizontalTextAlignment="Center"
+               TextColor="White"
+               VerticalTextAlignment="Center"/>
+    </Grid>
+</Frame>

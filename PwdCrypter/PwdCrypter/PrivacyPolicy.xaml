@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 xmlns:ext="clr-namespace:PwdCrypter.Extensions.ResxLocalization"
+             xmlns:controls="clr-namespace:PwdCrypter.Controls"
+             x:Class="PwdCrypter.PrivacyPolicy"
+			 Title="{ext:Translate titlePrivacyPolicy}"
+			 BackgroundColor="White"
+			 SizeChanged="ContentPage_SizeChanged">
+    <ContentPage.Content>
+        <Grid Margin="20">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="*"/>
+				<RowDefinition Height="Auto"/>
+			</Grid.RowDefinitions>
+
+			<!-- Titolo -->
+			<Label 
+				x:Name="lblTitle"
+				Grid.Row="0"
+				Text="{ext:Translate txtPrivacyPolicy}"
+				HorizontalOptions="Center"
+				VerticalOptions="Center"
+				FontSize="Large"
+				FontAttributes="Bold"
+				TextColor="Black"
+				HorizontalTextAlignment="Center"/>
+
+			<!-- Testo della privacy policy -->
+            <controls:NestedScrollView Grid.Row="1"
+                                       VerticalScrollBarVisibility="Default"
+                                       HorizontalScrollBarVisibility="Never"
+						               VerticalOptions="FillAndExpand">
+                <controls:CustomWebView x:Name="webViewPrivacyPolicy"
+                                        Navigating="WebViewPrivacyPolicy_Navigating"/>
+			</controls:NestedScrollView>
+			
+			<!-- Bottoni -->
+			<StackLayout Grid.Row="2" 
+						 Orientation="Horizontal"
+						 HorizontalOptions="CenterAndExpand">
+				<Button
+					x:Name="btnDeny"
+					Text="{ext:Translate btnDeny}"
+					HorizontalOptions="FillAndExpand"
+					Clicked="BtnDeny_Clicked"/>
+				<Button
+					x:Name="btnAgree"
+					Text="{ext:Translate btnAgree}"
+					HorizontalOptions="FillAndExpand"
+					Clicked="BtnAgree_Clicked"/>
+			</StackLayout>
+		</Grid>
+    </ContentPage.Content>
+</ContentPage>

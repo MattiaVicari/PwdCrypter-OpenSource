@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <style>
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+            div {
+                display: block;
+                width: 100%;
+                margin-top: 5px;
+            }
+            input {
+                width: 100%;
+            }
+            span {
+                font-size: 18;
+            }
+            button {
+                width: 100%;
+                height: 35px;
+                color: white;
+                background-color: black;
+            }
+            .iconKey {
+                height: 15px;
+                margin-right: 10px;
+            }
+            .btnCaption {
+                font-size: 14;
+            }
+            #app-version {
+                font-size: 10px;
+            }
+        </style>
+    </head>
+    <body style="width: 280px;">
+        <div style="text-align: center">
+            <div id="popupTitle"></div>
+            <div id="app-version"></div>
+            <div>
+                <div>
+                    <div id="markFieldCheckbox" style="display: inline-flex; flex-direction: row; height: 30px;">
+                        <input id="markField" type="checkbox" class="big-checkbox" style="width: 20px; height: 20px;">
+                    </div>
+                </div>
+                <div>
+                    <button id="pasteFormData">
+                        <img class="iconKey" src="images/file-import.png"/>
+                    </button>
+                </div>
+                <div id="fillUsername" style="display: none">
+                    <button id="btnFillUsername">
+                        <img class="iconKey" src="images/user.png"/>
+                    </button>
+                </div>
+                <div id="fillEmail" style="display: none">
+                    <button id="btnFillEmail">
+                        <img class="iconKey" src="images/envelope.png"/>
+                    </button>
+                </div>
+                <div id="fillPassword" style="display: none">
+                    <button id="btnFillPassword">
+                        <img class="iconKey" src="images/lock.png"/>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <script src="popup.js"></script>
+    </body>
+</html>

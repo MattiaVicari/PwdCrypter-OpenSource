@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:ext="clr-namespace:PwdCrypter.Extensions.ResxLocalization"
+             xmlns:controls="clr-namespace:PwdCrypter.Controls"
+             mc:Ignorable="d"
+             x:Class="PwdCrypter.RecoveryCodePage"
+             Title="{ext:Translate titleRecoveryCode}"
+             BackgroundColor="White"
+             SizeChanged="ContentPage_SizeChanged">
+    <ContentPage.Content>
+        <RelativeLayout>
+            <StackLayout Orientation="Vertical"
+                         RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+						 RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}">
+                <Grid Padding="40,20,40,0"
+                      VerticalOptions="FillAndExpand"
+                      HorizontalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <!-- Titolo -->
+                    <Label x:Name="lblTitle"
+                           Grid.Row="0"
+				           Text="{ext:Translate titleRecoveryCode}"
+				           FontSize="Large"
+				           FontAttributes="Bold"
+				           TextColor="Black"
+				           HorizontalTextAlignment="Center"
+                           VerticalTextAlignment="Start"/>
+
+                    <Grid x:Name="gridMain" 
+                          Grid.Row="1"
+                          VerticalOptions="Center"
+                          HorizontalOptions="FillAndExpand">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <!-- Messaggio e codice -->
+                        <Label 
+                            x:Name="lblMessage"
+                            Grid.Row="0"
+                            Text="{ext:Translate txtRecoveryCode}"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            TextColor="Black"
+                            HorizontalTextAlignment="Center"/>
+                        <controls:FormEntry 
+                            x:Name="entryCode"
+                            Grid.Row="1"
+                            Title=""
+                            Text="{Binding Code}"
+                            IsPassword="False"
+                            HorizontalTextAlignment="Center"
+                            Margin="0,20,0,20"
+                            IsEntryEnabled="False"/>
+
+                        <!-- Bottone per chiudere la pagina -->
+                        <controls:ImageTextButton                     
+                            Grid.Row="2"
+                            Text="{ext:Translate btnClose}"
+                            Icon="{x:Static controls:Icon.FAWindowCloseSolid}"
+                            HorizontalOptions="Center"
+                            VerticalOptions="End"
+                            Margin="0,0,0,40"
+                            OnClicked="BtnClose_OnClicked"/>
+                    </Grid>
+                </Grid>
+            </StackLayout>
+            <!-- Notifica fade in/out -->
+            <Frame x:Name="frameNotification"
+				    CornerRadius="10"
+				    Padding="5"
+				    BackgroundColor="Black"
+				    Opacity="0"
+                    IsVisible="False"
+				    RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.7}"
+				    RelativeLayout.HeightConstraint="{ConstraintExpression Type=Constant, Constant=60}"
+				    RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.15}"
+				    RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1, Constant=-150}">
+                <StackLayout HorizontalOptions="CenterAndExpand"
+							        VerticalOptions="FillAndExpand">
+                    <Label x:Name="lblNotification" FontSize="14" TextColor="White"
+                                VerticalOptions="CenterAndExpand"
+						        VerticalTextAlignment="Center"/>
+                </StackLayout>
+            </Frame>
+        </RelativeLayout>
+    </ContentPage.Content>
+</ContentPage>

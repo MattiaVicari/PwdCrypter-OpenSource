@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 xmlns:local="clr-namespace:PwdCrypter"
+			 xmlns:ext="clr-namespace:PwdCrypter.Extensions.ResxLocalization"
+			 xmlns:controls="clr-namespace:PwdCrypter.Controls"
+			 xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             x:Class="PwdCrypter.WelcomePage"
+			 Title="{ext:Translate titleSummary}"
+			 BackgroundColor="White">
+	
+	<RelativeLayout>
+
+		<!-- Immagine di sfondo
+		A causa di un bug, è necessario specifiare ReplaceStringMap prima
+		di Source -->
+		<ffimageloadingsvg:SvgCachedImage
+			x:Name="imgBackground"
+			ReplaceStringMap="{x:Static local:WelcomePage.BackgroundImageColor}"
+			Source="Assets/SVG/chart_pie_solid.svg"
+			RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+			RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}"
+			RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.4, Constant=0}"
+			RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.2, Constant=0}"/>
+
+		<StackLayout
+			RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+			RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}">
+			<Grid
+				x:Name="gridMain"
+				Margin="20"
+				VerticalOptions="FillAndExpand">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto"/>
+					<RowDefinition Height="*"/>
+				</Grid.RowDefinitions>
+
+				<!-- Titolo -->
+                <StackLayout Grid.Row="0"
+                             Orientation="Vertical">
+                    <Label 
+                        x:Name="lblTitle"
+					    Text="{ext:Translate txtSummary}"
+					    HorizontalOptions="Center"
+					    VerticalOptions="Center"
+					    FontSize="Large"
+					    FontAttributes="Bold"
+					    TextColor="Black"
+					    HorizontalTextAlignment="Center"/>
+                    <Label
+                        x:Name="lblDataSource"
+                        Text="{x:Static local:WelcomePage.DataSource}"
+                        HorizontalOptions="Center"
+					    VerticalOptions="Center"
+					    HorizontalTextAlignment="Center"
+                        IsVisible="{x:Static local:WelcomePage.IsCloudAvailable}"/>
+                </StackLayout>
+
+                <!-- Statistiche -->
+				<FlexLayout Grid.Row="1"
+							Direction="Column"
+							AlignItems="Center"
+							JustifyContent="SpaceAround"
+							Wrap="Wrap">
+					
+					<!-- Password presenti in archivio -->
+					<Grid FlexLayout.AlignSelf="Stretch">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="*"/>
+							<ColumnDefinition Width="*"/>
+						</Grid.ColumnDefinitions>
+						<ffimageloadingsvg:SvgCachedImage
+							Grid.Column="0"
+							ReplaceStringMap="{x:Static local:WelcomePage.StatisticsImageColor}"
+							Source="Assets/SVG/chart_pie_solid.svg"
+							WidthRequest="{x:Static local:WelcomePage.StatisticsImageSize}"/>
+						<StackLayout Grid.Column="1" 
+									 Orientation="Vertical"
+									 HorizontalOptions="Start"
+									 VerticalOptions="Start"
+									 Margin="10, 0, 0, 0">
+							<Label Text="{ext:Translate txtStatistics}"
+								   LineBreakMode="TailTruncation"
+								   FontAttributes="Bold"/>
+							<Label Text="{x:Static local:WelcomePage.PasswordCount}"/>
+							<Label Text="{x:Static local:WelcomePage.AccountTypeCount}"/>
+						</StackLayout>
+					</Grid>
+					
+					<!-- Ultimo accesso -->
+					<Grid FlexLayout.AlignSelf="Stretch">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="*"/>
+							<ColumnDefinition Width="*"/>
+						</Grid.ColumnDefinitions>
+						<ffimageloadingsvg:SvgCachedImage
+							Grid.Column="0"
+							ReplaceStringMap="{x:Static local:WelcomePage.StatisticsImageColor}"
+							Source="Assets/SVG/sign_in_alt_solid.svg"
+							WidthRequest="{x:Static local:WelcomePage.StatisticsImageSize}"/>
+						<StackLayout Grid.Column="1"
+							         Orientation="Vertical"
+									 HorizontalOptions="Start"
+									 VerticalOptions="Start"
+									 Margin="10, 0, 0, 0">
+							<Label Text="{ext:Translate txtLastLogin}"
+								   FontAttributes="Bold"/>
+							<Label Text="{x:Static local:WelcomePage.LastLoginDate}"
+								   LineBreakMode="TailTruncation"/>
+							<Label Text="{x:Static local:WelcomePage.LastLoginTime}"
+								   LineBreakMode="TailTruncation"/>
+						</StackLayout>
+					</Grid>
+
+					<!-- Ultima password inserita -->
+					<Grid FlexLayout.AlignSelf="Stretch">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="*"/>
+							<ColumnDefinition Width="*"/>
+						</Grid.ColumnDefinitions>
+						<ffimageloadingsvg:SvgCachedImage
+							Grid.Column="0"
+							ReplaceStringMap="{x:Static local:WelcomePage.StatisticsImageColor}"
+							Source="Assets/SVG/key_solid.svg"
+							WidthRequest="{x:Static local:WelcomePage.StatisticsImageSize}"/>
+						<StackLayout Grid.Column="1"
+							         Orientation="Vertical"
+									 HorizontalOptions="Start"
+									 VerticalOptions="Start"
+									 Margin="10, 0, 0, 0">
+							<Label Text="{ext:Translate txtLastPassword}"
+								   FontAttributes="Bold"/>
+							<Label Text="{x:Static local:WelcomePage.LastPassword}"/>
+						</StackLayout>
+					</Grid>
+				</FlexLayout>
+			</Grid>
+		</StackLayout>
+	</RelativeLayout>
+	
+</ContentPage>

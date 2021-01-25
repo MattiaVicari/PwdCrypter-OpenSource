@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="PwdCrypter.ChangeLoginPage"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:PwdCrypter.Controls"
+             xmlns:ext="clr-namespace:PwdCrypter.Extensions.ResxLocalization"
+             xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             xmlns:local="clr-namespace:PwdCrypter"
+             Title="{ext:Translate titleChangeLoginPwd}"
+             BackgroundColor="White"
+             SizeChanged="ContentPage_SizeChanged">
+    <RelativeLayout>
+        <!--
+            Immagine di sfondo
+            A causa di un bug, è necessario specifiare ReplaceStringMap prima
+            di Source
+        -->
+        <ffimageloadingsvg:SvgCachedImage x:Name="imgBackground"
+                                          RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                                                 Property=Height,
+                                                                                                 Factor=1}"
+                                          RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                                                Property=Width,
+                                                                                                Factor=1}"
+                                          RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                                            Property=Width,
+                                                                                            Factor=0.4,
+                                                                                            Constant=0}"
+                                          RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                                            Property=Height,
+                                                                                            Factor=0.2,
+                                                                                            Constant=0}"
+                                          ReplaceStringMap="{x:Static local:ChangeLoginPage.BackgroundImageColor}"
+                                          Source="Assets/SVG/lock.svg"/>
+
+        <StackLayout RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                            Property=Height,
+                                                                            Factor=1}"
+                     RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                           Property=Width,
+                                                                           Factor=1}">
+            <ScrollView HorizontalScrollBarVisibility="Never"
+                        VerticalScrollBarVisibility="Default">
+                <Grid x:Name="gridMain"
+                      Margin="20"
+                      VerticalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <!--  Titolo  -->
+                    <Label x:Name="lblTitle"
+                           Grid.Row="0"
+                           FontAttributes="Bold"
+                           FontSize="Large"
+                           HorizontalOptions="Center"
+                           HorizontalTextAlignment="Center"
+                           Text="{ext:Translate titleChangeLoginPwd}"
+                           TextColor="Black"
+                           VerticalOptions="Center"/>
+
+                    <!--  Spinner  -->
+                    <ActivityIndicator x:Name="spinnerLogin"
+                                       Grid.Row="1"
+                                       IsEnabled="False"
+                                       IsRunning="False"
+                                       IsVisible="False"
+                                       Color="{x:Static local:AppStyle.IconColor}"/>
+
+                    <!--  Password  -->
+                    <Grid x:Name="gridPassword"
+                          Grid.Row="2"
+                          VerticalOptions="Center">
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <!--  Vecchia Password  -->
+                        <controls:FormEntry x:Name="entryOldPassword"
+                                            Title="{ext:Translate txtOldPassword}"
+                                            Grid.Row="0"
+                                            IsPassword="True"
+                                            Placeholder="Password"/>
+                        <!--  Nuova Password  -->
+                        <controls:FormEntry x:Name="entryNewPassword"
+                                            Title="{ext:Translate txtNewPassword}"
+                                            Grid.Row="1"
+                                            IsPassword="True"
+                                            Placeholder="Password"
+                                            ShowPasswordStrength="True"/>
+                        <!--  Conferma Password  -->
+                        <controls:FormEntry x:Name="entryRepeatPassword"
+                                            Title="{ext:Translate txtRepeatPassword}"
+                                            Grid.Row="2"
+                                            IsPassword="True"
+                                            Placeholder="Password"/>
+                    </Grid>
+
+                    <!--  Conferma  -->
+                    <Button x:Name="btnConfirm"
+                            Grid.Row="3"
+                            Clicked="BtnConfirm_Clicked"
+                            HorizontalOptions="FillAndExpand"
+                            Text="{ext:Translate btnConfirm}"/>
+
+                </Grid>
+            </ScrollView>
+        </StackLayout>
+    </RelativeLayout>
+</ContentPage>

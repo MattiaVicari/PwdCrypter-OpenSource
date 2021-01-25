@@ -1,0 +1,323 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{4D24EA71-AAC2-450C-87FD-9CCE23CE937A}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PwdCrypter.UWP</RootNamespace>
+    <AssemblyName>PwdCrypter.UWP</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetPlatformVersion>10.0.18362.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.16299.0</TargetPlatformMinVersion>
+    <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
+    <EnableDotNetNativeCompatibleProfile>true</EnableDotNetNativeCompatibleProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PackageCertificateKeyFile>PwdCrypter.UWP_StoreKey.pfx</PackageCertificateKeyFile>
+    <PackageCertificateThumbprint>
+    </PackageCertificateThumbprint>
+    <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
+    <AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
+    <AppxBundle>Always</AppxBundle>
+    <AppxBundlePlatforms>x86|x64|arm</AppxBundlePlatforms>
+    <AppInstallerUpdateFrequency>0</AppInstallerUpdateFrequency>
+    <AppInstallerCheckForUpdateFrequency>OnApplicationRun</AppInstallerCheckForUpdateFrequency>
+    <AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
+    <GenerateTestArtifacts>True</GenerateTestArtifacts>
+    <HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppInformant.cs" />
+    <Compile Include="ApplicationCloser.cs" />
+    <Compile Include="AssetReader.cs" />
+    <Compile Include="BackgroundTaskManager.cs" />
+    <Compile Include="Controls\CustomTimePickerRenderer.cs" />
+    <Compile Include="Controls\HyperLinkLabelRenderer.cs" />
+    <Compile Include="Controls\ImageTextButtonRenderer.cs" />
+    <Compile Include="Controls\CustomWebViewRenderer.cs" />
+    <Compile Include="CrossPlatformSpecialFolder.cs" />
+    <Compile Include="DeviceInfo.cs" />
+    <Compile Include="FontAwesomeLabelRenderer.cs" />
+    <Compile Include="HtmlWebViewBaseUrl.cs" />
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Notifier.cs" />
+    <Compile Include="OAuth2Authenticator.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PushNotificationManager.cs" />
+    <Compile Include="PwdService.cs" />
+    <Compile Include="TripleDESHelper.cs" />
+    <Compile Include="TwoFactorAuth.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\AboutLogo.png" />
+    <Content Include="Assets\add.png" />
+    <Content Include="Assets\backup_hero.png" />
+    <Content Include="Assets\BadgeLogo.scale-100.png" />
+    <Content Include="Assets\BadgeLogo.scale-125.png" />
+    <Content Include="Assets\BadgeLogo.scale-150.png" />
+    <Content Include="Assets\BadgeLogo.scale-200.png" />
+    <Content Include="Assets\BadgeLogo.scale-400.png" />
+    <Content Include="Assets\cancel.png" />
+    <Content Include="Assets\checkpassword_hero.png" />
+    <Content Include="Assets\CreativeCommons.png" />
+    <Content Include="Assets\delete.png" />
+    <Content Include="Assets\edit.png" />
+    <Content Include="Assets\clear_filter.png" />
+    <Content Include="Assets\filter.png" />
+    <Content Include="Assets\LargeTile.scale-100.png" />
+    <Content Include="Assets\LargeTile.scale-125.png" />
+    <Content Include="Assets\LargeTile.scale-150.png" />
+    <Content Include="Assets\LargeTile.scale-200.png" />
+    <Content Include="Assets\LargeTile.scale-400.png" />
+    <Content Include="Assets\Licenses\fontawesome.htm" />
+    <Content Include="Assets\Licenses\Microsoft.htm" />
+    <Content Include="Assets\Licenses\MicrosoftUWP.htm" />
+    <Content Include="Assets\Licenses\NETStandard.Library.htm" />
+    <Content Include="Assets\Licenses\NewtonsoftJson.htm" />
+    <Content Include="Assets\Licenses\OtpNET.htm" />
+    <Content Include="Assets\Licenses\PluginInAppBilling.htm" />
+    <Content Include="Assets\Licenses\SkiaSharpViewsForms.htm" />
+    <Content Include="Assets\Licenses\WiryBase32.htm" />
+    <Content Include="Assets\Licenses\XamarinAuth.htm" />
+    <Content Include="Assets\Licenses\XamarinEssentials.htm" />
+    <Content Include="Assets\Licenses\XamarinFFImageLoadingSvgForms.htm" />
+    <Content Include="Assets\Licenses\XamarinForms.htm" />
+    <Content Include="Assets\Licenses\XamarinPluginFilePicker.htm" />
+    <Content Include="Assets\Licenses\XamarinPluginsClipboard.htm" />
+    <Content Include="Assets\Licenses\XamFormsQRCode.htm" />
+    <Content Include="Assets\Licenses\zxcvbncore.htm" />
+    <Content Include="Assets\PrivacyPolicy\privacypolicy_en.html" />
+    <Content Include="Assets\PrivacyPolicy\privacypolicy_en_us.html" />
+    <Content Include="Assets\PrivacyPolicy\privacypolicy_it.html" />
+    <Content Include="Assets\PrivacyPolicy\privacypolicy_it_it.html" />
+    <Content Include="Assets\plus_label.png" />
+    <Content Include="Assets\save.png" />
+    <Content Include="Assets\search.png" />
+    <Content Include="Assets\send.png" />
+    <Content Include="Assets\SmallTile.scale-100.png" />
+    <Content Include="Assets\SmallTile.scale-125.png" />
+    <Content Include="Assets\SmallTile.scale-150.png" />
+    <Content Include="Assets\SmallTile.scale-200.png" />
+    <Content Include="Assets\SmallTile.scale-400.png" />
+    <Content Include="Assets\SplashScreen.scale-100.png" />
+    <Content Include="Assets\SplashScreen.scale-125.png" />
+    <Content Include="Assets\SplashScreen.scale-150.png" />
+    <Content Include="Assets\SplashScreen.scale-200.png" />
+    <Content Include="Assets\SplashScreen.scale-400.png" />
+    <Content Include="Assets\Square150x150Logo.scale-100.png" />
+    <Content Include="Assets\Square150x150Logo.scale-125.png" />
+    <Content Include="Assets\Square150x150Logo.scale-150.png" />
+    <Content Include="Assets\Square150x150Logo.scale-200.png" />
+    <Content Include="Assets\Square150x150Logo.scale-400.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-16.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-24.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-256.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-32.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-48.png" />
+    <Content Include="Assets\Square44x44Logo.scale-100.png" />
+    <Content Include="Assets\Square44x44Logo.scale-125.png" />
+    <Content Include="Assets\Square44x44Logo.scale-150.png" />
+    <Content Include="Assets\Square44x44Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.scale-400.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-16.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-24.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-256.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-32.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-48.png" />
+    <Content Include="Assets\StoreLogo.scale-100.png" />
+    <Content Include="Assets\StoreLogo.scale-125.png" />
+    <Content Include="Assets\StoreLogo.scale-150.png" />
+    <Content Include="Assets\StoreLogo.scale-200.png" />
+    <Content Include="Assets\StoreLogo.scale-400.png" />
+    <Content Include="Assets\SVG\angle_right_solid.svg" />
+    <Content Include="Assets\SVG\cat_app.svg" />
+    <Content Include="Assets\SVG\cat_bank.svg" />
+    <Content Include="Assets\SVG\cat_creditcard.svg" />
+    <Content Include="Assets\SVG\cat_device.svg" />
+    <Content Include="Assets\SVG\cat_ecommerce.svg" />
+    <Content Include="Assets\SVG\cat_email.svg" />
+    <Content Include="Assets\SVG\cat_institutional.svg" />
+    <Content Include="Assets\SVG\cat_other.svg" />
+    <Content Include="Assets\SVG\cat_socials.svg" />
+    <Content Include="Assets\SVG\cat_software.svg" />
+    <Content Include="Assets\SVG\chart_pie_solid.svg" />
+    <Content Include="Assets\SVG\cloud_solid.svg" />
+    <Content Include="Assets\SVG\cog_solid.svg" />
+    <Content Include="Assets\SVG\exchange_alt_solid.svg" />
+    <Content Include="Assets\SVG\exclamation_triangle_solid.svg" />
+    <Content Include="Assets\SVG\file_alt.svg" />
+    <Content Include="Assets\SVG\filter.svg" />
+    <Content Include="Assets\SVG\filter_slash.svg" />
+    <Content Include="Assets\SVG\fingerprint.svg" />
+    <Content Include="Assets\SVG\googledrive_logo.svg" />
+    <Content Include="Assets\SVG\hard_hat.svg" />
+    <Content Include="Assets\SVG\hdd_solid.svg" />
+    <Content Include="Assets\SVG\history.svg" />
+    <Content Include="Assets\SVG\hourglass_regular.svg" />
+    <Content Include="Assets\SVG\info_circle_solid.svg" />
+    <Content Include="Assets\SVG\key_solid.svg" />
+    <Content Include="Assets\SVG\lock.svg" />
+    <Content Include="Assets\SVG\newspaper_solid.svg" />
+    <Content Include="Assets\SVG\onedrive_logo.svg" />
+    <Content Include="Assets\SVG\paperclip_solid.svg" />
+    <Content Include="Assets\SVG\shield_alt_solid.svg" />
+    <Content Include="Assets\SVG\shopping_cart_solid.svg" />
+    <Content Include="Assets\SVG\sign_in_alt_solid.svg" />
+    <Content Include="Assets\SVG\skull_crossbones_solid.svg" />
+    <Content Include="Assets\SVG\unlock_alt.svg" />
+    <Content Include="Assets\SVG\user_shield_solid.svg" />
+    <Content Include="Assets\Wide310x150Logo.scale-100.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-125.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-150.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-400.png" />
+    <Content Include="Properties\Default.rd.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Otp.NET">
+      <Version>1.2.2</Version>
+    </PackageReference>
+    <PackageReference Include="SkiaSharp.Views.Forms">
+      <Version>1.68.3</Version>
+    </PackageReference>
+    <PackageReference Include="System.IO.Compression.ZipFile">
+      <Version>4.3.0</Version>
+    </PackageReference>
+    <PackageReference Include="Wiry.Base32">
+      <Version>1.1.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Essentials">
+      <Version>1.5.3.2</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.FFImageLoading.Svg.Forms">
+      <Version>2.4.11.982</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Forms" Version="4.6.0.847" />
+    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.2.10" />
+    <PackageReference Include="Xamarin.Plugin.FilePicker">
+      <Version>2.1.41</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\PwdCrypterBackground\PwdCrypterBackground.csproj">
+      <Project>{1823f2b4-86f4-42e3-bce3-59a9911c229c}</Project>
+      <Name>PwdCrypterBackground</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PwdCrypter\PwdCrypter.csproj">
+      <Project>{05A01E1E-DE37-4C31-BF2D-695E1B849DAD}</Project>
+      <Name>PwdCrypter</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\Fonts\FontAwesome.otf" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="string\en\Resources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="string\en-US\Resources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="string\it\Resources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="string\it-IT\Resources.resw" />
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
+    <VisualStudioVersion>14.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+</Project>

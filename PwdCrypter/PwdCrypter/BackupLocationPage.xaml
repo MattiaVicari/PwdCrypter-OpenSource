@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="PwdCrypter.BackupLocationPage"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:ext="clr-namespace:PwdCrypter.Extensions.ResxLocalization"
+             xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             xmlns:local="clr-namespace:PwdCrypter"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             Title="{ext:Translate titleBackupLocation}"
+             BackgroundColor="White"
+             SizeChanged="ContentPage_SizeChanged"
+             mc:Ignorable="d">
+    <ContentPage.Content>
+        <RelativeLayout>
+            <!--
+                Immagine di sfondo
+                A causa di un bug, è necessario specifiare ReplaceStringMap prima
+                di Source
+            -->
+            <ffimageloadingsvg:SvgCachedImage x:Name="imgBackground"
+                                              RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                                                     Property=Height,
+                                                                                                     Factor=1}"
+                                              RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                                                    Property=Width,
+                                                                                                    Factor=1}"
+                                              RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                                                Property=Width,
+                                                                                                Factor=0.4,
+                                                                                                Constant=0}"
+                                              RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                                                Property=Height,
+                                                                                                Factor=0.2,
+                                                                                                Constant=0}"
+                                              ReplaceStringMap="{x:Static local:BackupLocationPage.BackgroundImageColor}"
+                                              Source="Assets/SVG/history.svg"/>
+
+            <StackLayout RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                                Property=Height,
+                                                                                Factor=1}"
+                         RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                               Property=Width,
+                                                                               Factor=1}">
+                <Grid Margin="20"
+                      HorizontalOptions="CenterAndExpand"
+                      VerticalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <!--  Titolo  -->
+                    <Label x:Name="lblTitle"
+                           Grid.Row="0"
+                           FontAttributes="Bold"
+                           FontSize="Large"
+                           HorizontalOptions="Center"
+                           HorizontalTextAlignment="Center"
+                           Text="{ext:Translate titleBackupLocation}"
+                           TextColor="Black"
+                           VerticalOptions="Center"/>
+                    <!--  Pulsanti per la selezione della posizione  -->
+                    <FlexLayout Grid.Row="1"
+                                AlignItems="Center"
+                                Direction="Column"
+                                JustifyContent="SpaceAround"
+                                Wrap="Wrap">
+                        <!--  Locale  -->
+                        <Frame BackgroundColor="Transparent"
+                               FlexLayout.AlignSelf="Stretch"
+                               VerticalOptions="Start">
+                            <Grid HorizontalOptions="Center">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+
+                                <ffimageloadingsvg:SvgCachedImage Grid.Column="0"
+                                                                  Aspect="AspectFit"
+                                                                  ReplaceStringMap="{x:Static local:BackupLocationPage.ButtonImageColor}"
+                                                                  Source="Assets/SVG/hdd_solid.svg"
+                                                                  WidthRequest="{x:Static local:BackupLocationPage.LogoLocationWidth}"/>
+                                <Button x:Name="btnLocal"
+                                        Grid.Column="1"
+                                        Clicked="BtnLocal_OnClicked"
+                                        IsEnabled="True"
+                                        Text="{ext:Translate txtLocal}"
+                                        VerticalOptions="Center"/>
+                            </Grid>
+                        </Frame>
+                        <!--  Cloud  -->
+                        <Frame BackgroundColor="Transparent"
+                               FlexLayout.AlignSelf="Stretch"
+                               VerticalOptions="Start">
+                            <Grid HorizontalOptions="Center">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+
+                                <ffimageloadingsvg:SvgCachedImage Grid.Column="0"
+                                                                  Aspect="AspectFit"
+                                                                  ReplaceStringMap="{x:Static local:BackupLocationPage.ButtonImageColor}"
+                                                                  Source="Assets/SVG/cloud_solid.svg"
+                                                                  WidthRequest="{x:Static local:BackupLocationPage.LogoLocationWidth}"/>
+                                <Button x:Name="btnCloud"
+                                        Grid.Column="1"
+                                        Clicked="BtnCloud_OnClicked"
+                                        IsEnabled="True"
+                                        Text="{ext:Translate txtCloud}"
+                                        VerticalOptions="Center"/>
+                            </Grid>
+                        </Frame>
+                    </FlexLayout>
+                    <!--
+                        Pulsante per annullare l'operazione in caso di apertura modale
+                        della pagina
+                    -->
+                    <Button x:Name="btnCancel"
+                            Grid.Row="2"
+                            BackgroundColor="{x:Static local:AppStyle.ButtonAlternativeBackgroundColor}"
+                            Clicked="BtnCancel_Clicked"
+                            HorizontalOptions="FillAndExpand"
+                            Text="{ext:Translate btnCancel}"/>
+                </Grid>
+            </StackLayout>
+        </RelativeLayout>
+    </ContentPage.Content>
+</ContentPage>

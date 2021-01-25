@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="PwdCrypter.ImportExportPage"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:PwdCrypter.Controls"
+             xmlns:ext="clr-namespace:PwdCrypter.Extensions.ResxLocalization"
+             xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             xmlns:local="clr-namespace:PwdCrypter"
+             Title="{ext:Translate titleTransfer}"
+             BackgroundColor="White"
+             SizeChanged="ContentPage_SizeChanged">
+    <ContentPage.Content>
+        <RelativeLayout>
+            <!--
+                Immagine di sfondo
+                A causa di un bug, è necessario specifiare ReplaceStringMap prima
+                di Source
+            -->
+            <ffimageloadingsvg:SvgCachedImage x:Name="imgBackground"
+                                              RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                                                     Property=Height,
+                                                                                                     Factor=1}"
+                                              RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                                                    Property=Width,
+                                                                                                    Factor=1}"
+                                              RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                                                Property=Width,
+                                                                                                Factor=0.4,
+                                                                                                Constant=0}"
+                                              RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                                                Property=Height,
+                                                                                                Factor=0.2,
+                                                                                                Constant=0}"
+                                              ReplaceStringMap="{x:Static local:ImportExportPage.BackgroundImageColor}"
+                                              Source="Assets/SVG/exchange_alt_solid.svg"/>
+
+            <StackLayout RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                                Property=Height,
+                                                                                Factor=1}"
+                         RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                               Property=Width,
+                                                                               Factor=1}">
+
+                <Grid x:Name="gridMain"
+                      Margin="20"
+                      HorizontalOptions="CenterAndExpand"
+                      VerticalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <!--  Titolo  -->
+                    <Label x:Name="lblTitle"
+                           Grid.Row="0"
+                           FontAttributes="Bold"
+                           FontSize="Large"
+                           HorizontalOptions="Center"
+                           HorizontalTextAlignment="Center"
+                           Text="{ext:Translate titleTransfer}"
+                           TextColor="Black"
+                           VerticalOptions="Center"/>
+
+                    <!--  Spinner  -->
+                    <ActivityIndicator x:Name="spinnerCloud"
+                                       Grid.Row="1"
+                                       IsEnabled="False"
+                                       IsRunning="False"
+                                       IsVisible="False"
+                                       Color="{x:Static local:AppStyle.IconColor}"/>
+
+                    <!--  Operazioni  -->
+                    <FlexLayout x:Name="stackOperations"
+                                Grid.Row="1"
+                                AlignItems="Stretch"
+                                Direction="Column"
+                                JustifyContent="SpaceAround"
+                                Wrap="Reverse">
+                        <controls:ImageTextButton x:Name="btnImport"
+                                                  Icon="{x:Static controls:Icon.FAExchangeAltSolid}"
+                                                  OnClicked="BtnImport_OnClicked"
+                                                  Text="{ext:Translate txtImport}"
+                                                  VerticalOptions="Center"/>
+                        <controls:ImageTextButton x:Name="btnExport"
+                                                  Icon="{x:Static controls:Icon.FAExchangeAltSolid}"
+                                                  OnClicked="BtnExport_OnClicked"
+                                                  Text="{ext:Translate txtExport}"
+                                                  VerticalOptions="Center"/>
+                        <controls:ImageTextButton x:Name="btnDownloadFromCloud"
+                                                  Icon="{x:Static controls:Icon.FACloudDownloadAltSolid}"
+                                                  IsVisible="False"
+                                                  OnClicked="BtnDownloadFromCloud_OnClicked"
+                                                  Text="{ext:Translate txtDownload}"
+                                                  VerticalOptions="Center"/>
+                        <controls:ImageTextButton x:Name="btnUploadToCloud"
+                                                  Icon="{x:Static controls:Icon.FACloudUploadAltSolid}"
+                                                  IsVisible="False"
+                                                  OnClicked="BtnUploadToCloud_OnClicked"
+                                                  Text="{ext:Translate txtUpload}"
+                                                  VerticalOptions="Center"/>
+                    </FlexLayout>
+                </Grid>
+            </StackLayout>
+        </RelativeLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PwdCrypter.BreachedAccountsPage"
+			 xmlns:local="clr-namespace:PwdCrypter"
+			 xmlns:ext="clr-namespace:PwdCrypter.Extensions.ResxLocalization"
+			 xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+			 Title="{ext:Translate titleBreachedAccount}"
+			 BackgroundColor="White">
+    <ContentPage.Content>
+		<RelativeLayout>
+			<!-- Immagine di sfondo
+			A causa di un bug, è necessario specifiare ReplaceStringMap prima
+			di Source -->
+			<ffimageloadingsvg:SvgCachedImage
+				x:Name="imgBackground"
+				ReplaceStringMap="{x:Static local:BreachedAccountsPage.BackgroundImageColor}"
+				Source="Assets/SVG/skull_crossbones_solid.svg"
+				RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+				RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}"
+				RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.4, Constant=0}"
+				RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.2, Constant=0}"/>
+
+			<StackLayout RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+						 RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}">
+
+				<Grid x:Name="gridMain" 
+					  HorizontalOptions="FillAndExpand"
+					  VerticalOptions="FillAndExpand"
+					  Margin="10,0,10,0">
+					<ListView x:Name="listViewAccounts"
+							  HasUnevenRows="True"
+							  RowHeight="60"
+							  BackgroundColor="Transparent"
+							  ItemSelected="ListViewAccounts_ItemSelected">
+						<ListView.ItemTemplate>
+							<DataTemplate>
+								<ViewCell>
+									<Grid BackgroundColor="{Binding RowColor}">
+										<Grid.RowDefinitions>
+											<RowDefinition Height="*"/>
+											<RowDefinition Height="*"/>
+										</Grid.RowDefinitions>
+
+										<!-- Account -->
+										<StackLayout Grid.Row="0" 
+													 Orientation="Horizontal"
+													 HorizontalOptions="FillAndExpand">
+											<Label Text="{ext:Translate txtAccount}"
+												   TextColor="Black"
+												   FontAttributes="Bold"
+												   VerticalTextAlignment="Center"
+												   HorizontalTextAlignment="Start"/>
+											<Label Text="{Binding Account}"
+												   TextColor="Black"
+												   VerticalTextAlignment="Center"
+												   HorizontalTextAlignment="Start"
+												   Margin="10,0,0,0"/>
+										</StackLayout>
+
+										<!-- Numero di violazioni -->
+										<StackLayout Grid.Row="1" 
+													 Orientation="Horizontal">
+											<Label Text="{ext:Translate txtBreachesCount}"
+												   TextColor="Black"
+												   FontAttributes="Bold"
+												   VerticalTextAlignment="Center"
+												   HorizontalTextAlignment="Start"/>
+											<Label Text="{Binding BreachesCount}"
+												   TextColor="Black"
+												   VerticalTextAlignment="Center"
+												   HorizontalTextAlignment="Start"
+												   Margin="10,0,0,0"/>
+										</StackLayout>
+									</Grid>
+								</ViewCell>
+							</DataTemplate>
+						</ListView.ItemTemplate>
+					</ListView>
+				</Grid>
+				
+			</StackLayout>
+		</RelativeLayout>
+	</ContentPage.Content>
+</ContentPage>

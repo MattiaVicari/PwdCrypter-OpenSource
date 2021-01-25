@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="PwdCrypter.AboutPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:PwdCrypter.Controls"
+    xmlns:ext="clr-namespace:PwdCrypter.Extensions.ResxLocalization"
+    xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+    xmlns:local="clr-namespace:PwdCrypter"
+    Title="{ext:Translate titleAbout}"
+    BackgroundColor="White">
+    <ContentPage.Content>
+        <RelativeLayout>
+            <!--
+                Immagine di sfondo
+                A causa di un bug, è necessario specifiare ReplaceStringMap prima
+                di Source
+            -->
+            <ffimageloadingsvg:SvgCachedImage
+                x:Name="imgBackground"
+                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                       Property=Height,
+                                                                       Factor=1}"
+                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                      Property=Width,
+                                                                      Factor=1}"
+                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                  Property=Width,
+                                                                  Factor=0.4,
+                                                                  Constant=0}"
+                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                  Property=Height,
+                                                                  Factor=0.2,
+                                                                  Constant=0}"
+                ReplaceStringMap="{x:Static local:AboutPage.BackgroundImageColor}"
+                Source="Assets/SVG/info_circle_solid.svg" />
+
+            <StackLayout RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
+
+                <Grid HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                        <!--<RowDefinition Height="Auto" />-->
+                    </Grid.RowDefinitions>
+
+                    <!--  Informazioni sull'applicazione  -->
+                    <StackLayout
+                        Grid.Row="0"
+                        Padding="0,20,0,20"
+                        HorizontalOptions="Center"
+                        Orientation="Horizontal">
+                        <Image HeightRequest="80" Source="Assets/AboutLogo.png" />
+                        <StackLayout Orientation="Vertical">
+                            <Label
+                                x:Name="labelAppTitle"
+                                FontAttributes="Bold"
+                                FontSize="20"
+                                Text="PwdCrypter"
+                                TextColor="Black" />
+                            <Label
+                                x:Name="labelVersion"
+                                FontSize="14"
+                                Text="Versione: N.A."
+                                TextColor="Black" />
+                            <Label
+                                FontSize="14"
+                                Text="{ext:Translate txtCopyright}"
+                                TextColor="Black" />
+                        </StackLayout>
+                    </StackLayout>
+
+                    <!--  Altre risorse  -->
+                    <StackLayout
+                        Grid.Row="1"
+                        HorizontalOptions="Center"
+                        Orientation="Horizontal">
+
+                        <ListView
+                            x:Name="listViewSupport"
+                            HorizontalScrollBarVisibility="Never"
+                            ItemSelected="ListViewSupport_ItemSelected"
+                            RowHeight="25"
+                            VerticalScrollBarVisibility="Never"
+                            WidthRequest="300">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="Auto" />
+                                            </Grid.ColumnDefinitions>
+                                            <Label
+                                                Grid.Column="0"
+                                                Text="{Binding SupportTitle}"
+                                                TextColor="Black"
+                                                VerticalTextAlignment="Center" />
+                                            <ffimageloadingsvg:SvgCachedImage
+                                                Grid.Column="1"
+                                                HeightRequest="25"
+                                                ReplaceStringMap="{x:Static local:AboutPage.SupportIconColor}"
+                                                Source="{Binding SupportIcon}" />
+                                        </Grid>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackLayout>
+
+                    <!--  Codice di sblocco
+                    <StackLayout Grid.Row="2"
+                                 Margin="0,0,0,30"
+                                 HorizontalOptions="Center"
+                                 IsVisible="{x:Static local:AboutPage.ShowUnlockCode}"
+                                 Orientation="Vertical"
+                                 VerticalOptions="Start">
+                        <Label HorizontalTextAlignment="Center"
+                               Text="{ext:Translate txtUnlockCode}"
+                               TextColor="Black"/>
+                        <Label x:Name="labelUnlockCode"
+                               HorizontalTextAlignment="Center"
+                               TextColor="Black">
+                            <Label.FontSize>
+                                <OnPlatform x:TypeArguments="x:Double">
+                                    <OnPlatform.Platforms>
+                                        <On Platform="Android"
+                                            Value="14"/>
+                                        <On Platform="UWP"
+                                            Value="20"/>
+                                    </OnPlatform.Platforms>
+                                </OnPlatform>
+                            </Label.FontSize>
+                        </Label>
+                    </StackLayout>-->
+
+                    <!--  Codice di sblocco utilizzato
+                    <StackLayout Grid.Row="2"
+                                 Margin="0,0,0,30"
+                                 HorizontalOptions="Center"
+                                 IsVisible="{x:Static local:AboutPage.ShowUsedUnlockCode}"
+                                 Orientation="Vertical"
+                                 VerticalOptions="Start">
+                        <Label HorizontalTextAlignment="Center"
+                               Text="{ext:Translate txtUsedUnlockCode}"
+                               TextColor="Black"/>
+                        <Label x:Name="labelUsedUnlockCode"
+                               HorizontalTextAlignment="Center"
+                               TextColor="Black">
+                            <Label.FontSize>
+                                <OnPlatform x:TypeArguments="x:Double">
+                                    <OnPlatform.Platforms>
+                                        <On Platform="Android"
+                                            Value="14"/>
+                                        <On Platform="UWP"
+                                            Value="20"/>
+                                    </OnPlatform.Platforms>
+                                </OnPlatform>
+                            </Label.FontSize>
+                        </Label>
+                    </StackLayout>-->
+                </Grid>
+            </StackLayout>
+        </RelativeLayout>
+    </ContentPage.Content>
+</ContentPage>

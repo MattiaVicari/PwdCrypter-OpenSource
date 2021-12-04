@@ -21,7 +21,6 @@ namespace PwdCrypter.Droid
         protected override void OnCreate(Bundle bundle)
         {
             Instance = this;
-            Plugin.CurrentActivity.CrossCurrentActivity.Current.Activity = this;
             Xamarin.Essentials.Platform.Init(this, bundle);
 
             TabLayoutResource = Resource.Layout.Tabbar;
@@ -36,6 +35,9 @@ namespace PwdCrypter.Droid
             CreateNotificationChannel();
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
+            global::Xamarin.Auth.Presenters.XamarinAndroid.AuthenticationConfiguration.Init(this, bundle);
+
+            global::Xamarin.Auth.CustomTabsConfiguration.CustomTabsClosingMessage = null;
             LoadApplication(new App());
         }
 
@@ -61,7 +63,6 @@ namespace PwdCrypter.Droid
         protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
         {
             base.OnActivityResult(requestCode, resultCode, data);
-            Plugin.InAppBilling.InAppBillingImplementation.HandleActivityResult(requestCode, resultCode, data);
         }
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Permission[] grantResults)

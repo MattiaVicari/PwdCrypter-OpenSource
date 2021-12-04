@@ -16,24 +16,44 @@ namespace PwdCrypter.Droid
     /// </summary>
     public class OAuth2Authenticator : IOAuth2Authenticator
     {
+        public static Xamarin.Auth.OAuth2Authenticator AuthenticationState { get; private set; }
+
         public event EventOnOAuth2Completed Completed;
         public event EventOnOAuth2Error Error;
 
-        public void StartAuthentication(string clientId, string scope, string appSecret, Uri authorizeUrl, Uri redirectUrl, Uri tokenUrl, bool codeChallengeMethod)
+        public void StartAuthentication(string clientId, string scope, string appSecret, 
+            Uri authorizeUrl, Uri redirectUrl, Uri tokenUrl, 
+            bool codeChallengeMethod,
+            bool useNativeUI)
         {
             Xamarin.Auth.OAuth2Authenticator oAuth2 = new Xamarin.Auth.OAuth2Authenticator(clientId,
                                                                                            appSecret,
                                                                                            scope,
                                                                                            authorizeUrl,
                                                                                            redirectUrl,
-                                                                                           tokenUrl);
+                                                                                           tokenUrl,
+                                                                                           null,
+                                                                                           useNativeUI);
+            oAuth2.ClearCookiesBeforeLogin = true;
+            oAuth2.AllowCancel = true;
+            oAuth2.ShowErrors = false;
             oAuth2.Completed += OnOAuth2Completed;
             oAuth2.Error += OnOAuth2Error;
 
-            Android.Content.Context context = Android.App.Application.Context;
-            Android.Content.Intent loginUI = oAuth2.GetUI(context);
-            loginUI.AddFlags(Android.Content.ActivityFlags.NewTask);
-            context.StartActivity(loginUI);
+            AuthenticationState = oAuth2;
+            if (useNativeUI)
+            {
+
+                var presenter = new Xamarin.Auth.Presenters.OAuthLoginPresenter();
+                presenter.Login(oAuth2);
+            }
+            else
+            {
+                Android.Content.Context context = Android.App.Application.Context;
+                Android.Content.Intent loginUI = oAuth2.GetUI(context);
+                loginUI.AddFlags(Android.Content.ActivityFlags.NewTask);
+                context.StartActivity(loginUI);
+            }
         }
 
         private void OnOAuth2Error(object sender, AuthenticatorErrorEventArgs e)

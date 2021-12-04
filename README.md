@@ -100,10 +100,12 @@ Open the source code CacheManager.cs of the common platform project and replace 
 ### Cloud
 The App can save the list of password (and also the do backups) in the Cloud.
 The class GoogleDriveConnector and OneDriveConnector provide the feature to access to the Cloud of GoogleDrive and OneDrive.  
+
 Go to the source file Cloud/GoogleDriveConnector.cs of the common platform project and set:
 - your application id to the constant IDApplication
 - your callback URL to the constant URLCallaback
 - your serialization password for the remember me feature to the constant SerializationPassword
+- open the AuthGoogleCallbackActivity.cs file and update the DataScheme of the IntentFilter attribute replacing the YOUR_CALLBACK_URL placeholder with your callback
 
 Do the same thing in the source file Cloud/OneDriveConnector.cs:
 - set your application id to the constant IDApplication

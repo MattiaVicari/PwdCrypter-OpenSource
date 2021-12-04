@@ -106,7 +106,10 @@ namespace PwdCrypter.UWP
             return code;
         }
 
-        public async void StartAuthentication(string clientId, string scope, string appSecret, Uri authorizeUrl, Uri redirectUrl, Uri tokenUrl, bool codeChallengeMethod)
+        public async void StartAuthentication(string clientId, string scope, string appSecret, 
+            Uri authorizeUrl, Uri redirectUrl, Uri tokenUrl, 
+            bool codeChallengeMethod,
+            bool useNativeUI)
         {
             string codeVerifier = "";
             UriBuilder uriBuilder = new UriBuilder(authorizeUrl);

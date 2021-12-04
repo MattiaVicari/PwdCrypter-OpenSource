@@ -18,7 +18,8 @@ namespace PwdCrypter
                                  Uri authorizeUrl,
                                  Uri redirectUrl,
                                  Uri tokenUrl,
-                                 bool codeChallengeMethod = false);
+                                 bool codeChallengeMethod = false,
+                                 bool useNativeUI = false);
 
         Task<string> RefreshToken(OAuthAccountWrapper account, 
                                   string clientId, 

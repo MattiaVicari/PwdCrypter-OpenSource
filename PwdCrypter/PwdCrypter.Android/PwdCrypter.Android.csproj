@@ -91,7 +91,7 @@
       <Version>1.2.2</Version>
     </PackageReference>
     <PackageReference Include="Plugin.InAppBilling">
-      <Version>2.0.0</Version>
+      <Version>4.0.2</Version>
     </PackageReference>
     <PackageReference Include="SkiaSharp.Views.Forms">
       <Version>1.68.3</Version>
@@ -140,6 +140,7 @@
     <Compile Include="AppInformant.cs" />
     <Compile Include="ApplicationCloser.cs" />
     <Compile Include="AssetReader.cs" />
+    <Compile Include="AuthGoogleCallbackActivity.cs" />
     <Compile Include="BackgroundTaskManager.cs" />
     <Compile Include="BackupActivity.cs" />
     <Compile Include="BillingVerify.cs" />

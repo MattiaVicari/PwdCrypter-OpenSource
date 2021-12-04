@@ -1,5 +1,4 @@
 ﻿using Plugin.InAppBilling;
-using Plugin.InAppBilling.Abstractions;
 using PwdCrypter.Extensions.ResxLocalization.Resx;
 using System;
 using System.Collections.Generic;
@@ -86,12 +85,12 @@ namespace PwdCrypter
             var billing = CrossInAppBilling.Current;
             try
             {
-                var connected = await billing.ConnectAsync(ItemType.InAppPurchase);
+                var connected = await billing.ConnectAsync();
                 if (!connected)
                     throw new Exception(AppResources.errInAppBillingNotConnected);
 
                 var verify = DependencyService.Get<IInAppBillingVerifyPurchase>();
-                var purchase = await billing.PurchaseAsync(productId, subscription ? ItemType.Subscription : ItemType.InAppPurchase, DevPayload, verify);
+                var purchase = await billing.PurchaseAsync(productId, subscription ? ItemType.Subscription : ItemType.InAppPurchase, verify);
 #if DEBUG
                 if (billing.InTestingMode)
                     return "test-purchasing-token";
@@ -128,7 +127,7 @@ namespace PwdCrypter
             var billing = CrossInAppBilling.Current;
             try
             {
-                var connected = await billing.ConnectAsync(ItemType.InAppPurchase);
+                var connected = await billing.ConnectAsync();
                 if (!connected)
                     throw new Exception(AppResources.errInAppBillingNotConnected);
 
@@ -136,8 +135,8 @@ namespace PwdCrypter
                 if (Device.RuntimePlatform == Device.iOS)
                     return;
 
-                var consumedItem = await CrossInAppBilling.Current.ConsumePurchaseAsync(productId, purchaseToken);
-                if (consumedItem == null)
+                bool consumedItem = await CrossInAppBilling.Current.ConsumePurchaseAsync(productId, purchaseToken);
+                if (!consumedItem)
                     throw new Exception(AppResources.errConsumeProduct);
             }
             catch (InAppBillingPurchaseException Ex)
@@ -164,7 +163,7 @@ namespace PwdCrypter
             var billing = CrossInAppBilling.Current;
             try
             {
-                var connected = await billing.ConnectAsync(ItemType.InAppPurchase);
+                var connected = await billing.ConnectAsync();
                 if (!connected)
                     throw new Exception(AppResources.errInAppBillingNotConnected);
 
@@ -202,7 +201,7 @@ namespace PwdCrypter
             var billing = CrossInAppBilling.Current;
             try
             {
-                var connected = await billing.ConnectAsync(ItemType.InAppPurchase);
+                var connected = await billing.ConnectAsync();
                 if (!connected)
                     throw new Exception(AppResources.errInAppBillingNotConnected);
 

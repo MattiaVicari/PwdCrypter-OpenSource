@@ -597,7 +597,7 @@ namespace PwdCrypter.Cloud
                                            new Uri(URLAuthorize),
                                            new Uri(URLCallaback),
                                            new Uri(URLToken),
-                                           true);
+                                           true, true);
                 return await Task.FromResult(true);
             }
             catch (Exception Ex)

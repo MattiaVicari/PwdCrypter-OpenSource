@@ -1,6 +1,5 @@
-﻿using System;
+﻿using Plugin.InAppBilling;
 using System.Threading.Tasks;
-using Plugin.InAppBilling.Abstractions;
 using Xamarin.Forms;
 
 [assembly: Dependency(typeof(PwdCrypter.Droid.BillingVerify))]

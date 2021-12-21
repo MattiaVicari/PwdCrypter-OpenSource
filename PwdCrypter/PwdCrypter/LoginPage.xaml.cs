@@ -221,7 +221,7 @@ namespace PwdCrypter
             lblFingerprintMsg.Text = AppResources.txtFingerprintSucceeded;
             Debug.WriteLine("Impronta: autenticazione riuscita");
             App.PwdManager.Password = Encoding.UTF8.GetString(result);
-            await DoLogin();
+            await OpenPasswordListFile();
         }
 
         protected override bool OnBackButtonPressed()
@@ -358,15 +358,8 @@ namespace PwdCrypter
                 App.CurrentApp.ChangeMainPage(new HamburgerMenu());
         }
 
-        async private void BtnLogin_Clicked(object sender, EventArgs e)
+        async private Task OpenPasswordListFile()
         {
-            if (entryPassword.Text == null || entryPassword.Text.Trim().Length == 0)
-            {
-                await DisplayAlert(App.Title, AppResources.errInvalidPassword, "Ok");
-                return;
-            }
-
-            App.PwdManager.Password = entryPassword.Text;
             LoginIsBusy = true;
             try
             {
@@ -378,7 +371,7 @@ namespace PwdCrypter
 
                     if (App.PwdManager.Is2FAAccessConfigured())
                         await DoLogin2FA();
-                    else                    
+                    else
                         await DoLogin();
                 }
                 else
@@ -391,6 +384,18 @@ namespace PwdCrypter
             {
                 LoginIsBusy = false;
             }
+        }
+
+        async private void BtnLogin_Clicked(object sender, EventArgs e)
+        {
+            if (entryPassword.Text == null || entryPassword.Text.Trim().Length == 0)
+            {
+                await DisplayAlert(App.Title, AppResources.errInvalidPassword, "Ok");
+                return;
+            }
+
+            App.PwdManager.Password = entryPassword.Text;
+            await OpenPasswordListFile();
         }
     }
 }

@@ -40,7 +40,6 @@
     "permissions": [
         "tabs",
         "nativeMessaging",
-        "debugger",
         "<all_urls>"
     ],
     "icons": {

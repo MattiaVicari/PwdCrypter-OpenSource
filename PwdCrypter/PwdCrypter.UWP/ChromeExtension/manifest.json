@@ -38,7 +38,6 @@
         "ids": ["*"]
     },
     "permissions": [
-        "tabs",
         "nativeMessaging",
         "<all_urls>"
     ],
